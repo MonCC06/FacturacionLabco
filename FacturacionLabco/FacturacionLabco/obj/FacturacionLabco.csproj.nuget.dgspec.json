@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\monse\\OneDrive\\Documentos\\COVAO\\Programación\\Tercer Trimestre\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj": {}
+    "C:\\Users\\monse\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj": {}
   },
   "projects": {
-    "C:\\Users\\monse\\OneDrive\\Documentos\\COVAO\\Programación\\Tercer Trimestre\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj": {
+    "C:\\Users\\monse\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\monse\\OneDrive\\Documentos\\COVAO\\Programación\\Tercer Trimestre\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
+        "projectUniqueName": "C:\\Users\\monse\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
         "projectName": "FacturacionLabco",
-        "projectPath": "C:\\Users\\monse\\OneDrive\\Documentos\\COVAO\\Programación\\Tercer Trimestre\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
+        "projectPath": "C:\\Users\\monse\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
         "packagesPath": "C:\\Users\\monse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\monse\\OneDrive\\Documentos\\COVAO\\Programación\\Tercer Trimestre\\FacturacionLabco\\FacturacionLabco\\obj\\",
+        "outputPath": "C:\\Users\\monse\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\monse\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.17, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
