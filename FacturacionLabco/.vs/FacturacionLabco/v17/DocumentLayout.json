@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\monse\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\",
+  "WorkspaceRootPath": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\monse\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco\\facturacionlabco.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\facturacionlabco.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\models\\trabajador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\models\\trabajador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\controllers\\trabajadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\controllers\\trabajadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,20 +29,55 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Trabajador.cs",
+              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Models\\Trabajador.cs",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Models\\Trabajador.cs",
+              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Models\\Trabajador.cs",
+              "RelativeToolTip": "FacturacionLabco\\Models\\Trabajador.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T04:25:25.171Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FacturacionLabco",
-              "DocumentMoniker": "C:\\Users\\monse\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
-              "RelativeDocumentMoniker": "FacturacionLabco\\FacturacionLabco.csproj",
-              "ToolTip": "C:\\Users\\monse\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
-              "RelativeToolTip": "FacturacionLabco\\FacturacionLabco.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-24T04:13:51.82Z",
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Models\\Cliente.cs",
+              "RelativeToolTip": "FacturacionLabco\\Models\\Cliente.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T04:25:11.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TrabajadorController.cs",
+              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\TrabajadorController.cs",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\TrabajadorController.cs",
+              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\TrabajadorController.cs",
+              "RelativeToolTip": "FacturacionLabco\\Controllers\\TrabajadorController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T04:24:26.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "FacturacionLabco\\Controllers\\ClienteController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T04:23:02.91Z",
               "EditorCaption": ""
             }
           ]
