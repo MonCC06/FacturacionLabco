@@ -1,5 +1,5 @@
-﻿using FacturacionLabco.Datos;
-using FacturacionLabco.Models;
+﻿using FacturacionLabco.Models;
+using FacturacionLabco.
 using Microsoft.AspNetCore.Mvc;
 
 namespace FacturacionLabco.Controllers
@@ -17,7 +17,7 @@ namespace FacturacionLabco.Controllers
         //Metodos que se ejecutan desde la vista 
         public IActionResult Index()
         {
-            IEnumerable<Cliente> lista = _db.clientes; //Accede a los clientes por medio del _db y trae a todos los objetos del modelo cliente y los almacena en la lista
+            IEnumerable<Cliente> lista = _db.cliente; //Accede a los clientes por medio del _db y trae a todos los objetos del modelo cliente y los almacena en la lista
 
 
             return View(lista);
@@ -36,7 +36,7 @@ namespace FacturacionLabco.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.clientes.Add(cliente);//Guarde los datos en la BD
+                _db.cliente.Add(cliente);//Guarde los datos en la BD
                 _db.SaveChanges();//Se salven los datos
                 return RedirectToAction(nameof(Index));//Una vez los datos fueron insertados, muestre el index con el cliente insertado
             }
@@ -51,7 +51,7 @@ namespace FacturacionLabco.Controllers
             if (Id == null || Id == 0)
             { return View(); }
 
-            var obj = _db.clientes.Find(Id); //Busque el cliente con el id y traiga el objeto de ese id
+            var obj = _db.cliente.Find(Id); //Busque el cliente con el id y traiga el objeto de ese id
             if (obj == null)
             {
                 return NotFound();
@@ -67,7 +67,7 @@ namespace FacturacionLabco.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.clientes.Update(cliente);//Actualiza los datos en la BD
+                _db.cliente.Update(cliente);//Actualiza los datos en la BD
                 _db.SaveChanges();//Se salven los datos
                 return RedirectToAction(nameof(Index));//Una vez los datos fueron insertados, muestre el index con la categoria insertada
             }
@@ -82,7 +82,7 @@ namespace FacturacionLabco.Controllers
             if (Id == null || Id == 0)
             { return View(); }
 
-            var obj = _db.clientes.Find(Id); //Busque el cliente con el id y traiga el objeto de ese id
+            var obj = _db.cliente.Find(Id); //Busque el cliente con el id y traiga el objeto de ese id
             if (obj == null)
             {
                 return NotFound();
@@ -101,7 +101,7 @@ namespace FacturacionLabco.Controllers
                 return NotFound();
             }
 
-            _db.clientes.Remove(cliente);//Actualiza los datos en la BD
+            _db.cliente.Remove(cliente);//Actualiza los datos en la BD
             _db.SaveChanges();//Se salven los datos
             return RedirectToAction(nameof(Index));//Una vez los datos fueron insertados, muestre el index del cliente insertada
 
