@@ -1,7 +1,7 @@
 ﻿using FacturacionLabco.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ferretero.Datos
+namespace FacturacionLabco.Datos
 {
     public class AplicationDbContext : DbContext
     {
@@ -13,7 +13,7 @@ namespace Ferretero.Datos
 
         public DbSet<Cliente> cliente { get; set; }
 
-        public DbSet<Marca> Marca { get; set; }
+        public DbSet<Marca> marca { get; set; }
 
         public DbSet<Producto> producto { get; set; }
 
