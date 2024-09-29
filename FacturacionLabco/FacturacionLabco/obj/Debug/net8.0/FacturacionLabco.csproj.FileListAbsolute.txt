@@ -1,0 +1,9 @@
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.csproj.AssemblyReference.cache
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.AssemblyInfoInputs.cache
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.AssemblyInfo.cs
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.csproj.CoreCompileInputs.cache
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.RazorAssemblyInfo.cache
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.RazorAssemblyInfo.cs
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.sourcelink.json

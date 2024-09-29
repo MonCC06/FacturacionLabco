@@ -11,7 +11,7 @@ namespace FacturacionLabco.Datos
         }
         //Aca iremos Creando basados en el modelo las respectivas tablas en la bd 
 
-        public DbSet<Cliente> cliente { get; set; }
+        public DbSet<Cliente> clientes { get; set; }
 
         public DbSet<Marca> marca { get; set; }
 
@@ -20,6 +20,12 @@ namespace FacturacionLabco.Datos
         public DbSet<Servicio> servicio { get; set; }
 
         public DbSet<Trabajador> trabajador { get; set; }
+
+        public DbSet<Factura> factura { get; set; }
+
+        public DbSet<Detalle> detalle { get; set; }
+
+        public DbSet<Vehiculo> vehiculo { get; set; }
 
 
     }
