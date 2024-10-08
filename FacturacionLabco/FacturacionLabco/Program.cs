@@ -1,4 +1,10 @@
+using FacturacionLabco.Datos;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<AplicationDbContext>(options =>
+                                                   options.UseSqlServer(
+                                                   builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

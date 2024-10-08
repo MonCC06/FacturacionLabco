@@ -21,7 +21,7 @@ namespace FacturacionLabco.Models
         public string Placa { get; set; }
 
         [Required(ErrorMessage = "Tipo de distancia es obligatorio")]
-        public string TipoDeDistancia { get; set; };
+        public string TipoDeDistancia { get; set; }
 
         [Required(ErrorMessage = "Distancia recorrida es obligatoria")]
         public string DistanciaRecorrida { get; set; }

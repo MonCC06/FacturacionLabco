@@ -1,5 +1,4 @@
-﻿using FacturacionLabco.Migrations;
-using Humanizer.Localisation.TimeToClockNotation;
+﻿using Humanizer.Localisation.TimeToClockNotation;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

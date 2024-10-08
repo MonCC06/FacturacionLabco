@@ -109,14 +109,22 @@ namespace FacturacionLabco.Controllers
         public IActionResult Eliminar(int? Id) 
         {
             if (Id == null || Id == 0)
-            { return View(); }
-
-            var obj = _db.factura.Find(Id);
-            if (obj == null)
             {
                 return NotFound();
+
             }
-            return View(obj);
+            Factura factura = _db.factura.Include(d => d.Detalle)
+               .Include(t => t.Trabajador).Include(c => c.Cliente).
+               FirstOrDefault(f => f.Id == Id);
+
+            if (factura != null)
+            {
+
+                return NotFound();
+
+            }
+
+            return View(factura);
         }
 
         //Post
@@ -124,14 +132,17 @@ namespace FacturacionLabco.Controllers
         [ValidateAntiForgeryToken] //Datos encriptados
         public IActionResult Eliminar(Factura factura)
         {
-            if (ModelState.IsValid)
+            if (factura == null)
             {
+
                 return NotFound();
+
             }
 
-            _db.factura.Remove(factura);//Actualiza los datos en la BD
-            _db.SaveChanges();//Se salven los datos
-            return RedirectToAction(nameof(Index));//Una vez los datos fueron insertados, muestre el index del cliente insertada
+            _db.factura.Remove(factura);
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
 
         }
     }

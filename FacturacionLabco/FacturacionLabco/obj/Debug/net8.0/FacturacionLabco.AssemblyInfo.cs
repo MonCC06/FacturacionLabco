@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FacturacionLabco")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8feadedd874cc308ae86c9a73be7f413cc0e502")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24fe2a09d75a2e3535f4eec9a04a1e36ce0f001b")]
 [assembly: System.Reflection.AssemblyProductAttribute("FacturacionLabco")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FacturacionLabco")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
