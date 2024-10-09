@@ -3,6 +3,7 @@ using FacturacionLabco.Models.ViewModels;
 using FacturacionLabco.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace FacturacionLabco.Controllers
 {
@@ -103,28 +104,38 @@ namespace FacturacionLabco.Controllers
         public IActionResult Eliminar(int? Id)
         {
             if (Id == null || Id == 0)
-            { return View(); }
-
-            var obj = _db.vehiculo.Find(Id);
-            if (obj == null)
             {
                 return NotFound();
+
             }
-            return View(obj);
+            Vehiculo vehiculo = _db.vehiculo.Include(c => c.Cliente)
+               .Include(m => m.Marca).FirstOrDefault(v => v.Id == Id);
+
+            if (vehiculo != null)
+            {
+
+                return NotFound();
+
+            }
+
+            return View(vehiculo);
         }
 
         //Post
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken] //Datos encriptados
         public IActionResult Eliminar(Vehiculo vehiculo)
         {
-            if (ModelState.IsValid)
+            if (vehiculo == null)
             {
+
                 return NotFound();
+
             }
 
             _db.vehiculo.Remove(vehiculo);
             _db.SaveChanges();
+
             return RedirectToAction(nameof(Index));
 
         }
