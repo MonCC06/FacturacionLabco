@@ -1,5 +1,5 @@
-﻿using FacturacionLabco.Datos;
-using FacturacionLabco.Models;
+﻿using FacturacionLabco_AccesoDatos;
+using FacturacionLabco_Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FacturacionLabco.Controllers
