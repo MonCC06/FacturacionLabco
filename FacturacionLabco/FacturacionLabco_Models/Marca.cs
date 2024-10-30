@@ -13,7 +13,5 @@ namespace FacturacionLabco_Models
         public string Nombre_Marca { get; set; }
 
 
-        [Required(ErrorMessage = "Estado de la marca obligatorio")]
-        public Boolean Estado_Marca { get; set; }
     }
 }

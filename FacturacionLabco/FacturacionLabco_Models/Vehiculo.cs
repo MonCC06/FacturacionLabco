@@ -37,10 +37,7 @@ namespace FacturacionLabco_Models
         [Required(ErrorMessage = "Distancia es obligatoria")]
         public double DistanciaRecorrida { get; set; } // Distancia ingresada 
 
-        public double ObtenerDistanciaEnKilometros()
-        {
-            return TipoDistancia ? DistanciaRecorrida * 1.60934 : DistanciaRecorrida;
-        }
+        
 
         //Foreing key
 
