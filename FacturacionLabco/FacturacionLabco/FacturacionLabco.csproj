@@ -25,8 +25,4 @@
     <ProjectReference Include="..\FacturacionLabco_Utilidades\FacturacionLabco_Utilidades.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
