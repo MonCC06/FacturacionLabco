@@ -292,3 +292,4 @@ C:\Users\Estudiante-08\Documents\GitHub\FacturacionLabco\FacturacionLabco\Factur
 C:\Users\Estudiante-08\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.pdb
 C:\Users\Estudiante-08\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.genruntimeconfig.cache
 C:\Users\Estudiante-08\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\ref\FacturacionLabco.dll
+C:\Users\Estudiante-08\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.MvcApplicationPartsAssemblyInfo.cs
