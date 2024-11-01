@@ -12,7 +12,7 @@ namespace FacturacionLabco_Models
     {
         public Vehiculo()
         {
-
+            DistanciaRecorrida = 0;
         }
 
         [Key]
@@ -37,7 +37,9 @@ namespace FacturacionLabco_Models
         [Required(ErrorMessage = "Distancia es obligatoria")]
         public double DistanciaRecorrida { get; set; } // Distancia ingresada 
 
-        
+        [NotMapped]
+
+
 
         //Foreing key
 

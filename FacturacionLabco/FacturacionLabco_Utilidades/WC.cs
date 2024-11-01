@@ -10,7 +10,7 @@ namespace FacturacionLabco_Utilidades
         public const string AdminRole = "Admin";
         public static string ClienteRole = "Cliente";
         public static string EmailAdmin = "mauricio_vargas@covao.ed.cr";
-        public const string CategoriaNombre = "Categoria";
+        public const string ClienteNombre = "Cliente";
         public const string MarcaNombre= "Marca";
         public const string Exitosa = "Exitosa";
         public const string Error = "Error";
