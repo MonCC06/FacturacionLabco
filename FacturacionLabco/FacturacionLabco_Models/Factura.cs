@@ -46,5 +46,10 @@ namespace FacturacionLabco_Models
 
         [ForeignKey("ClienteID")]
         public virtual Cliente? Cliente { get; set; }
+
+        public int VehiculoID { get; set; }
+
+        [ForeignKey("VehiculoID")]
+        public virtual Vehiculo? Vehiculo { get; set; }
     }
 }
