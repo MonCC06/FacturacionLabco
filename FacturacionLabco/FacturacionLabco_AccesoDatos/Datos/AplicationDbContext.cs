@@ -18,11 +18,15 @@ namespace FacturacionLabco_AccesoDatos
 
         public DbSet<Producto> producto { get; set; }
 
-        public DbSet<Servicio> servicio { get; set; }
-
         public DbSet<Trabajador> trabajador { get; set; }
 
         public DbSet<Vehiculo> vehiculo { get; set; }
+
+        public DbSet<Detalle> detalle { get; set; }
+
+        public DbSet<Factura> factura { get; set; }
+
+        public DbSet<UsuarioAplicacion> usuarioaplicacion { get; set; }
 
 
     }

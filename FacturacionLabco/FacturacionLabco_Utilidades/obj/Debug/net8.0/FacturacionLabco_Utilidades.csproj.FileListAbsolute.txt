@@ -11,3 +11,16 @@ C:\Users\Estudiante-08\Documents\GitHub\FacturacionLabco\FacturacionLabco\Factur
 C:\Users\Estudiante-08\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\refint\FacturacionLabco_Utilidades.dll
 C:\Users\Estudiante-08\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.pdb
 C:\Users\Estudiante-08\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\ref\FacturacionLabco_Utilidades.dll
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\bin\Debug\net8.0\FacturacionLabco_Utilidades.deps.json
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\bin\Debug\net8.0\FacturacionLabco_Utilidades.dll
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\bin\Debug\net8.0\FacturacionLabco_Utilidades.pdb
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.csproj.AssemblyReference.cache
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.GeneratedMSBuildEditorConfig.editorconfig
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.AssemblyInfoInputs.cache
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.AssemblyInfo.cs
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.csproj.CoreCompileInputs.cache
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.sourcelink.json
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.dll
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\refint\FacturacionLabco_Utilidades.dll
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.pdb
+D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\ref\FacturacionLabco_Utilidades.dll

@@ -27,7 +27,7 @@ namespace FacturacionLabco_Models
         public double Iva { get; set; }
 
         [Required(ErrorMessage = "Total de la factura es obligatorio")]
-        public DateOnly Fecha { get; set; }
+        public DateTime Fecha { get; set; }
 
         //Foreing key
 

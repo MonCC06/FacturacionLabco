@@ -24,10 +24,5 @@ namespace FacturacionLabco_Models
 
         [ForeignKey("ProductoID")]
         public virtual Producto? Producto { get; set; }
-
-        public int ServicioID { get; set; }
-
-        [ForeignKey("ServicioID")]
-        public virtual Servicio? Servicio { get; set; }
     }
 }
