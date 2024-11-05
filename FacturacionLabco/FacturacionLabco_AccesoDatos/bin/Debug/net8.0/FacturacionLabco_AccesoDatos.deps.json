@@ -606,10 +606,7 @@
           "Microsoft.AspNetCore.Identity.UI": "8.0.0"
         },
         "runtime": {
-          "FacturacionLabco_Models.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "FacturacionLabco_Models.dll": {}
         }
       }
     }

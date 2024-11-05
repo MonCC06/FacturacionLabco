@@ -24,3 +24,16 @@ D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\
 D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.dll
 D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.pdb
 D:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\ref\FacturacionLabco_Models.dll
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.deps.json
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.dll
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.pdb
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.csproj.AssemblyReference.cache
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.GeneratedMSBuildEditorConfig.editorconfig
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.AssemblyInfoInputs.cache
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.AssemblyInfo.cs
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.csproj.CoreCompileInputs.cache
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.sourcelink.json
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.dll
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\refint\FacturacionLabco_Models.dll
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.pdb
+F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\ref\FacturacionLabco_Models.dll

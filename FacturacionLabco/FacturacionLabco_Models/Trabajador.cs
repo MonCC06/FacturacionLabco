@@ -12,6 +12,11 @@ namespace FacturacionLabco_Models
         [Required(ErrorMessage = "Nombre obligatorio")]
         public string Nombre { get; set; }
 
+        public string PrimerApellido { get; set; }
+
+        [Required(ErrorMessage = "Segundo apellido obligatorio")]
+        public string SegundoApellido { get; set; }
+
         //DESCRIPCION ES OBLIGATORIO
         [Required(ErrorMessage = "Cédula obligatoria")]
         public string Cedula { get; set; }
