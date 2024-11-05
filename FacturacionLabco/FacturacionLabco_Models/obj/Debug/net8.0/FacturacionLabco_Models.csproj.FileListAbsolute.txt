@@ -37,3 +37,16 @@ F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\
 F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\refint\FacturacionLabco_Models.dll
 F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.pdb
 F:\UNDECIMO\Progra\C#\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\ref\FacturacionLabco_Models.dll
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.deps.json
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.dll
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.pdb
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.csproj.AssemblyReference.cache
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.AssemblyInfoInputs.cache
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.AssemblyInfo.cs
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.csproj.CoreCompileInputs.cache
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.sourcelink.json
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.dll
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\refint\FacturacionLabco_Models.dll
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.pdb
+C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\ref\FacturacionLabco_Models.dll

@@ -11,6 +11,8 @@ builder.Services.AddDbContext<AplicationDbContext>(options =>
                                                 options.UseSqlServer(
                                                 builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AplicationDbContext>();
+
 
 //Lo modificamos para agregar al servicio la asignacion de roles de usuario
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().
