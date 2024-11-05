@@ -1,4 +1,4 @@
-﻿using FacturacionLabco_AccesoDatos.Migrations;
+﻿using FacturacionLabco_Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
 {
-    public interface IMarcaRepositorio : IRepositorio<Marca>
+    public interface IClienteRepositorio : IRepositorio<Cliente>
     {
-        void Actualizar(Marca marca);
+
+        void Actualizar(Cliente cliente);
+
     }
 }
