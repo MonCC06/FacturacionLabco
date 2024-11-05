@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
 {
-    public interface IMarcaRepositorio : IRepositorio<Marca>
-    { 
-        void Actualizar(Marca marca);
+    public interface IClienteRepositorio : IRepositorio<Cliente>
+    {
+
+         void Actualizar(Cliente cliente);
+        
     }
 }
