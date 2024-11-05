@@ -1193,3 +1193,16 @@ C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\Factur
 C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\bin\Debug\net8.0\Microsoft.JSInterop.dll
 C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\bin\Debug\net8.0\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
 C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco\bin\Debug\net8.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.csproj.AssemblyReference.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.GeneratedMSBuildEditorConfig.editorconfig
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.AssemblyInfoInputs.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.AssemblyInfo.cs
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.csproj.CoreCompileInputs.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.MvcApplicationPartsAssemblyInfo.cs
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.MvcApplicationPartsAssemblyInfo.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.RazorAssemblyInfo.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.RazorAssemblyInfo.cs
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.sourcelink.json
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.dll
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\refint\FacturacionLabco.dll
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco\obj\Debug\net8.0\FacturacionLabco.pdb

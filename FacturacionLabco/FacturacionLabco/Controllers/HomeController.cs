@@ -1,6 +1,12 @@
-﻿namespace FacturacionLabco.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace FacturacionLabco.Controllers
 {
-    public class HomeController
+    public class HomeController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

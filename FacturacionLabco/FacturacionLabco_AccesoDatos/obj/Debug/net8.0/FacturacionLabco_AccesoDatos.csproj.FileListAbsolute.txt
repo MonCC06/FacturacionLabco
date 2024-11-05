@@ -62,3 +62,12 @@ C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\Factur
 C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\refint\FacturacionLabco_AccesoDatos.dll
 C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.pdb
 C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\ref\FacturacionLabco_AccesoDatos.dll
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.csproj.AssemblyReference.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.AssemblyInfoInputs.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.AssemblyInfo.cs
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.csproj.CoreCompileInputs.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.sourcelink.json
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.dll
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\refint\FacturacionLabco_AccesoDatos.dll
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.pdb

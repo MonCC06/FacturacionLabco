@@ -1,4 +1,4 @@
-﻿using FacturacionLabco_AccesoDatos.Migrations;
+﻿using FacturacionLabco_Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

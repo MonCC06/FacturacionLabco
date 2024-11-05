@@ -1,4 +1,6 @@
 ﻿using FacturacionLabco_Models;
+using FacturacionLabco_AccesoDatos.Datos.Repositorio;
+using FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;

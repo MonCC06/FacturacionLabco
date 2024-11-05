@@ -50,3 +50,16 @@ C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\Factur
 C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\refint\FacturacionLabco_Models.dll
 C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.pdb
 C:\Users\Estudiante-20\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\ref\FacturacionLabco_Models.dll
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.deps.json
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.dll
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\bin\Debug\net8.0\FacturacionLabco_Models.pdb
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.csproj.AssemblyReference.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.GeneratedMSBuildEditorConfig.editorconfig
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.AssemblyInfoInputs.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.AssemblyInfo.cs
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.csproj.CoreCompileInputs.cache
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.sourcelink.json
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.dll
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\refint\FacturacionLabco_Models.dll
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\FacturacionLabco_Models.pdb
+F:\FacturacionLabco\FacturacionLabco\FacturacionLabco_Models\obj\Debug\net8.0\ref\FacturacionLabco_Models.dll
