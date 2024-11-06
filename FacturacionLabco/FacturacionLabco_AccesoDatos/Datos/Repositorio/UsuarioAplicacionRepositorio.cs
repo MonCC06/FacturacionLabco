@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
 {
-    public class UsuarioAplicacionRepositorio : Repositorio<UsuarioAplicacion>, IUsuarioAplicacion
+    public class UsuarioAplicacionRepositorio : Repositorio<UsuarioAplicacion>, IUsuarioAplicacionRepositorio
     {
 
         private readonly AplicationDbContext _db;

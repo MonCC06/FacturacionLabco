@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
 {
-    public interface IUsuarioAplicacion
+    public interface IUsuarioAplicacionRepositorio
     {
         void Actualizar(UsuarioAplicacion usuarioAplicacion);
     }
