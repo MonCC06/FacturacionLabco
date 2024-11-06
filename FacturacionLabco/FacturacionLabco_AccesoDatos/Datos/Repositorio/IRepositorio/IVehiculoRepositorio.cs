@@ -1,4 +1,5 @@
 ﻿using FacturacionLabco_Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
 {
-    public interface IClienteRepositorio : IRepositorio<Cliente>
+    public interface IVehiculoRepositorio : IRepositorio<Vehiculo>
     {
+        void Actualizar(Vehiculo vehiculo);
 
-        void Actualizar(Cliente cliente);
-
-
+        IEnumerable<SelectListItem> ObtenerTodosDropDownList(string obj);
     }
 }

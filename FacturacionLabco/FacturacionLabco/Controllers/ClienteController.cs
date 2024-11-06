@@ -25,6 +25,15 @@ namespace FacturacionLabco.Controllers
             return View(lista);
         }
 
+
+        [HttpGet]
+        public IActionResult ObtenerListaClientes()
+        {
+
+            return Json(new { data = _cliRepo.ObtenerTodos() });
+
+        }
+
         //Get
         public IActionResult Crear()
         {

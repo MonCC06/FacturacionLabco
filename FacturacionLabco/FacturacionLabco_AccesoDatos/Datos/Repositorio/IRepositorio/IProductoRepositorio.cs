@@ -1,4 +1,5 @@
 ﻿using FacturacionLabco_Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
     public interface IProductoRepositorio : IRepositorio<Producto>
     {
         void Actualizar(Producto producto);
+
+
     }
 }
