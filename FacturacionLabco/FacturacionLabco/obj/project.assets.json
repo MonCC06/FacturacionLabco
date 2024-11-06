@@ -8900,23 +8900,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Estudiante-05\\.nuget\\packages\\": {},
+    "C:\\Users\\Estudiante-01\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
+      "projectUniqueName": "C:\\Users\\Estudiante-01\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
       "projectName": "FacturacionLabco",
-      "projectPath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
-      "packagesPath": "C:\\Users\\Estudiante-05\\.nuget\\packages\\",
-      "outputPath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\obj\\",
+      "projectPath": "C:\\Users\\Estudiante-01\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
+      "packagesPath": "C:\\Users\\Estudiante-01\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Estudiante-01\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Estudiante-05\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Estudiante-01\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8932,14 +8932,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj": {
-              "projectPath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj"
+            "C:\\Users\\Estudiante-01\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj": {
+              "projectPath": "C:\\Users\\Estudiante-01\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj"
             },
-            "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj": {
-              "projectPath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj"
+            "C:\\Users\\Estudiante-01\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj": {
+              "projectPath": "C:\\Users\\Estudiante-01\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj"
             },
-            "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Utilidades\\FacturacionLabco_Utilidades.csproj": {
-              "projectPath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Utilidades\\FacturacionLabco_Utilidades.csproj"
+            "C:\\Users\\Estudiante-01\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Utilidades\\FacturacionLabco_Utilidades.csproj": {
+              "projectPath": "C:\\Users\\Estudiante-01\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Utilidades\\FacturacionLabco_Utilidades.csproj"
             }
           }
         }
