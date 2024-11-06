@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UYgvJF6CSiQUYXXq1J0Vpc/rNonzZv6z0f88g29PDOigy4KNicDBk1LD5Y2yQzIdHsJ5Jgc+bR1PvlXIDwzpeQ==",
+  "dgSpecHash": "0QQU8HUmjI9fGi8WqxxSHhBgU8HInT/LvsFdwxL2mr65gOm4m3utm2j9Y6m3lnpUbzdpO1i4ldxI6QdKdndOCg==",
   "success": true,
-  "projectFilePath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
+  "projectFilePath": "C:\\Users\\Estudiante-05\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Estudiante-05\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Estudiante-05\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

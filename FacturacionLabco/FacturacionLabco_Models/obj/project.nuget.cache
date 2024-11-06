@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vS7O3UNP/r0JZEU+f3AkHJ8PqbXaGTKEl8Qrz5E81IRM9l6bPEi/tCKNgtPt+K103Ve4H6I32G9wpqNQDh8RxA==",
+  "dgSpecHash": "bLuD7wfd9EV0aCyCSryW3iXU9DghOz/WfyixLGsiP1H9ebxdXFikeSW3IQ1THGC/OOaXxCRUAbJqatgwe64fgw==",
   "success": true,
-  "projectFilePath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
+  "projectFilePath": "C:\\Users\\Estudiante-05\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Estudiante-05\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.10\\microsoft.aspnetcore.authorization.8.0.10.nupkg.sha512",
     "C:\\Users\\Estudiante-05\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.0\\microsoft.aspnetcore.cryptography.internal.8.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wakF9df7wKCJlY/554zhUTlbPaBP46oU98Ik7TkBLOM9vmTEmuOnpfsHGYKMRzcpJ18ra3Z0YyqJJokHTawehg==",
+  "dgSpecHash": "SSpBAHPKQbFloxFFtvqqrIthgT6nvy9ZD90ngpnA1PLccq11vcy046v7jiIZXmi00KfM86A2TyNUTjtk3WKlcA==",
   "success": true,
-  "projectFilePath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Utilidades\\FacturacionLabco_Utilidades.csproj",
+  "projectFilePath": "C:\\Users\\Estudiante-05\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Utilidades\\FacturacionLabco_Utilidades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Estudiante-05\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.0\\microsoft.aspnetcore.cryptography.internal.8.0.0.nupkg.sha512",
     "C:\\Users\\Estudiante-05\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.0\\microsoft.aspnetcore.cryptography.keyderivation.8.0.0.nupkg.sha512",

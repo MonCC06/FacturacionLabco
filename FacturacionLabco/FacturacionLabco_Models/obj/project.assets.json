@@ -1227,11 +1227,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
+      "projectUniqueName": "C:\\Users\\Estudiante-05\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
       "projectName": "FacturacionLabco_Models",
-      "projectPath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
+      "projectPath": "C:\\Users\\Estudiante-05\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
       "packagesPath": "C:\\Users\\Estudiante-05\\.nuget\\packages\\",
-      "outputPath": "F:\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\obj\\",
+      "outputPath": "C:\\Users\\Estudiante-05\\Documents\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
