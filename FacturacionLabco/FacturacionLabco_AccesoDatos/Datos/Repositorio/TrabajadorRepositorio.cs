@@ -24,10 +24,6 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
             {
                 catAnterior.Nombre = trabajador.Nombre;
             }
-
-
-
-
         }
 
 
