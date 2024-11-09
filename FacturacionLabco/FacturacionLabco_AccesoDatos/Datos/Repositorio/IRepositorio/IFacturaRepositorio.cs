@@ -12,5 +12,6 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
     {
 
         void Actualizar(Factura factura);
+        IEnumerable<SelectListItem> ObtenerTodosDropDownList(string obj);
     }
 }

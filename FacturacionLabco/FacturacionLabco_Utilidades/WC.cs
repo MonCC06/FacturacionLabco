@@ -13,6 +13,8 @@ namespace FacturacionLabco_Utilidades
         public const string MarcaNombre = "Marca";
         public const string TrabajadorNombre = "Trabajador";
         public const string DetalleNombre = "Detalle";
+        public const string ProductoNombre = "Producto";
+        public const string VehiculoNombre = "Producto";
         public const string Exitosa = "Exitosa";
         public const string Error = "Error";
 
