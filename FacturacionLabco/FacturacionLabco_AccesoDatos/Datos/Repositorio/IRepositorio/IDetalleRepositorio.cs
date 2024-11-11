@@ -10,7 +10,9 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
 {
     public interface IDetalleRepositorio : IRepositorio<Detalle>
     {
+
         void Actualizar(Detalle detalle);
+
         IEnumerable<SelectListItem> ObtenerTodosDropDownList(string obj);
     }
 }

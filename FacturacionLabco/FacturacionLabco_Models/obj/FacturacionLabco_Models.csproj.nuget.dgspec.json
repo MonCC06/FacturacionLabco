@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UNDECIMO\\Progra\\C#\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj": {}
+    "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj": {}
   },
   "projects": {
-    "D:\\UNDECIMO\\Progra\\C#\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj": {
+    "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UNDECIMO\\Progra\\C#\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
+        "projectUniqueName": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
         "projectName": "FacturacionLabco_Models",
-        "projectPath": "D:\\UNDECIMO\\Progra\\C#\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
-        "packagesPath": "C:\\Users\\pablo\\.nuget\\packages\\",
-        "outputPath": "D:\\UNDECIMO\\Progra\\C#\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\obj\\",
+        "projectPath": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
+        "packagesPath": "C:\\Users\\Dylan Pereira\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dylan Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

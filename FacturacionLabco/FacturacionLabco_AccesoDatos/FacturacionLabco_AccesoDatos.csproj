@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FacturacionLabco_Models\FacturacionLabco_Models.csproj" />
+    <ProjectReference Include="..\FacturacionLabco_Utilidades\FacturacionLabco_Utilidades.csproj" />
   </ItemGroup>
 
 </Project>
