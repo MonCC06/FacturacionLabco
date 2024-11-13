@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FacturacionLabco_AccesoDatos;
 
-public class AplicationDbContext : IdentityDbContext<IdentityUser>
+public class IdentityDBContext : IdentityDbContext<IdentityUser>
 {
-    public AplicationDbContext(DbContextOptions<AplicationDbContext> options)
+    public IdentityDBContext(DbContextOptions<IdentityDBContext> options)
         : base(options)
     {
     }
