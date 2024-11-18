@@ -161,24 +161,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FacturaRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
-              "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
-              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
-              "RelativeToolTip": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEYAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T23:31:32.396Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -190,8 +177,7 @@
               "RelativeToolTip": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\DetalleRepositorio.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAACIAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T20:48:06.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T20:48:06.367Z"
             },
             {
               "$type": "Document",
@@ -203,8 +189,7 @@
               "RelativeToolTip": "FacturacionLabco_Models\\Detalle.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T21:03:34.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T21:03:34.348Z"
             },
             {
               "$type": "Document",
@@ -216,8 +201,7 @@
               "RelativeToolTip": "FacturacionLabco\\Controllers\\DetalleController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T23:27:30.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T23:27:30.797Z"
             },
             {
               "$type": "Document",
@@ -229,8 +213,7 @@
               "RelativeToolTip": "FacturacionLabco_Models\\ViewModels\\DetalleVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T03:33:16.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-02T03:33:16.053Z"
             },
             {
               "$type": "Document",
@@ -242,8 +225,7 @@
               "RelativeToolTip": "FacturacionLabco_Utilidades\\WC.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T23:46:58.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T23:46:58.621Z"
             },
             {
               "$type": "Document",
@@ -255,8 +237,7 @@
               "RelativeToolTip": "FacturacionLabco_Models\\Producto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T23:51:25.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T23:51:25.985Z"
             },
             {
               "$type": "Document",
@@ -268,8 +249,7 @@
               "RelativeToolTip": "FacturacionLabco\\Controllers\\FacturaController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T23:28:06.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T23:28:06.757Z"
             },
             {
               "$type": "Document",
@@ -322,6 +302,18 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FacturaRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
+              "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
+              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
+              "RelativeToolTip": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T23:31:32.396Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Factura.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Factura.cs",
@@ -330,8 +322,7 @@
               "RelativeToolTip": "FacturacionLabco_Models\\Factura.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAmwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T21:08:21.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T21:08:21.065Z"
             },
             {
               "$type": "Document",
@@ -343,8 +334,7 @@
               "RelativeToolTip": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\IRepositorio\\IDetalleRepositorio.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T21:12:43.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T21:12:43.541Z"
             },
             {
               "$type": "Document",
@@ -581,8 +571,7 @@
               "RelativeToolTip": "FacturacionLabco\\FacturacionLabco.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-24T04:13:51.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T04:13:51.82Z"
             },
             {
               "$type": "Document",
@@ -617,8 +606,7 @@
               "RelativeToolTip": "FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-28T23:50:10.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T23:50:10.302Z"
             },
             {
               "$type": "Document",

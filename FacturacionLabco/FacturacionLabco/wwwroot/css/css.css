@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    /* Estilos del fondo */
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("/Imagenes/taller-foto-blog.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    /* Aplicar filtro a la imagen de fondo */
+    filter: sepia(200%) saturate(200%) hue-rotate(99deg) brightness(30%);
+    z-index: -1;
+
+    /* Hacer que la imagen sea responsive */
+    /* Mantener el aspecto correcto para diferentes tamaños de pantalla */
+    object-fit: cover;
+}
+
+
+.container {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgb(0, 0, 0);
+    background-color: #ffffff;
+    padding: 0%;
+}
+
+.image-container {
+    width: 50%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajustar la imagen para cubrir el contenedor */
+   /* filter: sepia(200%) saturate(210%) hue-rotate(99deg) brightness(55%) !important;*/
+}
+
+.login-container {
+    width: 50%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.logo img {
+    width: 250px;
+    margin-bottom: 1px;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #F0F0F0 !important;
+}
+
+.btn {
+    
+    width: 100%;
+    padding: 5px;
+    background-color: #ffde00;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e6c200;
+}
+
+.input-group {
+    border-radius: 3rem;
+}
+
+.input-group-text {
+    border-top-left-radius: 3rem; 
+    border-bottom-left-radius: 3rem; 
+}
+
+.form-control {
+    border-top-right-radius: 3rem !important; 
+    border-bottom-right-radius: 3rem !important; 
+    border: 2px solid #ced4da; 
+}
+
+
