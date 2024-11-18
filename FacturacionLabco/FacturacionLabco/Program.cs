@@ -1,9 +1,12 @@
 using FacturacionLabco_AccesoDatos;
+using FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio;
+using FacturacionLabco_AccesoDatos.Datos.Repositorio;
 using FacturacionLabco_Utilidades;
 using FacturacionLabco_Utilidades.Utilidades;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using FacturacionLabco_AccesoDatos.Datos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +19,22 @@ builder.Services.AddDbContext<AplicationDbContext>(options =>
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().
     AddDefaultTokenProviders().AddDefaultUI().
     AddEntityFrameworkStores<AplicationDbContext>();
+
+
+builder.Services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
+//Servicio de TipoAplicacionRepositorio
+builder.Services.AddScoped<IDetalleRepositorio, DetalleRepositorio>();
+//Servicio de ProductoRepositorio
+builder.Services.AddScoped<IProductoRepositorio, ProductoRepositorio>();
+//Servicio de OrdeRepositorio
+builder.Services.AddScoped<IFacturaRepositorio, FacturaRepositorio>();
+//Servicio de OrdeDetalleRepositorio
+builder.Services.AddScoped<IMarcaRepositorio, MarcaRepositorio>();
+//Servicio de UsuarioAplicacionRepositorio
+builder.Services.AddScoped<IUsuarioAplicacionRepositorio, UsuarioAplicacionRepositorio>();
+builder.Services.AddScoped<ITrabajadorRepositorio, TrabajadorRepositorio>();
+builder.Services.AddScoped<IVehiculoRepositorio, VehiculoRepositorio>();
+
 
 
 //Servivio de SendGrid correos
