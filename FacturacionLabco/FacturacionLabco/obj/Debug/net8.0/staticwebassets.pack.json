@@ -5,12 +5,36 @@
       "PackagePath": "staticwebassets\\FacturacionLabco.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\css.css",
+      "PackagePath": "staticwebassets\\css\\css.css"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\cssNavbar.css",
+      "PackagePath": "staticwebassets\\css\\cssNavbar.css"
+    },
+    {
       "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\imagenes\\labco.png",
+      "PackagePath": "staticwebassets\\imagenes\\labco.png"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\imagenes\\logo-Labco-sin-fondo.png",
+      "PackagePath": "staticwebassets\\imagenes\\logo-Labco-sin-fondo.png"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\imagenes\\motorcito.jpeg",
+      "PackagePath": "staticwebassets\\imagenes\\motorcito.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\imagenes\\taller-foto-blog.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\taller-foto-blog.jpg"
     },
     {
       "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\js\\Cliente.js",

@@ -1,6 +1,7 @@
 using FacturacionLabco_AccesoDatos;
 using FacturacionLabco_Utilidades;
 using FacturacionLabco_Utilidades.Utilidades;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,12 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>().
     AddDefaultTokenProviders().AddDefaultUI().
     AddEntityFrameworkStores<AplicationDbContext>();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Identity/Account/Login"; // Aquí pones la ruta del login
+                    options.AccessDeniedPath = "/Identity/Account/AccessDenied"; // Página de acceso denegado
+                });
 
 //Servivio de SendGrid correos
 
@@ -64,6 +71,19 @@ app.UseAuthorization();
 app.UseSession();//este el pipeline para utlizar el servicio de sesiones 
 
 app.MapRazorPages();
+
+app.MapGet("/", async context =>
+{
+    // Si el usuario no está autenticado, redirige al login
+    if (!context.User.Identity.IsAuthenticated)
+    {
+        context.Response.Redirect("/Identity/Account/Login");
+        return;
+    }
+
+    // Si está autenticado, se puede redirigir a la página de inicio
+    context.Response.Redirect("/Home/Index");
+});
 
 app.MapControllerRoute(
     name: "default",
