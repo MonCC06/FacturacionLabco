@@ -76,3 +76,16 @@ C:\Users\Dylan Pereira\source\FacturacionLabco\FacturacionLabco\FacturacionLabco
 C:\Users\Dylan Pereira\source\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\refint\FacturacionLabco_Utilidades.dll
 C:\Users\Dylan Pereira\source\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.pdb
 C:\Users\Dylan Pereira\source\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\ref\FacturacionLabco_Utilidades.dll
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\bin\Debug\net8.0\FacturacionLabco_Utilidades.deps.json
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\bin\Debug\net8.0\FacturacionLabco_Utilidades.dll
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\bin\Debug\net8.0\FacturacionLabco_Utilidades.pdb
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.csproj.AssemblyReference.cache
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.AssemblyInfoInputs.cache
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.AssemblyInfo.cs
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.csproj.CoreCompileInputs.cache
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.sourcelink.json
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.dll
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\refint\FacturacionLabco_Utilidades.dll
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\FacturacionLabco_Utilidades.pdb
+C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_Utilidades\obj\Debug\net8.0\ref\FacturacionLabco_Utilidades.dll
