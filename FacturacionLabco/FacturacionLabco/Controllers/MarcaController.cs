@@ -28,8 +28,6 @@ namespace FacturacionLabco.Controllers
         //Get
         public IActionResult Crear()
         {
-
-
             return View();
         }
 
@@ -47,7 +45,7 @@ namespace FacturacionLabco.Controllers
                 TempData[WC.Exitosa] = "Marca creada exitosamente";
                 return RedirectToAction(nameof(Index)); //esto es para que ne redirigir al index
             }
-            TempData[WC.Error] = "Error al crear nueva categoria";
+            TempData[WC.Error] = "Error al crear nueva marca";
             return View(marca);
         }
 
