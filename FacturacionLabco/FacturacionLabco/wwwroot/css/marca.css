@@ -289,3 +289,8 @@ body {
     font-size: 0.8rem;
   }
 }
+
+.marca-row.seleccionada {
+    background-color: #F1E3E2; /* Color de fondo para la fila seleccionada */
+    cursor: pointer;
+}

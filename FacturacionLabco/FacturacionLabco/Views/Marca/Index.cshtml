@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<FacturacionLabco_Models.Marca>
-
 @{
 
     Layout = null;
+    var marca = Model;
 }
 <!DOCTYPE html>
 <html lang="es">
@@ -115,7 +115,7 @@
                 </div>
                 <div class="mb-4">
                 </div>
-                <input type="text" class="form-control" placeholder="Buscar Marca">
+                <input type="text" class="form-control" placeholder="Buscar Marca" id="BuscarMarca" onkeyup="filtrarTabla()">
             </div>
             <div class="col-12 col-md-3 text-start mt-5">
                 <div class="modal fade" id="ModalMarca" tabindex="-1" aria-labelledby="ModalMarca" style="display: none;"
@@ -189,27 +189,30 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
                                             <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                                         </svg>
-                                    </div>
+                                    </div>''
                                 </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-12">
-                                        <h5 class="text-custom1">¿Desea eliminar la marca seleccionada?</h5>
+                                    <form asp-controller="Marca" id="formEliminar" asp-action="Eliminar" method="post">
+                                        <input type="hidden" id="marcaId" name="Id" value="" />
+                                    </form>
+                                    <div class="row justify-content-center">
+                                        <div class="col-12">
+                                            <h5 class="text-custom1">¿Desea eliminar la marca seleccionada?</h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row botones">
-                                    <div class="col-6 d-flex justify-content-end">
-                                        <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
-                                                data-bs-dismiss="modal" aria-label="Close">
-                                            Confirmar
-                                        </button>
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" form="formEliminar" aria-label="Close">
+                                                Confirmar
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="col-6 d-flex">
-                                        <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
-                                                data-bs-dismiss="modal" aria-label="Close">
-                                            Anular
-                                        </button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -217,39 +220,91 @@
             </div>
         </div>
 
+        @if (Model.Any())
+        {
+            <div class="table-responsive " id="TablaMarca">
+                <table class="table table-bordered table-hover table-custom">
+                    <thead>
+                        <tr>
+                            <th class="text-nowrap">Nombre</th>
 
-        <div class="table-responsive ">
-            <table class="table table-bordered table-hover table-custom">
-                <thead>
-                    <tr>
-                        <th class="text-nowrap">Nombre</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="Nombre"></td>
+                        <tr data-id="@item.Id" data-nombre="@item.Nombre_Marca" onclick="seleccionarFila(this)">
+                            <td class="Nombre">@item.Nombre_Marca</td>
+                        </tr>
 
-                    </tr>
-                    <tr>
-                        <td class="Nombre"></td>
+                        }
+                    </tbody>
 
-                    </tr>
-                    <tr>
-                        <td class="Nombre"></td>
-
-                    </tr>
-                    <tr>
-                        <td class="Nombre"></td>
-
-                    </tr>
-                </tbody>
-            </table>
+                </table>
+            </div>
+        }
+        <div class="col-12 col-md-3 text-start mt-5">
+            <div class="modal fade" id="ModalModificarMarca" tabindex="-1" aria-labelledby="ModalModificarMarca" style="display: none;"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="d-flex">
+                                <div class="volver">
+                                    <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                        </svg>
+                                        <h1 class="modal-title fs-5" id="ModalModificarProducto">Editar Producto</h1>
+                                    </button>
+                                </div>
+                                <div class="col-12 col-md-6 text-start user-info">
+                                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                                    <span class="user-name">Messi</span>
+                                </div>
+                            </div>
+                            <div class="container-modal">
+                                <form asp-controller="Marca" asp-action="Editar" method="post">
+                                    <input type="hidden" id="MarcaId" name="Id" value="" />
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h5>Datos de Marca</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <h9 for="Nombre_Marca">Nombre</h9>
+                                        </div>
+                                        <div class="col-8">
+                                            <input id="Nombre_Marca" name="Nombre_Marca" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
+                                                Editar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="col-12 text-end">
             <div class="actions d-flex justify-content-start">
-                <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalMarca">Modificar</button>
+                <button class="btn btn-custom" type="button" data-bs-toggle="modal" id="btnModificarMarca" data-bs-target="#ModalModificarMarca">Modificar</button>
                 <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarMarca">Eliminar</button>
             </div>
         </div>
@@ -258,6 +313,94 @@
 
     </div>
 </body>
+
+@*MODIFICAR*@
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const table = document.getElementById('TablaMarca');
+        const btnModificar = document.getElementById('btnModificarMarca');
+
+        let selectedRow = null;
+
+        // Agrega el evento para seleccionar una fila
+        table.addEventListener('click', (event) => {
+            const row = event.target.closest('tr');
+
+            if (row) {
+                // Desmarcar cualquier fila previamente seleccionada
+                if (selectedRow) {
+                    selectedRow.classList.remove('table-active');
+                }
+
+                // Marcar la fila actual como seleccionada
+                selectedRow = row;
+                selectedRow.classList.add('table-active');
+            }
+        });
+
+        // Rellena el modal con los datos del producto seleccionado
+        btnModificar.addEventListener('click', () => {
+            if (!selectedRow) {
+                alert('Por favor selecciona una marca primero.');
+                return;
+            }
+
+            const id = selectedRow.dataset.id;
+            const nombre = selectedRow.dataset.nombre;
+
+            // Asignar valores al modal
+            document.getElementById('MarcaId').value = id;
+            document.getElementById('Nombre_Marca').value = nombre;
+        });
+    });
+</script>
+
+@*ELIMINAR*@
+<script>
+    function seleccionarFila(fila) {
+        // Obtén el Id desde el atributo data-id de la fila
+        var id = fila.getAttribute("data-id");
+
+        // Configura el input oculto en el modal para enviar el Id al backend
+        document.getElementById("marcaId").value = id;
+    }
+</script>
+
+@*BUSCAR*@
+<script>
+    function filtrarTabla() {
+        // Obtén el texto ingresado en el campo de búsqueda y conviértelo a minúsculas para hacer la búsqueda insensible a mayúsculas/minúsculas.
+        const filtro = document.getElementById("BuscarMarca").value.toLowerCase();
+
+        // Obtén la referencia de la tabla donde se realizará el filtrado.
+        const tabla = document.getElementById("TablaMarca");
+
+        // Obtén todas las filas de la tabla (<tr>), incluyendo encabezados y datos.
+        const filas = tabla.getElementsByTagName("tr");
+
+        // Itera sobre todas las filas de la tabla, comenzando desde el índice 1 para saltar la fila de encabezado.
+        for (let i = 1; i < filas.length; i++) {
+            // Obtén todas las celdas (<td>) de la fila actual.
+            const celdas = filas[i].getElementsByTagName("td");
+
+            // Variable para determinar si esta fila debe mostrarse o no.
+            let mostrarFila = false;
+
+            // Si el checkbox "Nombre" está seleccionado:
+                // Si el checkbox "Nombre" NO está seleccionado, busca el texto en todas las columnas de la fila.
+                for (let j = 0; j < celdas.length; j++) {
+                    // Verifica si la celda existe y contiene el texto buscado.
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true; // Marca esta fila para ser mostrada.
+                        break; // Detén la búsqueda en esta fila, ya que se encontró una coincidencia.
+                    }
+                }
+
+            // Si se encontró coincidencia (mostrarFila es true), muestra la fila; de lo contrario, ocúltala.
+            filas[i].style.display = mostrarFila ? "" : "none";
+        }
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

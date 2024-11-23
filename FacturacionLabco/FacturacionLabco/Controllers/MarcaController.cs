@@ -75,13 +75,15 @@ namespace FacturacionLabco.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Editar(Marca marca)
         {
-
             if (ModelState.IsValid)
             {
                 _marRepo.Actualizar(marca);
                 _marRepo.Grabar();
-                return RedirectToAction(nameof(Index)); //esto es para que ne redirigir al index
+                TempData["Mensaje"] = "Producto actualizado correctamente.";
+                return RedirectToAction(nameof(Index));
             }
+
+            TempData["Error"] = "Ocurrió un error al actualizar el producto.";
             return View(marca);
         }
 
@@ -110,20 +112,19 @@ namespace FacturacionLabco.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Eliminar(Marca marca)
+        public IActionResult Eliminar(int id)
         {
 
+            var marca = _marRepo.Obtener(id); // Recupera la entidad desde el repositorio
             if (marca == null)
             {
                 return NotFound();
             }
-            _marRepo.Remover(marca);
-            _marRepo.Grabar();
-            return RedirectToAction(nameof(Index)); //esto es para que ne redirigir al index
+
+            _marRepo.Remover(marca); // Llama al método de tu repositorio para eliminar
+            _marRepo.Grabar();       // Guarda los cambios en la base de datos
+            return RedirectToAction(nameof(Index)); // Redirige al índice
 
         }
-
-
-
     }
 }

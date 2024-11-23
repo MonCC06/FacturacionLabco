@@ -21,10 +21,11 @@ namespace FacturacionLabco_AccesoDatos.Datos
 
         public void Actualizar(Marca marca)
         {
-            var catAnterior = _db.Marca.FirstOrDefault(c => c.Id == marca.Id); // Debería ser 'Categorias'.
-            if (catAnterior != null)
+            var marAnterior = _db.Marca.FirstOrDefault(m => m.Id == marca.Id); 
+            if (marAnterior != null)
             {
-                catAnterior.Nombre_Marca = marca.Nombre_Marca;
+                marAnterior.Nombre_Marca = marca.Nombre_Marca;
+
             }
         }
     }
