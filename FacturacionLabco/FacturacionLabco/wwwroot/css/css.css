@@ -229,6 +229,7 @@ body {
   width: 100px;
   border-radius: 120px !important;
   height: 30px;
+  text-decoration:none;
 }
 
 .btn-light:hover{

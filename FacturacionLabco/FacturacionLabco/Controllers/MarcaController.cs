@@ -77,13 +77,15 @@ namespace FacturacionLabco.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Editar(Marca marca)
         {
-
             if (ModelState.IsValid)
             {
                 _marRepo.Actualizar(marca);
                 _marRepo.Grabar();
-                return RedirectToAction(nameof(Index)); //esto es para que ne redirigir al index
+                TempData["Mensaje"] = "Producto actualizado correctamente.";
+                return RedirectToAction(nameof(Index));
             }
+
+            TempData["Error"] = "Ocurrió un error al actualizar el producto.";
             return View(marca);
         }
 
