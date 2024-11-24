@@ -114,7 +114,7 @@ namespace FacturacionLabco.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Eliminar(int id)
         {
-            
+            var trabajador = _traRepo.Obtener(id); // Recupera la entidad desde el repositorio
             if (trabajador == null)
             {
                 return NotFound();
