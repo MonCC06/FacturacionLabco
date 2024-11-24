@@ -339,7 +339,7 @@
                                 </div>
                             </div>
                             <div class="container-modal">
-                                <form asp-controller="Trabajadir" asp-action="Editar" method="post">
+                                <form asp-controller="Trabajador" asp-action="Editar" method="post">
                                     <input type="hidden" id="TrabajadorId" name="Id" value="" />
                                     <div class="row">
                                         <div class="col text-center">
@@ -469,8 +469,8 @@
 
             // Si el checkbox "Nombre" está seleccionado:
             if (filtrarPorNombre) {
-                // Verifica si el contenido de la celda en la columna 0 (Nombre) incluye el texto ingresado en el filtro.
-                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                // Verifica si el contenido de la celda en la columna 1 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[1] && celdas[1].innerText.toLowerCase().includes(filtro)) {
                     mostrarFila = true;
                 }
             }
@@ -478,7 +478,7 @@
             // Si el checkbox "Cédula" está seleccionado:
             if (filtrarPorCedula) {
                 // Verifica si el contenido de la celda en la columna 3 (Cédula) incluye el texto ingresado en el filtro.
-                if (celdas[3] && celdas[3].innerText.toLowerCase().includes(filtro)) {
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
                     mostrarFila = true;
                 }
             }
@@ -547,7 +547,7 @@
             const telefono = selectedRow.dataset.telefono;    // Telfono
 
             // Asigna los valores obtenidos a los campos del formulario dentro del modal
-            document.getElementById('Id').value = id; // Campo oculto para el ID
+            document.getElementById('TrabajadorId').value = id; // Campo oculto para el ID
             document.getElementById('Cedula').value = cedula; // Campo de texto para cedula
             document.getElementById('Nombre').value = nombre;        // Campo de texto/numérico para el nombre
             document.getElementById('PrimerApellido').value = primerapellido;      // Campo de texto/numérico para el primerapelldo
@@ -566,6 +566,6 @@
         // Muestra el modal de confirmación
 
         // Configura el input oculto en el modal para enviar el Id al backend
-        document.getElementById("Id").value = id;
+        document.getElementById("TrabajadorId").value = id;
     }
 </script>

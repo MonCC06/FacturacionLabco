@@ -23,6 +23,11 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
             if (catAnterior != null)
             {
                 catAnterior.Nombre = trabajador.Nombre;
+                catAnterior.PrimerApellido = trabajador.PrimerApellido;
+                catAnterior.SegundoApellido = trabajador.SegundoApellido;
+                catAnterior.Cedula = trabajador.Cedula;
+                catAnterior.Correo = trabajador.Correo;
+                catAnterior.Telefono = trabajador.Telefono;
             }
         }
 
