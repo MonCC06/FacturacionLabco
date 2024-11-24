@@ -1,0 +1,301 @@
+/* Reset de márgenes y paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.barra {
+  width: 259px;
+}
+
+
+.sidebar {
+  width: 250px;
+  background-color: #f8fafa; 
+  height: 100vh;
+  padding-top: 20px !important;
+  position: fixed !important; 
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
+  overflow-y: auto; /* Desplazamiento vertical si es necesario */
+}
+
+.logo img {
+  max-width: 100%; /* Ajusta el ancho al tamaño del contenedor */
+  height: auto; /* Mantiene la proporción del logo */
+}
+.logo {
+  display: flex; /* Asegura flexibilidad */
+  justify-content: center; /* Centra el logo horizontalmente */
+  align-items: center; /* Centra el logo verticalmente */
+  max-width: 100%; /* No supera el tamaño del contenedor */
+}
+
+
+
+
+.menu {
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1; /* Hace que el menú ocupe el espacio disponible */
+    width: 20%; /* La barra ocupará el 20% del ancho del viewport */
+    max-width: 250px; /* Límite superior de ancho */
+    min-width: 150px; /* Límite inferior de ancho */
+
+  
+}
+
+.menu li {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.menu li a:hover {
+  background-color: #035928;
+  color: #ffffff;
+}
+
+.menu li a svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  fill: #000000;
+}
+
+.menu li a:hover svg {
+  fill: #ffffff;
+}
+
+
+body {
+  background-color: #ff0000;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  min-height: 100vh; /* Altura mínima para evitar problemas visuales */
+  margin: 0;
+  padding: 0;
+}
+.custom-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 20px auto;
+  width: 100%;
+  height: auto; /* Mantén la altura automática */
+  min-height: 120vh; /* Incrementa la altura mínima al 120% de la vista */
+  justify-content: center; /* Centra los hijos horizontalmente */
+  align-items: center; /* Centra los hijos verticalmente */
+}
+
+.container-custom {
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 30px; /* Aumenta el relleno interno */
+  border-radius: 10px;
+  background-color: #F0F0F0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.container-modal {
+  max-width: 1030px !important;
+  margin-left: 10px; /* Espacio para la barra lateral */
+  margin-right: 10px !important;
+  background-color: #F0F0F0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Margen superior */
+}
+
+.btn-custom {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 120px !important;
+  background-color: #ffffff !important;
+  color: #000000;
+  border: none; /* Eliminar el borde */
+
+}
+.btn-custom:hover {
+  background-color: #035928 !important; /* Fondo verde al pasar el cursor */
+  color: #ffffff !important; /* Texto blanco al pasar el cursor */
+
+}
+.btn-custom2 {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 120px !important;
+  color: #ffffff !important; /* Color del texto en blanco */
+  background-color: #77221d !important; /* Fuerza el color de fondo rojo */
+  border: none;
+
+}
+.text-custom1{
+  color: #000000;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.user-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.user-name {
+  margin-left: 10px;
+  color: black;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.table-custom {
+  margin-top: 20px;
+  background-color: white;
+}
+.text-nowrap{
+  width: 16%;
+}
+.btn-success {
+  border-radius: 120px !important;
+  background-color: #035928 !important;
+  transform: none; /* Evita que cambie el tamaño */
+}
+.nav-item{
+  justify-items: start;
+}
+
+.volver {
+  display: flex;
+  align-items: center;
+  color: #035928;
+  border-radius: 2pc;
+  padding: 5px 10px;
+  cursor: pointer; /* Cambia el cursor a una manita */
+  border:none;
+}
+.volver svg {
+  width: 24px; /* Ajusta el tamaño del icono */
+  height: 24px; /* Ajusta el tamaño del icono */
+  margin-right: 5px;
+}
+
+.modalvolver {
+  border:none;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  color: #035928; 
+}
+
+
+.row {
+  color: #035928; 
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col-3 {
+  color: black !important;
+}
+
+.btn-anular {
+  color: 77221d !important;
+  background-color: white !important;
+  width: 100px;
+  border-radius: 120px !important;
+  height: 30px;
+}
+
+.btn-anular:hover{
+  background-color: #77221d !important;
+  color: white !important;
+}
+
+.btn-anular:active{
+  background-color: #77221d !important;
+  color: #cccccc !important;
+}
+
+.btn-light {
+  background-color: white !important;
+  width: 100px;
+  border-radius: 120px !important;
+  height: 30px;
+}
+
+.btn-light:hover{
+  background-color: #035928 !important;
+  color: white !important;
+}
+
+.btn-light:active{
+  background-color: #035928 !important;
+  color: #cccccc !important;
+}
+
+.botones {
+  margin-top: 30px !important;
+  margin-bottom: 5px !important;
+}
+.form-control{
+  border-radius: 120px !important;
+}
+.container-modal1{
+ background-color: #F1E3E2;
+ max-width: 1030px !important;
+  margin-left: 10px; /* Espacio para la barra lateral */
+  margin-right: 10px !important;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Margen superior */
+
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table-custom th, .table-custom td {
+  white-space: nowrap; /* Prevent wrapping of cell content */
+  padding: 8px 12px;
+}
+
+@media (max-width: 768px) {
+  .table-custom {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-custom th, .table-custom td {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}

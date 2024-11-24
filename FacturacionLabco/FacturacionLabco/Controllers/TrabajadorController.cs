@@ -112,9 +112,9 @@ namespace FacturacionLabco.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Eliminar(Trabajador trabajador)
+        public IActionResult Eliminar(int id)
         {
-
+            
             if (trabajador == null)
             {
                 return NotFound();

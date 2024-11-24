@@ -1,0 +1,572 @@
+﻿@model IEnumerable<FacturacionLabco_Models.Trabajador>
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/trabajador.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FacturacionLabco.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Barra lateral -->
+    <div class="d-flex flex-column vh-100 p-3 bg-white shadow-sm menu">
+        <!-- Logo -->
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto justify-content-center">
+            <div class="logo">
+                <img src="Imagenes/labco.png" alt="LABCO Logo" style="max-width: 100%; height: auto;">
+            </div>
+        </a>
+        <hr>
+        <div class="container-fluid">
+            <!-- Menú de navegación -->
+            <ul class="nav nav-pills flex-column mb-auto">
+                <!-- Opción Factura -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-earmark-bar-graph-fill" viewBox="0 0 16 16">
+                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m.5 10v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5m-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5z" />
+                        </svg>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Factura</span>
+                    </a>
+                </li>
+                <!-- Opción Cliente -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                        </svg>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Cliente</span>
+                    </a>
+                </li>
+                <!-- Opción Trabajadores -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                        </svg>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Trabajadores</span>
+                    </a>
+                </li>
+                <!-- Opción Vehículo -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
+                            <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17s3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
+                        </svg>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Vehículo</span>
+                    </a>
+                </li>
+                <!-- Opción Marca -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+                            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z" />
+                        </svg>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Marca</span>
+                    </a>
+                </li>
+                <!-- Opción Productos -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+                            <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+                        </svg>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Productos</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="container-fluid container-custom">
+        <div class="row mb-4">
+            <div class="col-12 col-md-6 d-flex align-items-center">
+                <div class="volver">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                    </svg>
+                    <h5>Buscar Trabajador</h5>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 text-end user-info">
+                <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                <span class="user-name">User</span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-8">
+                <div class="d-flex align-items-center">
+                    <div class="form-check me-3">
+                        <input class="form-check-input" type="radio" name="FiltroNombre" id="FiltroNombre" value="nombre">
+                        <label class="form-check-label" for="FiltroNombre">
+                            Nombre
+                        </label>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="form-check me-3">
+                        <input class="form-check-input" type="radio" name="FiltroCedula" id="FiltroCedula" value="cedula">
+                        <label class="form-check-label" for="FiltroCedula">
+                            Cedula
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="mb-4">
+                </div>
+                <input type="text" id="BuscarTrabajador" class="form-control" placeholder="Buscar Trabajador" onkeyup="filtrarTabla()">
+            </div>
+            <div class="col-12 col-md-3 text-start mt-5">
+                <div class="modal fade" id="ModalTrabajador" tabindex="-1" aria-labelledby="ModalTrabajador" style="display: none;"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="d-flex">
+                                    <div class="volver">
+                                        <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                            </svg>
+                                            <h1 class="modal-title fs-5" id="ModalTrabajadorTitulo">Agregar Trabajador</h1>
+                                        </button>
+                                    </div>
+                                    <div class="col-12 col-md-6 text-start user-info">
+                                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                                        <span class="user-name">Messi</span>
+                                    </div>
+                                </div>
+                                <div class="container-modal">
+                                    <form asp-controller="Trabajador" asp-action="Crear" method="post">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <h5>Datos del Trabajador</h5>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Cedula">Cedula</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="Cedula" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Nombre">Nombre</label>
+                                            </div>
+                                            <div class="col-8">
+                                                <input name="Nombre" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="PrimerApellido">Primer apellido</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="PrimerApellido" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="SegundoApellido">Segundo apellido</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="SegundoApellido" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+
+                                        
+
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Correo">Correo</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="Correo" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Telefono">Telefono</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="Telefono" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="row botones">
+                                            <div class="col-6 d-flex justify-content-end">
+                                                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                    Anular
+                                                </button>
+                                            </div>
+                                            <div class="col-6 d-flex">
+                                                <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
+                                                    Guardar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-success btn-mt-3" type="button" data-bs-toggle="modal" data-bs-target="#ModalTrabajador">Crear +</button>
+            </div>
+
+            <div class="modal fade" id="ModalEliminarTrabajador" tabindex="-1" aria-labelledby="ModalEliminarTrabajador" style="display: none;"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="d-flex">
+                            </div>
+                            <div class="container-modal1 text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <form asp-controller="Trabajador" id="formEliminar" asp-action="Eliminar" method="post">
+                                    <input type="hidden" id="TrabajadorId" name="Id" value="" />
+                                </form>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <h5 class="text-custom1">¿Desea eliminar el trabajador seleccionado?</h5>
+                                    </div>
+                                </div>
+                                <div class="row botones">
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                data-bs-dismiss="modal" form="formEliminar" aria-label="Close">
+                                            Confirmar
+                                        </button>
+                                    </div>
+
+                                    <div class="col-6 d-flex">
+                                        <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                data-bs-dismiss="modal" aria-label="Close">
+                                            Anular
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (Model.Any())
+        {
+            <div class="table-responsive ">
+                <table class="table table-bordered table-hover table-custom" id="TablaTrabajadores">
+                    <thead>
+                        <tr>
+                            <th class="text-nowrap">Cedula</th>
+                            <th class="text-nowrap">Nombre</th>
+                            <th class="text-nowrap">Primer apellido</th>
+                            <th class="text-nowrap">Segundo apellido</th>
+                            <th class="text-nowrap">Correo</th>
+                            <th class="text-nowrap">Telefono</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr data-id="@item.Id" data-cedula="@item.Cedula" data-nombre="@item.Nombre" data-primerapellido="@item.PrimerApellido" data-segundoapellido="@item.SegundoApellido" data-correo="@item.Correo" data-telefono="@item.Telefono" onclick="seleccionarFila(this)">
+                                <td class="Cedula">@item.Cedula</td>
+                                <td class="Nombre">@item.Nombre</td>
+                                <td class="Primer Apellido">@item.PrimerApellido</td>
+                                <td class="Segundo Apellido">@item.SegundoApellido</td>
+                                <td class="Correo">@item.Correo</td>
+                                <td class="Telefono">@item.Telefono</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <p>No hay registro de trabajadores</p>
+        }
+
+        <div class="col-12 col-md-3 text-start mt-5">
+            <div class="modal fade" id="ModalModificarTrabajador" tabindex="-1" aria-labelledby="ModalModificarTrabajador" style="display: none;"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="d-flex">
+                                <div class="volver">
+                                    <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                        </svg>
+                                        <h1 class="modal-title fs-5" id="ModalModificarTrabajador">Editar Trabajador</h1>
+                                    </button>
+                                </div>
+                                <div class="col-12 col-md-6 text-start user-info">
+                                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                                    <span class="user-name">Messi</span>
+                                </div>
+                            </div>
+                            <div class="container-modal">
+                                <form asp-controller="Trabajadir" asp-action="Editar" method="post">
+                                    <input type="hidden" id="TrabajadorId" name="Id" value="" />
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h5>Datos del Trabajador</h5>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <h9 for="Cedula">Cedula</h9>
+                                        </div>
+                                        <div class="col-8">
+                                            <input id="Cedula" name="Cedula" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <h9 for="Nombre">Nombre</h9>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <input id="Nombre" name="Nombre" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <h9 for="PrimerApellido">Primer Apellido</h9>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <input id="PrimerApellido" name="PrimerApellido" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <h9 for="SegundoApellido">Segundo Apellido</h9>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <input id="SegundoApellido" name="SegundoApellido" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <h9 for="Correo">Correo</h9>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <input id="Correo" name="Correo" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <h9 for="Telefono">Telefono</h9>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <input id="Telefono" name="Telefono" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
+                                                Editar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 text-end">
+            <div class="actions d-flex justify-content-start">
+                <button class="btn btn-custom" type="button" id="btnModificarTrabajador" data-bs-toggle="modal" data-bs-target="#ModalModificarTrabajador">Modificar</button>
+                <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarTrabajador">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+<script>
+    function filtrarTabla() {
+        // Obtén el texto ingresado en el campo de búsqueda y conviértelo a minúsculas.
+        const filtro = document.getElementById("BuscarTrabajador").value.toLowerCase();
+
+        // Obtén la referencia de la tabla donde se realizará el filtrado.
+        const tabla = document.getElementById("TablaTrabajadores");
+
+        // Obtén todas las filas de la tabla (<tr>), incluyendo encabezados y datos.
+        const filas = tabla.getElementsByTagName("tr");
+
+        // Verifica si el checkbox "Nombre" o "Cedula" está seleccionado.
+        const filtrarPorNombre = document.getElementById("FiltroNombre").checked;
+        const filtrarPorCedula = document.getElementById("FiltroCedula").checked;
+
+        // Itera sobre todas las filas de la tabla, comenzando desde el índice 1 para saltar la fila de encabezado.
+        for (let i = 1; i < filas.length; i++) {
+            // Obtén todas las celdas (<td>) de la fila actual.
+            const celdas = filas[i].getElementsByTagName("td");
+
+            // Variable para determinar si esta fila debe mostrarse o no.
+            let mostrarFila = false;
+
+            // Si el checkbox "Nombre" está seleccionado:
+            if (filtrarPorNombre) {
+                // Verifica si el contenido de la celda en la columna 0 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true;
+                }
+            }
+
+            // Si el checkbox "Cédula" está seleccionado:
+            if (filtrarPorCedula) {
+                // Verifica si el contenido de la celda en la columna 3 (Cédula) incluye el texto ingresado en el filtro.
+                if (celdas[3] && celdas[3].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true;
+                }
+            }
+
+            // Si no se selecciona ningún filtro, busca en todas las columnas:
+            if (!filtrarPorNombre && !filtrarPorCedula) {
+                for (let j = 0; j < celdas.length; j++) {
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true;
+                        break;
+                    }
+                }
+            }
+
+            // Muestra u oculta la fila según el valor de mostrarFila.
+            filas[i].style.display = mostrarFila ? "" : "none";
+        }
+    }
+
+</script>
+<script>
+    // Espera a que todo el DOM se cargue completamente antes de ejecutar el script
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Obtiene la referencia de la tabla de productos
+        const table = document.getElementById('TablaTrabajadores');
+        // Obtiene la referencia del botón que abre el modal para modificar productos
+        const btnModificar = document.getElementById('btnModificarTrabajador');
+
+        // Variable para almacenar la fila seleccionada actualmente
+        let selectedRow = null;
+
+        // Agrega un evento de clic a la tabla para detectar cuando se selecciona una fila
+        table.addEventListener('click', (event) => {
+            // Obtiene la fila (<tr>) más cercana al elemento que fue clickeado
+            const row = event.target.closest('tr');
+
+            // Si se clickea una fila válida (no nula)
+            if (row) {
+                // Si ya hay una fila seleccionada previamente, remueve el estilo de selección
+                if (selectedRow) {
+                    selectedRow.classList.remove('table-active');
+                }
+
+                // Marca la fila clickeada como seleccionada
+                selectedRow = row;
+                selectedRow.classList.add('table-active'); // Agrega la clase CSS para el estilo de selección
+            }
+        });
+
+        // Agrega un evento al botón "Modificar" para rellenar el modal con los datos de la fila seleccionada
+        btnModificar.addEventListener('click', () => {
+            // Si no hay ninguna fila seleccionada, muestra un mensaje de alerta y detiene el flujo
+            if (!selectedRow) {
+                alert('Por favor selecciona un trabajador primero.');
+                return;
+            }
+
+            // Obtiene los valores de los atributos personalizados (dataset) de la fila seleccionada
+            const id = selectedRow.dataset.id;            // ID 
+            const cedula = selectedRow.dataset.cedula;    // Cedula
+            const nombre = selectedRow.dataset.nombre;    // Nombre 
+            const primerapellido = selectedRow.dataset.primerapellido;    // Apellido1
+            const segundoapellido = selectedRow.dataset.segundoapellido    // Apellido2
+            const correo = selectedRow.dataset.correo;      // Correo
+            const telefono = selectedRow.dataset.telefono;    // Telfono
+
+            // Asigna los valores obtenidos a los campos del formulario dentro del modal
+            document.getElementById('Id').value = id; // Campo oculto para el ID
+            document.getElementById('Cedula').value = cedula; // Campo de texto para cedula
+            document.getElementById('Nombre').value = nombre;        // Campo de texto/numérico para el nombre
+            document.getElementById('PrimerApellido').value = primerapellido;      // Campo de texto/numérico para el primerapelldo
+            document.getElementById('SegundoApellido').value = segundoapellido; // Campo de texto para el segundo apellido
+            document.getElementById('Correo').value = correo;        // Campo de texto/numérico para el correo
+            document.getElementById('Telefono').value = telefono;      // Campo de texto/numérico para el telefono
+
+        });
+    });
+</script>
+<script>
+    function seleccionarFila(fila) {
+        // Obtén el Id desde el atributo data-id de la fila
+        var id = fila.getAttribute("data-id");
+
+        // Muestra el modal de confirmación
+
+        // Configura el input oculto en el modal para enviar el Id al backend
+        document.getElementById("Id").value = id;
+    }
+</script>
