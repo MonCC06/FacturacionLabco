@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XCLUzR2uHZ2R7uT3Dznnw2RNfS0pWENG2T0PV+SJ0Lc=",
+  "Hash": "KW5ZhrBwhh3iQ4uyjVn+0jyPMRqVpitY8vrmG2SAZ/M=",
   "Source": "FacturacionLabco",
   "BasePath": "_content/FacturacionLabco",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FacturacionLabco.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\Cliente.css",
+      "SourceId": "FacturacionLabco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\",
+      "BasePath": "_content/FacturacionLabco",
+      "RelativePath": "css/Cliente.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Cliente.css"
     },
     {
       "Identity": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\site.css",

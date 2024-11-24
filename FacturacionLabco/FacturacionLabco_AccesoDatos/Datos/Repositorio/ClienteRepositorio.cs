@@ -27,7 +27,11 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
             {
 
                 tipoAnterior.Nombre = cliente.Nombre;
-
+                tipoAnterior.PrimerApellido = cliente.PrimerApellido;
+                tipoAnterior.SegundoApellido = cliente.SegundoApellido;
+                tipoAnterior.Cedula = cliente.Cedula;
+                tipoAnterior.Correo = cliente.Correo;
+                tipoAnterior.Telefono = cliente.Telefono;
             }
         }
     }

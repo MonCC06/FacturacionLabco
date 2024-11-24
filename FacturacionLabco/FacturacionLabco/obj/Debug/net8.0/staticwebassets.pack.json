@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\Imagenes\\taller-foto-blog.jpg"
     },
     {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\Cliente.css",
+      "PackagePath": "staticwebassets\\css\\Cliente.css"
+    },
+    {
       "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

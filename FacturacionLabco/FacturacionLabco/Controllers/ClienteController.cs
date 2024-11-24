@@ -121,9 +121,9 @@ namespace FacturacionLabco.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Eliminar(Cliente cliente)
+        public IActionResult Eliminar(int id)
         {
-
+            var cliente = _cliRepo.Obtener(id);
             if (cliente == null)
             {
                 return NotFound();

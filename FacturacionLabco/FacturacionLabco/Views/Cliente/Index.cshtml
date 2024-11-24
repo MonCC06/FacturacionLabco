@@ -1,0 +1,550 @@
+﻿@model IEnumerable<FacturacionLabco_Models.Cliente>
+@{
+    Layout = null;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Cliente.css">
+    <link rel="stylesheet" href="~/js/bootstrap.min.js">
+    <title>Cliente</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" href="~/Imagenes/logo-Labco.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+</head>
+<body>
+    <!-- Barra lateral -->
+    <div class="d-flex flex-column vh-100 p-3 bg-white shadow-sm menu">
+        <!-- Logo -->
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto justify-content-center">
+            <div class="logo">
+                <img src="~/Imagenes/Labco.png" alt="LABCO Logo">
+            </div>
+        </a>
+        <hr>
+        <div class="container-fluid">
+            <!-- Menú de navegación -->
+            <ul class="nav nav-pills flex-column mb-auto">
+                <!-- Opción Factura -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-file-earmark-bar-graph"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Factura</span>
+                    </a>
+                </li>
+                <!-- Opción Cliente -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-person-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Cliente</span>
+                    </a>
+                </li>
+                <!-- Opción Trabajadores -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Trabajador</span>
+                    </a>
+                </li>
+                <!-- Opción Vehículo -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-car-front-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Vehículo</span>
+                    </a>
+                </li>
+                <!-- Opción Marca -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-substack"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Marca</span>
+                    </a>
+                </li>
+                <!-- Opción Servicio -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-tools"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Servicio</span>
+                    </a>
+                </li>
+                <!-- Opción Productos -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-clipboard-check-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Productos</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="custom-wrapper">
+        <div class="col-12 col-md-6 d-flex align-items-center">
+            <div class="volver">
+                <div class="mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                    </svg>
+                </div>
+                <h5>Buscar Cliente</h5>
+            </div>
+        </div>
+        <div class=" container-custom">
+            <div class="row mb-3">
+                <div class="col-12 col-md-8">
+                    <div class="d-flex align-items-center">
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="FiltroNombre" id="FiltroNombre" value="option1">
+                            <label class="form-check-label" for="FiltroNombre">
+                                Nombre
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="FiltroCedula" id="FiltroCedula" value="option2">
+                            <label class="form-check-label" for="FiltroCedula">
+                                Cédula
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                    </div>
+                    <input type="text" class="form-control" id="BuscarCliente" placeholder="Buscar Cliente" onkeyup="filtrarTabla()">
+                </div>
+                <div class="col-12 col-md-3 text-start mt-5">
+                    <div class="modal fade" id="ModalCliente" tabindex="-1" aria-labelledby="ModalCliente"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="d-flex">
+                                        <div class="volver">
+                                            <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                                </svg>
+                                                <h1 class="modal-title fs-5" id="ModalClienteTitulo">Agregar Cliente</h1>
+                                            </button>
+                                        </div>
+                                        <div class="col-12 col-md-6 text-start user-info">
+                                            <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                                            <span class="user-name">Messi</span>
+                                        </div>
+                                    </div>
+                                    <div class="container-modal">
+                                        <form asp-controller="Cliente" asp-action="Crear" method="post">
+                                            <div class="row">
+                                                <div class="col text-center">
+                                                    <h5>Datos del Cliente</h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5 text-start">
+                                                    <h9 for="Nombre">Nombre</h9>
+                                                </div>
+                                                <div class="col-7">
+                                                    <input type="text" name="Nombre" class="form-control" placeholder="Ingrese aquí">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5 text-start">
+                                                    <h9 for="PrimerApellido">Primer Apellido</h9>
+                                                </div>
+                                                <div class="col-7 text-end">
+                                                    <input type="text" name="PrimerApellido" class="form-control" placeholder="Ingrese aquí">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5 text-start">
+                                                    <h9 for="SegundoApellido">Segundo Apellido</h9>
+                                                </div>
+                                                <div class="col-7 text-end">
+                                                    <input type="text" name="SegundoApellido" class="form-control" placeholder="Ingrese aquí">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5 text-start">
+                                                    <h9 for="Cedula">Cedula</h9>
+                                                </div>
+                                                <div class="col-7">
+                                                    <input type="text" name="Cedula" class="form-control" placeholder="Ingrese aquí">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5 text-start">
+                                                    <h9 for="Telefono">Telefono</h9>
+                                                </div>
+                                                <div class="col-7">
+                                                    <input type="text" name="Telefono" class="form-control" placeholder="Ingrese aquí">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5 text-start">
+                                                    <h9 for="Correo">Correo</h9>
+                                                </div>
+                                                <div class="col-7">
+                                                    <input type="text" name="Correo" class="form-control" placeholder="Ingrese aquí">
+                                                </div>
+                                            </div>
+                                            <div class="row botones">
+                                                <div class="col-6 d-flex justify-content-end">
+                                                    <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                            data-bs-dismiss="modal" aria-label="Close">
+                                                        Anular
+                                                    </button>
+                                                </div>
+                                                <div class="col-6 d-flex">
+                                                    <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                             aria-label="Close">
+                                                        Guardar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-success btn-mt-3" type="button" data-bs-toggle="modal" data-bs-target="#ModalCliente">Crear +</button>
+                </div>
+
+                <div class="modal fade" id="ModalEliminarCliente" tabindex="-1" aria-labelledby="ModalEliminarCliente"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="d-flex">
+                                </div>
+                                <div class="container-modal1 text-center">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <form asp-controller="Cliente" id="formEliminar" asp-action="Eliminar" method="post">
+                                        <input type="hidden" id="ClienteId" name="Id" value="" />
+                                    </form>
+                                    <div class="row justify-content-center">
+                                        <div class="col-12">
+                                            <h5 class="text-custom1">¿Desea eliminar el cliente seleccionado?</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                    form="formEliminar" aria-label="Close">
+                                                Confirmar
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if (Model.Any())
+            {
+
+                <div class="table-responsive ">
+                    <table class="table table-bordered table-hover table-custom" id="TablaCliente">
+                        <thead>
+                            <tr>
+                                <th class="text-nowrap">Cedula</th>
+                                <th class="text-nowrap">Nombre</th>
+                                <th class="text-nowrap">Primer Apellido</th>
+                                <th class="text-nowrap">Segundo Apellido</th>
+                                <th class="text-nowrap">Correo</th>
+                                <th class="text-nowrap">Telefono</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr data-id="@item.Id" data-cedula="@item.Cedula" data-nombre="@item.Nombre"
+                                    data-primerapellido="@item.PrimerApellido" data-segundoapellido="@item.SegundoApellido"
+                                    data-correo="@item.Correo" data-telefono="@item.Telefono" onclick="seleccionarFila(this)">
+                                    <td class="Cedula">@item.Cedula</td>
+                                    <td class="Nombre">@item.Nombre</td>
+                                    <td class="PrimerApellido">@item.PrimerApellido</td>
+                                    <td class="SegundoApellido">@item.SegundoApellido</td>
+                                    <td class="Correo">@item.Correo</td>
+                                    <td class="Telefono">@item.Telefono</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <p>No hay registro de clientes</p>
+            }
+
+            
+            <div class="col-12 col-md-3 text-start mt-5">
+                <div class="modal fade" id="ModalEditarCliente" tabindex="-1" aria-labelledby="ModalEditarCliente" style="display: none;"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="d-flex">
+                                    <div class="volver">
+                                        <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                            </svg>
+                                            <h1 class="modal-title fs-5" id="ModalEditarTitulo">Editar Cliente</h1>
+                                        </button>
+                                    </div>
+                                    <div class="col-12 col-md-6 text-start user-info">
+                                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                                        <span class="user-name">Messi</span>
+                                    </div>
+                                </div>
+                                <div class="container-modal">
+                                    <form asp-controller="Cliente" asp-action="Editar" method="post">
+                                        <input type="hidden" id="clienteId" name="Id" value="" />
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <h5>Datos del Cliente</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Cedula">Cedula</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input id="Cedula" name="Cedula" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Nombre">Nombre</label>
+                                            </div>
+                                            <div class="col-8">
+                                                <input name="Nombre" id="Nombre" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="PrimerApellido">Primer apellido</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="PrimerApellido" id="PrimerApellido" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="SegundoApellido">Segundo apellido</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="SegundoApellido" id="SegundoApellido" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Correo">Correo</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="Correo" id="Correo" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Telefono">Telefono</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="Telefono" id="Telefono" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="row botones">
+                                            <div class="col-6 d-flex justify-content-end">
+                                                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                    Anular
+                                                </button>
+                                            </div>
+                                            <div class="col-6 d-flex">
+                                                <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
+                                                    Guardar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-12 text-end">
+                <div class="actions d-flex justify-content-start">
+                    <button class="btn btn-custom" type="button" id="btnModificarCliente" data-bs-toggle="modal" data-bs-target="#ModalEditarCliente">Modificar</button>
+                    <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarCliente">Eliminar</button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+<script>
+    function filtrarTabla() {
+        // Obtén el texto ingresado en el campo de búsqueda y conviértelo a minúsculas.
+        const filtro = document.getElementById("BuscarCliente").value.toLowerCase();
+
+        // Obtén la referencia de la tabla donde se realizará el filtrado.
+        const tabla = document.getElementById("TablaCliente");
+
+        // Obtén todas las filas de la tabla (<tr>), incluyendo encabezados y datos.
+        const filas = tabla.getElementsByTagName("tr");
+
+        // Verifica si el checkbox "Nombre" o "Cedula" está seleccionado.
+        const filtrarPorNombre = document.getElementById("FiltroNombre").checked;
+        const filtrarPorCedula = document.getElementById("FiltroCedula").checked;
+
+        // Itera sobre todas las filas de la tabla, comenzando desde el índice 1 para saltar la fila de encabezado.
+        for (let i = 1; i < filas.length; i++) {
+            // Obtén todas las celdas (<td>) de la fila actual.
+            const celdas = filas[i].getElementsByTagName("td");
+
+            // Variable para determinar si esta fila debe mostrarse o no.
+            let mostrarFila = false;
+
+            // Si el checkbox "Nombre" está seleccionado:
+            if (filtrarPorNombre) {
+                // Verifica si el contenido de la celda en la columna 1 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[1] && celdas[1].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true;
+                }
+            }
+
+            // Si el checkbox "Cédula" está seleccionado:
+            if (filtrarPorCedula) {
+                // Verifica si el contenido de la celda en la columna 0 (Cédula) incluye el texto ingresado en el filtro.
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true;
+                }
+            }
+
+            // Si no se selecciona ningún filtro, busca en todas las columnas:
+            if (!filtrarPorNombre && !filtrarPorCedula) {
+                for (let j = 0; j < celdas.length; j++) {
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true;
+                        break;
+                    }
+                }
+            }
+
+            // Muestra u oculta la fila según el valor de mostrarFila.
+            filas[i].style.display = mostrarFila ? "" : "none";
+        }
+    }
+
+</script>
+
+<script>
+    // Espera a que todo el DOM se cargue completamente antes de ejecutar el script
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Obtiene la referencia de la tabla de productos
+        const table = document.getElementById('TablaCliente');
+        // Obtiene la referencia del botón que abre el modal para modificar productos
+        const btnModificar = document.getElementById('btnModificarCliente');
+
+        // Variable para almacenar la fila seleccionada actualmente
+        let selectedRow = null;
+
+        // Agrega un evento de clic a la tabla para detectar cuando se selecciona una fila
+        table.addEventListener('click', (event) => {
+            // Obtiene la fila (<tr>) más cercana al elemento que fue clickeado
+            const row = event.target.closest('tr');
+
+            // Si se clickea una fila válida (no nula)
+            if (row) {
+                // Si ya hay una fila seleccionada previamente, remueve el estilo de selección
+                if (selectedRow) {
+                    selectedRow.classList.remove('table-active');
+                }
+
+                // Marca la fila clickeada como seleccionada
+                selectedRow = row;
+                selectedRow.classList.add('table-active'); // Agrega la clase CSS para el estilo de selección
+            }
+        });
+
+        // Agrega un evento al botón "Modificar" para rellenar el modal con los datos de la fila seleccionada
+        btnModificar.addEventListener('click', () => {
+            // Si no hay ninguna fila seleccionada, muestra un mensaje de alerta y detiene el flujo
+            if (!selectedRow) {
+                alert('Por favor selecciona un cliente primero.');
+                return;
+            }
+
+            // Obtiene los valores de los atributos personalizados (dataset) de la fila seleccionada
+            const id = selectedRow.dataset.id;            // ID
+            const cedula = selectedRow.dataset.cedula;    // Cedula
+            const nombre = selectedRow.dataset.nombre;    // Nombre
+            const primerapellido = selectedRow.dataset.primerapellido;    // Apellido1
+            const segundoapellido = selectedRow.dataset.segundoapellido    // Apellido2
+            const correo = selectedRow.dataset.correo;      // Correo
+            const telefono = selectedRow.dataset.telefono;    // Telfono
+
+            // Asigna los valores obtenidos a los campos del formulario dentro del modal
+            document.getElementById('clienteId').value = id;
+            document.getElementById('Cedula').value = cedula;
+            document.getElementById('Nombre').value = nombre;
+            document.getElementById('PrimerApellido').value = primerapellido;
+            document.getElementById('SegundoApellido').value = segundoapellido;
+            document.getElementById('Correo').value = correo;
+            document.getElementById('Telefono').value = telefono;  // Campo de texto/numérico para el telefono
+
+        });
+    });
+</script>
+<script>
+    function seleccionarFila(fila) {
+        // Obtén el Id desde el atributo data-id de la fila
+        var id = fila.getAttribute("data-id");
+
+        // Muestra el modal de confirmación
+
+        // Configura el input oculto en el modal para enviar el Id al backend
+        document.getElementById("ClienteId").value = id;
+    }
+ </script>
+</html>
