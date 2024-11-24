@@ -2292,7 +2292,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
         },
         "runtime": {
-          "FacturacionLabco_AccesoDatos.dll": {}
+          "FacturacionLabco_AccesoDatos.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "FacturacionLabco_Models/1.0.0": {
@@ -2302,7 +2305,10 @@
           "Microsoft.AspNetCore.Identity.UI": "8.0.10"
         },
         "runtime": {
-          "FacturacionLabco_Models.dll": {}
+          "FacturacionLabco_Models.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "FacturacionLabco_Utilidades/1.0.0": {
@@ -2311,7 +2317,10 @@
           "SendGrid": "9.24.4"
         },
         "runtime": {
-          "FacturacionLabco_Utilidades.dll": {}
+          "FacturacionLabco_Utilidades.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
