@@ -37,6 +37,10 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
         // Método para obtener una entidad por su ID.
         public T Obtener(int id)
         {
+            if (id == 0)  // O cualquier valor que no sea un `id` válido
+            {
+                throw new ArgumentException("El ID proporcionado no es válido.");
+            }
             return dbSet.Find(id);
         }
 

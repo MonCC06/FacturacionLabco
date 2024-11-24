@@ -252,7 +252,7 @@
                                     </div>
                                 </div>
                                 <form asp-controller="Trabajador" id="formEliminar" asp-action="Eliminar" method="post">
-                                    <input type="hidden" id="TrabajadorId" name="Id" value="" />
+                                    <input type="hidden" id="trabajadorId" name="Id" value="" />
                                 </form>
                                 <div class="row justify-content-center">
                                     <div class="col-12">
@@ -546,7 +546,7 @@
             const telefono = selectedRow.dataset.telefono;    // Telfono
 
             // Asigna los valores obtenidos a los campos del formulario dentro del modal
-            document.getElementById('TrabajadorId').value = id;
+            document.getElementById('trabajadorId').value = id;
             document.getElementById('Cedula').value = cedula;
             document.getElementById('Nombre').value = nombre;
             document.getElementById('PrimerApellido').value = primerapellido;
