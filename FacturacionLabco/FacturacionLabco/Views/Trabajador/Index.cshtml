@@ -300,11 +300,13 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr data-id="@item.Id" data-cedula="@item.Cedula" data-nombre="@item.Nombre" data-primerapellido="@item.PrimerApellido" data-segundoapellido="@item.SegundoApellido" data-correo="@item.Correo" data-telefono="@item.Telefono" onclick="seleccionarFila(this)">
+                            <tr data-id="@item.Id" data-cedula="@item.Cedula" data-nombre="@item.Nombre"
+                                data-primerapellido="@item.PrimerApellido" data-segundoapellido="@item.SegundoApellido"
+                                data-correo="@item.Correo" data-telefono="@item.Telefono" onclick="seleccionarFila(this)">
                                 <td class="Cedula">@item.Cedula</td>
                                 <td class="Nombre">@item.Nombre</td>
-                                <td class="Primer Apellido">@item.PrimerApellido</td>
-                                <td class="Segundo Apellido">@item.SegundoApellido</td>
+                                <td class="PrimerApellido">@item.PrimerApellido</td>
+                                <td class="SegundoApellido">@item.SegundoApellido</td>
                                 <td class="Correo">@item.Correo</td>
                                 <td class="Telefono">@item.Telefono</td>
                             </tr>
@@ -346,10 +348,6 @@
                                             <h5>Datos del Trabajador</h5>
                                         </div>
                                     </div>
-                                   
-                                    
-                                    
-                                    
                                     <div class="row">
                                         <div class="col-4 text-start">
                                             <h9 for="Cedula">Cedula</h9>
@@ -428,7 +426,7 @@
 
         <div class="col-12 text-end">
             <div class="actions d-flex justify-content-start">
-                <button class="btn btn-custom" type="button" id="btnModificarTrabajador" data-bs-toggle="modal" data-bs-target="#ModalModificarTrabajador">Modificar</button>
+                <button class="btn btn-custom" type="button" id="btnModificarTrabajadores" data-bs-toggle="modal" data-bs-target="#ModalModificarTrabajador">Modificar</button>
                 <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarTrabajador">Eliminar</button>
             </div>
         </div>
@@ -499,6 +497,7 @@
     }
 
 </script>
+
 <script>
     // Espera a que todo el DOM se cargue completamente antes de ejecutar el script
     document.addEventListener('DOMContentLoaded', () => {
@@ -506,7 +505,7 @@
         // Obtiene la referencia de la tabla de productos
         const table = document.getElementById('TablaTrabajadores');
         // Obtiene la referencia del botón que abre el modal para modificar productos
-        const btnModificar = document.getElementById('btnModificarTrabajador');
+        const btnModificar = document.getElementById('btnModificarTrabajadores');
 
         // Variable para almacenar la fila seleccionada actualmente
         let selectedRow = null;
@@ -547,13 +546,13 @@
             const telefono = selectedRow.dataset.telefono;    // Telfono
 
             // Asigna los valores obtenidos a los campos del formulario dentro del modal
-            document.getElementById('TrabajadorId').value = id; // Campo oculto para el ID
-            document.getElementById('Cedula').value = cedula; // Campo de texto para cedula
-            document.getElementById('Nombre').value = nombre;        // Campo de texto/numérico para el nombre
-            document.getElementById('PrimerApellido').value = primerapellido;      // Campo de texto/numérico para el primerapelldo
-            document.getElementById('SegundoApellido').value = segundoapellido; // Campo de texto para el segundo apellido
-            document.getElementById('Correo').value = correo;        // Campo de texto/numérico para el correo
-            document.getElementById('Telefono').value = telefono;      // Campo de texto/numérico para el telefono
+            document.getElementById('TrabajadorId').value = id;
+            document.getElementById('Cedula').value = cedula;
+            document.getElementById('Nombre').value = nombre;
+            document.getElementById('PrimerApellido').value = primerapellido;
+            document.getElementById('SegundoApellido').value = segundoapellido;
+            document.getElementById('Correo').value = correo;
+            document.getElementById('Telefono').value = telefono;  // Campo de texto/numérico para el telefono
 
         });
     });

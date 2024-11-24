@@ -82,8 +82,10 @@ namespace FacturacionLabco.Controllers
             {
                 _traRepo.Actualizar(trabajador);
                 _traRepo.Grabar();
+                TempData["Mensaje"] = "trabajador actualizado correctamente.";
                 return RedirectToAction(nameof(Index)); //esto es para que ne redirigir al index
             }
+            TempData["Error"] = "Ocurrió un error al actualizar el producto.";
             return View(trabajador);
         }
 
