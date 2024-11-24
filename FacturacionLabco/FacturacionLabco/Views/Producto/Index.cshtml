@@ -278,50 +278,50 @@
                             </div>
                             <div class="container-modal">
                                 <form asp-controller="Producto" asp-action="Editar" method="post">
-                                    <input type="hidden" id="ProductoId" name="Id_Producto" value="" />
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h5>Datos del Producto</h5>
+                                    <input type="hidden" id="productoId" name="Id_Producto" value="" />
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <h5>Datos del Producto</h5>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-4 text-start">
-                                            <h9 for="Descripcion_Producto">Nombre</h9>
-                                        </div>
-                                        <div class="col-8">
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                            <label for="Descripcion_Producto">Nombre</label>
+                                            </div>
+                                            <div class="col-8">
                                             <input id="Descripcion_Producto" name="Descripcion_Producto" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-4 text-start">
-                                            <h9 for="Stock_Producto">Stock</h9>
-                                        </div>
-                                        <div class="col-8 text-end">
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Stock_Producto">Stock</label>
+                                            </div>
+                                            <div class="col-8 text-end">
                                             <input id="Stock_Producto" name="Stock_Producto" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-4 text-start">
-                                            <h9 for="Precio_Producto">Precio</h9>
-                                        </div>
-                                        <div class="col-8 text-end">
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                            <label for="Precio_Producto">Precio</label>
+                                            </div>
+                                            <div class="col-8 text-end">
                                             <input id="Precio_Producto" name="Precio_Producto" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row botones">
-                                        <div class="col-6 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
-                                                    data-bs-dismiss="modal" aria-label="Close">
-                                                Anular
-                                            </button>
+                                        <div class="row botones">
+                                            <div class="col-6 d-flex justify-content-end">
+                                                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                    Anular
+                                                </button>
+                                            </div>
+                                            <div class="col-6 d-flex">
+                                                <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
+                                                    Guardar
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="col-6 d-flex">
-                                            <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
-                                                Editar
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
+                                    </form>
                             </div>
                         </div>
                     </div>
@@ -437,7 +437,7 @@
             const precio = selectedRow.dataset.precio;    // Precio del producto
 
             // Asigna los valores obtenidos a los campos del formulario dentro del modal
-            document.getElementById('ProductoId').value = id; // Campo oculto para el ID
+            document.getElementById('productoId').value = id; // Campo oculto para el ID
             document.getElementById('Descripcion_Producto').value = nombre; // Campo de texto para el nombre
             document.getElementById('Stock_Producto').value = stock;        // Campo de texto/numérico para el stock
             document.getElementById('Precio_Producto').value = precio;      // Campo de texto/numérico para el precio

@@ -76,16 +76,16 @@ namespace FacturacionLabco.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Editar(Producto producto)
         {
+
             if (ModelState.IsValid)
             {
                 _proRepo.Actualizar(producto);
                 _proRepo.Grabar();
-                TempData["Mensaje"] = "Producto actualizado correctamente.";
-                return RedirectToAction(nameof(Index));
+                TempData[WC.Exitosa] = "Producto creado exitosamente";
+                return RedirectToAction(nameof(Index)); //esto es para que ne redirigir al index
             }
-
-            TempData["Error"] = "Ocurrió un error al actualizar el producto.";
-            return View(producto);
+            TempData[WC.Error] = "Error al crear un nuevo producto";
+            return RedirectToAction(nameof(Index));
         }
 
 
