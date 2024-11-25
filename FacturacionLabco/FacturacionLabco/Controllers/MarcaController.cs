@@ -112,16 +112,18 @@ namespace FacturacionLabco.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Eliminar(Marca marca)
+        public IActionResult Eliminar(int id)
         {
 
+            var marca = _marRepo.Obtener(id); // Recupera la entidad desde el repositorio
             if (marca == null)
             {
                 return NotFound();
             }
-            _marRepo.Remover(marca);
-            _marRepo.Grabar();
-            return RedirectToAction(nameof(Index)); //esto es para que ne redirigir al index
+
+            _marRepo.Remover(marca); // Llama al método de tu repositorio para eliminar
+            _marRepo.Grabar();       // Guarda los cambios en la base de datos
+            return RedirectToAction(nameof(Index)); // Redirige al índice
 
         }
 

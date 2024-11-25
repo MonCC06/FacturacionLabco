@@ -18,11 +18,16 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
         }
         public void Actualizar(Trabajador trabajador)
         {
-            _db.Update(trabajador);
-            var catAnterior = _db.trabajador.FirstOrDefault(c => c.Id == trabajador.Id); // Debería ser 'Categorias'.
-            if (catAnterior != null)
+            var trabajadorDb = _db.trabajador.FirstOrDefault(t => t.Id == trabajador.Id);
+
+            if (trabajadorDb != null)
             {
-                catAnterior.Nombre = trabajador.Nombre;
+                trabajadorDb.Cedula = trabajador.Cedula;
+                trabajadorDb.Correo = trabajador.Correo;
+                trabajadorDb.Nombre = trabajador.Nombre;
+                trabajadorDb.PrimerApellido = trabajador.PrimerApellido;
+                trabajadorDb.SegundoApellido = trabajador.SegundoApellido;
+                trabajadorDb.Telefono = trabajador.Telefono;
             }
         }
 

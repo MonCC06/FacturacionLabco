@@ -5,8 +5,40 @@
       "PackagePath": "staticwebassets\\FacturacionLabco.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\Imagenes\\labco.png",
+      "PackagePath": "staticwebassets\\Imagenes\\labco.png"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\Imagenes\\logo-Labco-sin-fondo.png",
+      "PackagePath": "staticwebassets\\Imagenes\\logo-Labco-sin-fondo.png"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\Imagenes\\logo-Labco.png",
+      "PackagePath": "staticwebassets\\Imagenes\\logo-Labco.png"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\Imagenes\\motorcito.jpeg",
+      "PackagePath": "staticwebassets\\Imagenes\\motorcito.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\Imagenes\\taller-foto-blog.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\taller-foto-blog.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\Cliente.css",
+      "PackagePath": "staticwebassets\\css\\Cliente.css"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\marca.css",
+      "PackagePath": "staticwebassets\\css\\marca.css"
+    },
+    {
       "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\trabajador.css",
+      "PackagePath": "staticwebassets\\css\\trabajador.css"
     },
     {
       "Id": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\favicon.ico",
