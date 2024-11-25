@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\dylan pereira\\source\\facturacionlabco\\facturacionlabco\\facturacionlabco\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -197,7 +205,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -205,20 +213,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Logout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-              "RelativeDocumentMoniker": "FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-              "RelativeToolTip": "FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-25T23:07:58.163Z",
+              "WhenOpened": "2024-11-25T23:16:39.832Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwFwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T23:16:38.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "MarcaController.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\MarcaController.cs",
               "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\MarcaController.cs",
@@ -230,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\ClienteController.cs",
@@ -242,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Cliente\\Index.cshtml",
               "RelativeDocumentMoniker": "FacturacionLabco\\Views\\Cliente\\Index.cshtml",
@@ -250,25 +271,24 @@
               "RelativeToolTip": "FacturacionLabco\\Views\\Cliente\\Index.cshtml",
               "ViewState": "AQIAAC0AAAAAAAAAAAAAAFUAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-25T19:16:32.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T19:16:32.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "FacturacionLabco\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "FacturacionLabco\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAFMAAAAXAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFMAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-25T19:21:04.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "TrabajadorRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\TrabajadorRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\TrabajadorRepositorio.cs",
@@ -280,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Marca\\Index.cshtml",
               "RelativeDocumentMoniker": "FacturacionLabco\\Views\\Marca\\Index.cshtml",
@@ -292,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Trabajador\\Index.cshtml",
               "RelativeDocumentMoniker": "FacturacionLabco\\Views\\Trabajador\\Index.cshtml",
@@ -304,7 +324,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Program.cs",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Program.cs",
+              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Program.cs",
+              "RelativeToolTip": "FacturacionLabco\\Program.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAGkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T02:40:52.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "RelativeToolTip": "FacturacionLabco\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T23:07:58.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "Producto.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Producto.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Producto.cs",
@@ -316,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "FacturaController.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\FacturaController.cs",
               "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\FacturaController.cs",
@@ -328,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "TrabajadorController.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\TrabajadorController.cs",
               "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\TrabajadorController.cs",
@@ -340,19 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Program.cs",
-              "RelativeDocumentMoniker": "FacturacionLabco\\Program.cs",
-              "ToolTip": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Program.cs",
-              "RelativeToolTip": "FacturacionLabco\\Program.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAAFgAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T02:40:52.105Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "FacturacionLabco\\Views\\Home\\Index.cshtml",
@@ -364,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\appsettings.json",
               "RelativeDocumentMoniker": "FacturacionLabco\\appsettings.json",
@@ -376,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ClienteRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\ClienteRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\ClienteRepositorio.cs",
@@ -388,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "20241102034648_factura.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\20241102034648_factura.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Migrations\\20241102034648_factura.cs",
@@ -400,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "FacturaVM.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\ViewModels\\FacturaVM.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\ViewModels\\FacturaVM.cs",
@@ -412,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Vehiculo.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Vehiculo.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Vehiculo.cs",
@@ -424,7 +457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "WC.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Utilidades\\WC.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Utilidades\\WC.cs",
@@ -436,7 +469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "DetalleVM.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\ViewModels\\DetalleVM.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\ViewModels\\DetalleVM.cs",
@@ -448,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Detalle.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Detalle.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Detalle.cs",
@@ -460,7 +493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "DetalleRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\DetalleRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\DetalleRepositorio.cs",
@@ -472,7 +505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "DetalleController.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\DetalleController.cs",
               "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\DetalleController.cs",
@@ -484,7 +517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "FacturaRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\FacturaRepositorio.cs",
@@ -496,7 +529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Factura.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Factura.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Factura.cs",
@@ -508,7 +541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "IDetalleRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\IRepositorio\\IDetalleRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\IRepositorio\\IDetalleRepositorio.cs",
@@ -520,7 +553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "20241102032532_Marca.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\20241102032532_Marca.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Migrations\\20241102032532_Marca.cs",
@@ -532,7 +565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "AplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\AplicationDbContext.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\AplicationDbContext.cs",
@@ -544,7 +577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "VehiculoVM.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\ViewModels\\VehiculoVM.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\ViewModels\\VehiculoVM.cs",
@@ -556,7 +589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "ProductoUsuarioVM.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\ViewModels\\ProductoUsuarioVM.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\ViewModels\\ProductoUsuarioVM.cs",
@@ -568,7 +601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "20241102032736_usuarioaplicacion.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\20241102032736_usuarioaplicacion.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Migrations\\20241102032736_usuarioaplicacion.cs",
@@ -580,7 +613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "20241102032555_producto.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\20241102032555_producto.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Migrations\\20241102032555_producto.cs",
@@ -592,7 +625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 48,
               "Title": "20241102032636_trabajador.cs",
               "DocumentMoniker": "D:\\UNDECIMO\\Progra\\C#\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\20241102032636_trabajador.cs",
               "ToolTip": "D:\\UNDECIMO\\Progra\\C#\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\20241102032636_trabajador.cs",
@@ -602,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 46,
               "Title": "20241102032445_detalle.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\20241102032445_detalle.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Migrations\\20241102032445_detalle.cs",
@@ -614,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 47,
               "Title": "20241102032201_vehiculo.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\20241102032201_vehiculo.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Migrations\\20241102032201_vehiculo.cs",
@@ -626,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "AplicationDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\AplicationDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Migrations\\AplicationDbContextModelSnapshot.cs",
@@ -638,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "20241102031414_cliente.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Migrations\\20241102031414_cliente.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Migrations\\20241102031414_cliente.cs",
@@ -650,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "MarcaRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\MarcaRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\MarcaRepositorio.cs",
@@ -662,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Cliente.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Cliente.cs",
@@ -674,7 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "Marca.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Marca.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Marca.cs",
@@ -686,7 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "UsuarioAplicacion.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\UsuarioAplicacion.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\UsuarioAplicacion.cs",
@@ -698,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\HomeController.cs",
@@ -710,7 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "Trabajador.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Trabajador.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Trabajador.cs",
@@ -722,7 +755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "Servicio.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Servicio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Servicio.cs",
@@ -733,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "FacturacionLabco.csproj",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco.csproj",
               "RelativeDocumentMoniker": "FacturacionLabco\\FacturacionLabco.csproj",
@@ -745,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\ErrorViewModel.cs",
@@ -757,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "FacturacionLabco_Models.csproj",
               "DocumentMoniker": "C:\\Users\\Dylan Pereira\\source\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\FacturacionLabco_Models.csproj",
