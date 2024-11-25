@@ -264,8 +264,6 @@
                             <tr>
                                 <th class="text-nowrap">Cedula</th>
                                 <th class="text-nowrap">Nombre</th>
-                                <th class="text-nowrap">Primer Apellido</th>
-                                <th class="text-nowrap">Segundo Apellido</th>
                                 <th class="text-nowrap">Correo</th>
                                 <th class="text-nowrap">Telefono</th>
                             </tr>
@@ -277,9 +275,7 @@
                                     data-primerapellido="@item.PrimerApellido" data-segundoapellido="@item.SegundoApellido"
                                     data-correo="@item.Correo" data-telefono="@item.Telefono" onclick="seleccionarFila(this)">
                                     <td class="Cedula">@item.Cedula</td>
-                                    <td class="Nombre">@item.Nombre</td>
-                                    <td class="PrimerApellido">@item.PrimerApellido</td>
-                                    <td class="SegundoApellido">@item.SegundoApellido</td>
+                                    <td class="Nombre">@item.Nombre @item.PrimerApellido @item.SegundoApellido</td>
                                     <td class="Correo">@item.Correo</td>
                                     <td class="Telefono">@item.Telefono</td>
                                 </tr>
