@@ -107,3 +107,21 @@ C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\Fact
 C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\refint\FacturacionLabco_AccesoDatos.dll
 C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.pdb
 C:\Users\pablo\OneDrive\Documentos\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\ref\FacturacionLabco_AccesoDatos.dll
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\bin\Debug\net8.0\FacturacionLabco_AccesoDatos.deps.json
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\bin\Debug\net8.0\FacturacionLabco_AccesoDatos.dll
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\bin\Debug\net8.0\FacturacionLabco_AccesoDatos.pdb
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\bin\Debug\net8.0\FacturacionLabco_Models.dll
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\bin\Debug\net8.0\FacturacionLabco_Utilidades.dll
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\bin\Debug\net8.0\FacturacionLabco_Models.pdb
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\bin\Debug\net8.0\FacturacionLabco_Utilidades.pdb
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.AssemblyInfoInputs.cache
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.AssemblyInfo.cs
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.sourcelink.json
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\Facturac.BF94709C.Up2Date
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.dll
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\refint\FacturacionLabco_AccesoDatos.dll
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\FacturacionLabco_AccesoDatos.pdb
+C:\Users\Jose David\Documents\GitHub\FacturacionLabco\FacturacionLabco\FacturacionLabco_AccesoDatos\obj\Debug\net8.0\ref\FacturacionLabco_AccesoDatos.dll

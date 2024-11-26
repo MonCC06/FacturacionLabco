@@ -14,7 +14,7 @@ namespace FacturacionLabco_AccesoDatos
 
         public DbSet<Cliente> cliente { get; set; }
 
-        public DbSet<Marca> Marca { get; set; }
+        public DbSet<Marca> marca { get; set; }
 
         public DbSet<Producto> producto { get; set; }
 

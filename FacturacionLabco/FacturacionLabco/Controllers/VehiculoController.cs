@@ -8,22 +8,33 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
+
+
 namespace FacturacionLabco.Controllers
 {
     public class VehiculoController : Controller
     {
 
         private readonly IVehiculoRepositorio _vehRepo;
+        private readonly IClienteRepositorio _clienteRepo;
+        private readonly IMarcaRepositorio _marcaRepo;
 
-        public VehiculoController(IVehiculoRepositorio vehRepo)//recibe nuestro contexto de BD
+        public VehiculoController(IVehiculoRepositorio vehRepo,IClienteRepositorio clienterepo, IMarcaRepositorio marcaRepo)//recibe nuestro contexto de BD
         {
             //    _db = db;
             _vehRepo = vehRepo;
+            _clienteRepo = clienterepo;
+            _marcaRepo = marcaRepo;
 
         }
         public IActionResult Index()
         {
             IEnumerable<Vehiculo> lista = _vehRepo.ObtenerTodos(incluirPropiedades: "Cliente,Marca");
+            IEnumerable<Cliente> listaclientes = _clienteRepo.GetClienteList();
+            IEnumerable<Marca> listamarca = _marcaRepo.GetMarcaList(); 
+
+
+
 
             return View(lista);
         }

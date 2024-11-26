@@ -151,7 +151,7 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Marca");
+                    b.ToTable("marca");
                 });
 
             modelBuilder.Entity("FacturacionLabco_Models.Producto", b =>
