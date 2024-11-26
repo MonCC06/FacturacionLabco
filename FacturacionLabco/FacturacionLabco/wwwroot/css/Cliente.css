@@ -34,6 +34,17 @@
   max-width: 100%; /* No supera el tamaño del contenedor */
 }
 
+.encabezado {
+  display: flex;
+  align-items: center;
+  border-radius: 2pc;
+  padding: 5px 10px;
+  border:none;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 20px;
+  color: #035928; 
+}
 
 
 
@@ -204,7 +215,7 @@ body {
   margin-right: 5px;
 }
 
-.modalvolver {
+.modal-volver {
   border:none;
   background-color: white;
   display: flex;
@@ -277,6 +288,18 @@ body {
   margin-top: 20px; /* Margen superior */
 
 }
+
+.container-modal2{
+  background-color: #DDEEE4;
+  max-width: 1030px !important;
+   margin-left: 10px; /* Espacio para la barra lateral */
+   margin-right: 10px !important;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-top: 20px; /* Margen superior */
+ 
+ }
 
 .table-responsive {
   overflow-x: auto;

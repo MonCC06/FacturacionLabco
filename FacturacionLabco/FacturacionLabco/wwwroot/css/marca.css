@@ -10,6 +10,17 @@
   width: 259px;
 }
 
+.encabezado {
+  display: flex;
+  align-items: center;
+  border-radius: 2pc;
+  padding: 5px 10px;
+  border:none;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 20px;
+  color: #035928; 
+}
 
 .sidebar {
   width: 250px;
@@ -20,21 +31,20 @@
   top: 0;
   left: 0;
   box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
+  overflow-y: auto; /* Desplazamiento vertical si es necesario */
 }
 
 .logo img {
-  width: 180px;
-  height: auto;
-  margin-bottom: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%; /* Ajusta el ancho al tamaño del contenedor */
+  height: auto; /* Mantiene la proporción del logo */
+}
+.logo {
+  display: flex; /* Asegura flexibilidad */
+  justify-content: center; /* Centra el logo horizontalmente */
+  align-items: center; /* Centra el logo verticalmente */
+  max-width: 100%; /* No supera el tamaño del contenedor */
 }
 
-/* Usa solo una clase para la barra lateral */
-.sidebar {
-  padding-top: 20px; /* Sin !important */
-}
 
 
 
@@ -42,6 +52,11 @@
   list-style: none;
   padding-left: 0;
   flex-grow: 1; /* Hace que el menú ocupe el espacio disponible */
+    width: 20%; /* La barra ocupará el 20% del ancho del viewport */
+    max-width: 250px; /* Límite superior de ancho */
+    min-width: 150px; /* Límite inferior de ancho */
+
+  
 }
 
 .menu li {
@@ -61,7 +76,7 @@
 }
 
 .menu li a:hover {
-  background-color: #006912;
+  background-color: #035928;
   color: #ffffff;
 }
 
@@ -78,29 +93,40 @@
 
 
 body {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   display: flex;
   font-family: 'Roboto', sans-serif;
   height: 100%;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  min-height: 100vh; /* Altura mínima para evitar problemas visuales */
+  margin: 0;
+  padding: 0;
 }
-.sidebar {
-  width: 250px; /* Ancho de la barra lateral */
-  background-color: #fff; /* Color de fondo de la barra lateral */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra de la barra lateral */
-  position: fixed; /* Posición fija */
-  height: 100vh; /* Altura de la barra lateral */
-  overflow-y: auto; /* Desplazamiento vertical si es necesario */
+.custom-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 20px auto;
+  width: 100%;
+  height: auto; /* Mantén la altura automática */
+  min-height: 120vh; /* Incrementa la altura mínima al 120% de la vista */
+  justify-content: center; /* Centra los hijos horizontalmente */
+  align-items: center; /* Centra los hijos verticalmente */
 }
+
 .container-custom {
-  margin-left: 20px !important; /* Espacio para la barra lateral */
-  margin-right: 20px !important;
-  margin-top: 50px; /* Margen superior */
-  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 30px; /* Aumenta el relleno interno */
   border-radius: 10px;
   background-color: #F0F0F0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- 
 }
+
+
+
+
+
 .container-modal {
   max-width: 1030px !important;
   margin-left: 10px; /* Espacio para la barra lateral */
@@ -145,9 +171,6 @@ body {
   height: 40px;
   border-radius: 50%;
 }
-
-
-
 .user-info {
   display: flex;
   justify-content: flex-end;
@@ -168,21 +191,15 @@ body {
 .text-nowrap{
   width: 16%;
 }
-
-
-.form-control{
-  border-radius: 120px !important;
-}
 .btn-success {
   border-radius: 120px !important;
   background-color: #035928 !important;
   transform: none; /* Evita que cambie el tamaño */
 }
-
-
 .nav-item{
   justify-items: start;
 }
+
 .volver {
   display: flex;
   align-items: center;
@@ -210,6 +227,8 @@ body {
 .row {
   color: #035928; 
   margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .col-3 {
@@ -247,7 +266,7 @@ body {
 }
 
 .btn-light:active{
-  background-color: #034b22 !important;
+  background-color: #035928 !important;
   color: #cccccc !important;
 }
 
@@ -255,7 +274,9 @@ body {
   margin-top: 30px !important;
   margin-bottom: 5px !important;
 }
-
+.form-control{
+  border-radius: 120px !important;
+}
 .container-modal1{
  background-color: #F1E3E2;
  max-width: 1030px !important;
@@ -288,9 +309,4 @@ body {
     padding: 6px 10px;
     font-size: 0.8rem;
   }
-}
-
-.marca-row.seleccionada {
-    background-color: #F1E3E2; /* Color de fondo para la fila seleccionada */
-    cursor: pointer;
 }
