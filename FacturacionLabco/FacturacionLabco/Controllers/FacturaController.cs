@@ -1,4 +1,5 @@
 ﻿using FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio;
+using FacturacionLabco_AccesoDatos.Migrations;
 using FacturacionLabco_Models;
 using FacturacionLabco_Models.ViewModels;
 using FacturacionLabco_Utilidades;
@@ -9,15 +10,19 @@ namespace FacturacionLabco.Controllers
     public class FacturaController : Controller
     {
         private readonly IFacturaRepositorio _facturaRepo;
-        public FacturaController(IFacturaRepositorio facturaRepo)
+        private readonly ITrabajadorRepositorio _traRepo;
+        public FacturaController(IFacturaRepositorio facturaRepo, ITrabajadorRepositorio traRepo)
         {
             _facturaRepo = facturaRepo;
+            _traRepo = traRepo;
         }
         public IActionResult Index()
         {
             IEnumerable<Factura> lista = _facturaRepo.ObtenerTodos(incluirPropiedades: "Detalle,Trabajador,Cliente,Vehiculo");
+            IEnumerable<Trabajador>listaTrabajadores= _traRepo.GetTrabajadorList();
 
-            return View();
+            ViewBag.Trabajadores = listaTrabajadores;
+            return View(lista);
         }
 
         //GET

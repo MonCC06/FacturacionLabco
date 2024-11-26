@@ -10,5 +10,6 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
     public interface ITrabajadorRepositorio : IRepositorio<Trabajador>
     {
         void Actualizar(Trabajador trabajador);
+        IEnumerable<Trabajador> GetTrabajadorList();
     }
 }
