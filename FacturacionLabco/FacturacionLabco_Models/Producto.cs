@@ -18,7 +18,5 @@ namespace FacturacionLabco_Models
         [Required(ErrorMessage = "Stock del Producto es obligatorio")]
         [Range(1, int.MaxValue, ErrorMessage = "el Stock tiene que ser mayor a cero")]
         public float Stock_Producto { get; set; }
-
-        public int TipoProductoServicio {  get; set; }
     }
 }

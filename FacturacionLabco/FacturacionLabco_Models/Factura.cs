@@ -20,14 +20,21 @@ namespace FacturacionLabco_Models
         [Required(ErrorMessage = "Total de la factura es obligatorio")]
         public double Total { get; set; }
 
-        [Required(ErrorMessage = "Total de la factura es obligatorio")]
+        [Required(ErrorMessage = "Subtotal de la factura es obligatorio")]
         public double Subtotal { get; set; }
 
-        [Required(ErrorMessage = "Total de la factura es obligatorio")]
+        [Required(ErrorMessage = "Iva de la factura es obligatorio")]
         public double Iva { get; set; }
 
-        [Required(ErrorMessage = "Total de la factura es obligatorio")]
+        [Required(ErrorMessage = "Fecha de la factura es obligatorio")]
         public DateTime Fecha { get; set; }
+
+        [Required(ErrorMessage = "Nota de la factura es obligatoria")]
+        public string Nota { get; set; }
+
+        [Required(ErrorMessage = "Nota interna de la factura es obligatoria")]
+        public string Nota_Interna { get; set; }
+
 
         //Foreing key
 

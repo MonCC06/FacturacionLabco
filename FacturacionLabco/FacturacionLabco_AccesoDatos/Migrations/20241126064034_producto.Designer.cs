@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FacturacionLabco_AccesoDatos.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20241102034648_factura")]
-    partial class factura
+    [Migration("20241126064034_producto")]
+    partial class producto
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.20")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -73,9 +73,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<double>("Monto")
-                        .HasColumnType("float");
-
                     b.Property<int>("ProductoID")
                         .HasColumnType("int");
 
@@ -109,6 +106,14 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.Property<double>("Iva")
                         .HasColumnType("float");
+
+                    b.Property<string>("Nota")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nota_Interna")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Subtotal")
                         .HasColumnType("float");
@@ -170,9 +175,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.Property<float>("Stock_Producto")
                         .HasColumnType("real");
 
-                    b.Property<int>("TipoProductoServicio")
-                        .HasColumnType("int");
-
                     b.HasKey("Id_Producto");
 
                     b.ToTable("producto");
@@ -195,6 +197,14 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PrimerApellido")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SegundoApellido")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -318,7 +328,8 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -372,7 +383,7 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.ToTable("AspNetUsers", (string)null);
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+                    b.HasDiscriminator().HasValue("IdentityUser");
 
                     b.UseTphMappingStrategy();
                 });

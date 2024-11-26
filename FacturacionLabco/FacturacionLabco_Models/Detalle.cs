@@ -13,8 +13,6 @@ namespace FacturacionLabco_Models
         [Key]
         public int Id { get; set; }
 
-        public double Monto { get; set; }
-
         [Required(ErrorMessage = "Total de la factura es obligatorio")]
         public int Cantidad { get; set; }
 
