@@ -72,7 +72,6 @@ namespace FacturacionLabco.Controllers
 
 
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Editar(Producto producto)
@@ -82,9 +81,11 @@ namespace FacturacionLabco.Controllers
             {
                 _proRepo.Actualizar(producto);
                 _proRepo.Grabar();
+                TempData[WC.Exitosa] = "Producto creado exitosamente";
                 return RedirectToAction(nameof(Index)); //esto es para que ne redirigir al index
             }
-            return View(producto);
+            TempData[WC.Error] = "Error al crear un nuevo producto";
+            return RedirectToAction(nameof(Index));
         }
 
 
@@ -112,9 +113,9 @@ namespace FacturacionLabco.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Eliminar(Producto producto)
+        public IActionResult Eliminar(int Id_Producto)
         {
-
+            var producto = _proRepo.Obtener(Id_Producto);
             if (producto == null)
             {
                 return NotFound();

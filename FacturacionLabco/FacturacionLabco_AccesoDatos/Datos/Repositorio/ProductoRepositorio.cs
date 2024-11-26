@@ -19,17 +19,21 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
         public void Actualizar(Producto producto)
         {
 
-            var catAnterior = _db.producto.FirstOrDefault(c => c.Id_Producto == producto.Id_Producto); // Debería ser 'Categorias'.
-            if (catAnterior != null)
+            var proAnterior = _db.producto.FirstOrDefault(p => p.Id_Producto == producto.Id_Producto);
+            if (proAnterior != null)
             {
-                catAnterior.Descripcion_Producto = producto.Descripcion_Producto;
-
-
-
+                proAnterior.Descripcion_Producto = producto.Descripcion_Producto;
+                proAnterior.Stock_Producto = producto.Stock_Producto;
+                proAnterior.Precio_Producto = producto.Precio_Producto;
             }
 
 
 
+        }
+
+        public IEnumerable<Producto> GetProductoList()
+        {
+            return _db.producto;
         }
 
     }

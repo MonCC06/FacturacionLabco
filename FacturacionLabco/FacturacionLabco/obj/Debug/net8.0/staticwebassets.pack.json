@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\css\\Factura.css"
     },
     {
+      "Id": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\Producto.css",
+      "PackagePath": "staticwebassets\\css\\Producto.css"
+    },
+    {
       "Id": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

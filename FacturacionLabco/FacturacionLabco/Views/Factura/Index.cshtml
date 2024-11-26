@@ -63,10 +63,17 @@
           <i class="bi bi-substack"></i>
             <span class="fs-5 ms-2 d-none d-sm-inline">Marca</span>
         </a>
-    </li>
+      </li>
       <!-- Opción Productos -->
       <li class="nav-item">
           <a asp-controller="Producto" asp-action="Index" class="d-flex align-items-center justify-content-center">
+            <i class="bi bi-clipboard-check-fill"></i>
+              <span class="fs-5 ms-2 d-none d-sm-inline">Productos</span>
+          </a>
+      </li>
+      <!-- Opción Detalle -->
+      <li class="nav-item">
+          <a asp-controller="Detalle" asp-action="Index" class="d-flex align-items-center justify-content-center">
             <i class="bi bi-clipboard-check-fill"></i>
               <span class="fs-5 ms-2 d-none d-sm-inline">Productos</span>
           </a>
@@ -239,7 +246,7 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
       <div class="d-flex align-items-center">
         <h5 class="text-green mb-0">Productos</h5>
-        <button class="btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalProducto" id="#ModalProducto">
+        <button class="btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalDetalle" id="#ModalDetalle">
           <i class="fas fa-search">+</i>
         </button>          
       </div>
@@ -977,7 +984,177 @@
 
 
 
-<!-- Modal Principal Producto -->
+<!-- Modal Principal Detalle -->
+<div class="modal fade" id="ModalDetalle" tabindex="-1" aria-labelledby="ModalDetalleLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <!-- Encabezado -->
+          <div class="row mb-4">
+            <div class="col-12 col-md-6 d-flex align-items-center">
+              <div class="volver">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                </svg>
+                <h5>Buscar Detalle</h5>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 text-end user-info">
+              <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+              <span class="user-name">User</span>
+            </div>
+          </div>
+
+          <!-- Radio y campo de búsqueda -->
+          <div class="row mb-3">
+            <div class="col-12 col-md-8">
+              <div class="d-flex align-items-center">
+                <div class="form-check me-3">
+                  <input class="form-check-input" type="radio" name="searchOption" id="searchByName" value="name" checked>
+                  <label class="form-check-label" for="searchByName">Nombre del producto</label>
+                </div>
+              </div>
+              <input type="text" class="form-control mt-2" placeholder="Buscar Producto">
+            </div>
+            <div class="col-12 col-md-3 mt-4">
+              <button class=" btn-success" type="button" data-bs-toggle="modal" data-bs-target="#ModalDetalleAgregar">Crear +</button>
+            </div>
+          </div>
+
+          <!-- Tabla -->
+          <div class="table-responsive ">
+            <table class="table table-bordered table-hover table-custom">
+              <thead>
+                <tr>
+                  <th class="text-nowrap" >Cantidad</th>
+                  <th class="text-nowrap" >Producto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="Cantidad"></td>
+                  <td class="Producto"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Acciones -->
+          <div class="col-12 text-end">
+            <div class="actions d-flex justify-content-start">
+              <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalProducto">Seleccionar</button>
+              <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Agregar Detalle -->
+<div class="modal fade" id="ModalDetalleAgregar" tabindex="-1" aria-labelledby="ModalProductoAgregarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal">
+    <div class="modal-content">
+      <div class="d-flex">
+        <div class="volver">
+          <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+            </svg>
+            <h1 class="modal-title fs-5" id="ModalProductoTitulo">Agregar Producto</h1>
+          </button>
+        </div>
+        <div class="col-12 col-md-6 text-start user-info">
+          <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+          <span class="user-name">Messi</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Formulario -->
+        <form>
+          <div class="container-modal">
+            <div class="row">
+              <div class="col text-center">
+                <h5>Datos del detalle</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 text-start">
+                <h9>Cantidad</h9>
+              </div>
+              <div class="col-8">
+                <input type="text" class="form-control" placeholder="Ingrese aquí">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 text-start">
+                <h9>Producto</h9>
+              </div>
+              <div class="col-8">
+                <div class="input-group">
+                  <input type="text" id="Nombre" class="form-control" placeholder="Seleccionar">
+                  <button class=" btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalProducto" id="#ModalProducto">
+                      <i class="fas fa-search">+</i>
+                  </button>
+                </div> 
+              </div>           
+            </div>
+            <div class="row botones">
+              <div class="col-6 d-flex justify-content-end">
+                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" 
+                data-bs-dismiss="modal" aria-label="Close">Anular</button>
+              </div>
+              <div class="col-6 d-flex">
+                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
+                data-bs-dismiss="modal" aria-label="Close">Guardar</button>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="ModalEliminarProducto" tabindex="-1" aria-labelledby="ModalEliminarProducto" style="display: none;"
+  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="d-flex">
+          </div>
+          <div class="container-modal1 text-center">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <h5 class="text-custom1">¿Desea eliminar el Producto seleccionado?</h5>
+              </div>
+            </div>
+            <div class="row botones">
+              <div class="col-6 d-flex justify-content-end">
+                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
+                data-bs-dismiss="modal" aria-label="Close">Confirmar</button>
+              </div>
+              <div class="col-6 d-flex">
+                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" 
+                data-bs-dismiss="modal" aria-label="Close">Anular</button>
+              </div>
+            </div>
+          </div>                  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Principal Producto -->
 <div class="modal fade" id="ModalProducto" tabindex="-1" aria-labelledby="ModalProductoLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
@@ -1063,109 +1240,6 @@
   </div>
 </div>
 
-<!-- Modal Agregar Producto -->
-<div class="modal fade" id="ModalProductoAgregar" tabindex="-1" aria-labelledby="ModalProductoAgregarLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal">
-    <div class="modal-content">
-      <div class="d-flex">
-        <div class="volver">
-          <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
-            </svg>
-            <h1 class="modal-title fs-5" id="ModalProductoTitulo">Agregar Producto</h1>
-          </button>
-        </div>
-        <div class="col-12 col-md-6 text-start user-info">
-          <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
-          <span class="user-name">Messi</span>
-        </div>
-      </div>
-
-      <div class="modal-body">
-        <!-- Formulario -->
-        <form>
-          <div class="container-modal">
-            <div class="row">
-              <div class="col text-center">
-                <h5>Datos del Producto</h5>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-4 text-start">
-                <h9>Nombre</h9>
-              </div>
-              <div class="col-8">
-                <input type="text" class="form-control" placeholder="Ingrese aquí">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-4 text-start">
-                <h9>Stock</h9>
-              </div>
-              <div class="col-8 text-end">
-                <input type="text" class="form-control" placeholder="Ingrese aquí">
-            </div>                    
-            </div>
-            <div class="row">
-              <div class="col-4 text-start">
-                <h9>Precio</h9>
-              </div>
-              <div class="col-8 text-end">
-                <input type="text" class="form-control" placeholder="Ingrese aquí">
-            </div>                    
-            </div>
-            <div class="row botones">
-              <div class="col-6 d-flex justify-content-end">
-                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" 
-                data-bs-dismiss="modal" aria-label="Close">Anular</button>
-              </div>
-              <div class="col-6 d-flex">
-                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
-                data-bs-dismiss="modal" aria-label="Close">Guardar</button>
-              </div>
-            </div>
-          </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="ModalEliminarProducto" tabindex="-1" aria-labelledby="ModalEliminarProducto" style="display: none;"
-  aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="d-flex">
-          </div>
-          <div class="container-modal1 text-center">
-            <div class="row justify-content-center">
-              <div class="col-12">
-                <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
-                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                </svg>
-              </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-12">
-                <h5 class="text-custom1">¿Desea eliminar el Producto seleccionado?</h5>
-              </div>
-            </div>
-            <div class="row botones">
-              <div class="col-6 d-flex justify-content-end">
-                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
-                data-bs-dismiss="modal" aria-label="Close">Confirmar</button>
-              </div>
-              <div class="col-6 d-flex">
-                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" 
-                data-bs-dismiss="modal" aria-label="Close">Anular</button>
-              </div>
-            </div>
-          </div>                  
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 </div>
 </div>

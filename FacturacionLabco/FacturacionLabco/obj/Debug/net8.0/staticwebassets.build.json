@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TQltC3nqmCGpz0e/KFczdqyp9WtWmd4mVzs0kW3WOtM=",
+  "Hash": "hg47nLw9YCqz11tluKIZgijpEECALmRcxMxYMcxpEK8=",
   "Source": "FacturacionLabco",
   "BasePath": "_content/FacturacionLabco",
   "Mode": "Default",
@@ -1269,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Factura.css"
+    },
+    {
+      "Identity": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\Producto.css",
+      "SourceId": "FacturacionLabco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\",
+      "BasePath": "_content/FacturacionLabco",
+      "RelativePath": "css/Producto.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Producto.css"
     },
     {
       "Identity": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\css\\site.css",

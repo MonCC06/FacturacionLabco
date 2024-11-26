@@ -11,7 +11,9 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
     public interface IProductoRepositorio : IRepositorio<Producto>
     {
         void Actualizar(Producto producto);
-
+        IEnumerable<Producto> GetProductoList();
 
     }
+
+
 }

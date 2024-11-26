@@ -9,13 +9,18 @@ namespace FacturacionLabco.Controllers
     public class DetalleController : Controller
     {
         private readonly IDetalleRepositorio _detalleRepo;
-        public DetalleController(IDetalleRepositorio detalleRepo)
+        private readonly IProductoRepositorio _proRepo;
+        public DetalleController(IDetalleRepositorio detalleRepo, IProductoRepositorio proRepo)
         {
             _detalleRepo = detalleRepo;
+            _proRepo = proRepo;
         }
         public IActionResult Index()
         {
             IEnumerable<Detalle> lista = _detalleRepo.ObtenerTodos(incluirPropiedades: "Producto");
+            IEnumerable<Producto> listaproductos = _proRepo.GetProductoList();
+
+            ViewBag.Productos = listaproductos;
 
             return View();
         }
