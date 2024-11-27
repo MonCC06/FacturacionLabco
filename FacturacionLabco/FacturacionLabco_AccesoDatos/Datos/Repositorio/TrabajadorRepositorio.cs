@@ -31,6 +31,9 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
             }
         }
 
-
+        public IEnumerable<Trabajador> GetTrabajadorList()
+        {
+            return _db.trabajador;
+        }
     }
 }

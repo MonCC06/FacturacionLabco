@@ -112,9 +112,9 @@ namespace FacturacionLabco.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Eliminar(Producto producto)
+        public IActionResult Eliminar(int Id_Producto)
         {
-
+            var producto = _proRepo.Obtener(Id_Producto);
             if (producto == null)
             {
                 return NotFound();

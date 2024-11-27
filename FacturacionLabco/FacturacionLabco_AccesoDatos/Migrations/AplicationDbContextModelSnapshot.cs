@@ -17,7 +17,7 @@ namespace FacturacionLabco_AccesoDatos.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.20")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -70,13 +70,15 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<double>("Monto")
-                        .HasColumnType("float");
+                    b.Property<int>("FacturaID")
+                        .HasColumnType("int");
 
                     b.Property<int>("ProductoID")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FacturaID");
 
                     b.HasIndex("ProductoID");
 
@@ -94,9 +96,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.Property<int>("ClienteID")
                         .HasColumnType("int");
 
-                    b.Property<int>("DetalleID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -106,6 +105,14 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.Property<double>("Iva")
                         .HasColumnType("float");
+
+                    b.Property<string>("Nota")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nota_Interna")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Subtotal")
                         .HasColumnType("float");
@@ -122,8 +129,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ClienteID");
-
-                    b.HasIndex("DetalleID");
 
                     b.HasIndex("TrabajadorID");
 
@@ -166,9 +171,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.Property<float>("Stock_Producto")
                         .HasColumnType("real");
-
-                    b.Property<int>("TipoProductoServicio")
-                        .HasColumnType("int");
 
                     b.HasKey("Id_Producto");
 
@@ -323,7 +325,8 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -377,7 +380,7 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.ToTable("AspNetUsers", (string)null);
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+                    b.HasDiscriminator().HasValue("IdentityUser");
 
                     b.UseTphMappingStrategy();
                 });
@@ -476,11 +479,19 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
             modelBuilder.Entity("FacturacionLabco_Models.Detalle", b =>
                 {
+                    b.HasOne("FacturacionLabco_Models.Factura", "Factura")
+                        .WithMany()
+                        .HasForeignKey("FacturaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("FacturacionLabco_Models.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Factura");
 
                     b.Navigation("Producto");
                 });
@@ -490,12 +501,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.HasOne("FacturacionLabco_Models.Cliente", "Cliente")
                         .WithMany()
                         .HasForeignKey("ClienteID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FacturacionLabco_Models.Detalle", "Detalle")
-                        .WithMany()
-                        .HasForeignKey("DetalleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -512,8 +517,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                         .IsRequired();
 
                     b.Navigation("Cliente");
-
-                    b.Navigation("Detalle");
 
                     b.Navigation("Trabajador");
 

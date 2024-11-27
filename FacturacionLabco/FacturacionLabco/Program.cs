@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using FacturacionLabco_AccesoDatos.Datos;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,12 +15,18 @@ builder.Services.AddDbContext<AplicationDbContext>(options =>
                                                 options.UseSqlServer(
                                                 builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
 //Lo modificamos para agregar al servicio la asignacion de roles de usuario
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().
     AddDefaultTokenProviders().AddDefaultUI().
     AddEntityFrameworkStores<AplicationDbContext>();
 
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Identity/Account/Login"; // Aquí pones la ruta del login
+                    options.AccessDeniedPath = "/Identity/Account/AccessDenied"; // Página de acceso denegado
+                });
 
 builder.Services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
 //Servicio de TipoAplicacionRepositorio
@@ -84,8 +91,21 @@ app.UseSession();//este el pipeline para utlizar el servicio de sesiones
 
 app.MapRazorPages();
 
+app.MapGet("/", async context =>
+{
+    // Si el usuario no está autenticado, redirige al login
+    if (!context.User.Identity.IsAuthenticated)
+    {
+        context.Response.Redirect("/Identity/Account/Login");
+        return;
+    }
+
+    // Si está autenticado, se puede redirigir a la página de inicio
+    context.Response.Redirect("/Factura/Index");
+});
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Factura}/{action=Index}/{id?}");
 
 app.Run();

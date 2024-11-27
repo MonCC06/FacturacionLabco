@@ -1,0 +1,1497 @@
+﻿@model IEnumerable<FacturacionLabco_Models.Factura>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link rel="icon" type="image/png" href="~/Imagenes/logo-Labco-sin-fondo.png">
+
+    <link rel="stylesheet" href="~/css/factura.css">
+    <link rel="stylesheet" href="/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+</head>
+<body>
+    <!-- Barra lateral -->
+    <div class="d-flex flex-column vh-100 p-3 bg-white shadow-sm menu">
+        <!-- Logo -->
+        <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto justify-content-center">
+            <div class="logo">
+                <img src="~/Imagenes/labco.png" alt="LABCO Logo">
+            </div>
+        </a>
+        <hr>
+        <div class="container-fluid">
+            <!-- Menú de navegación -->
+            <ul class="nav nav-pills flex-column mb-auto">
+                <!-- Opción Factura -->
+                <li class="nav-item">
+                    <a asp-controller="Factura" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-file-earmark-bar-graph"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Factura</span>
+                    </a>
+                </li>
+                <!-- Opción Cliente -->
+                <li class="nav-item">
+                    <a asp-controller="Cliente" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-person-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Cliente</span>
+                    </a>
+                </li>
+                <!-- Opción Trabajadores -->
+                <li class="nav-item">
+                    <a asp-controller="Trabajador" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Trabajador</span>
+                    </a>
+                </li>
+                <!-- Opción Vehículo -->
+                <li class="nav-item">
+                    <a asp-controller="Vehiculo" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-car-front-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Vehículo</span>
+                    </a>
+                </li>
+                <!-- Opción Marca -->
+                <li class="nav-item">
+                    <a asp-controller="Marca" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-substack"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Marca</span>
+                    </a>
+                </li>
+                <!-- Opción Productos -->
+                <li class="nav-item">
+                    <a asp-controller="Producto" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-clipboard-check-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Productos</span>
+                    </a>
+                </li>
+                <!-- Opción Detalle -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#ModalMensajeAdvertencia">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Logout</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- Modal Mensaje Advertencia -->
+            <div class="modal " id="ModalMensajeAdvertencia" tabindex="-1" aria-labelledby="ModalMensajeAdvertencia"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="container-modal1 text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#771019" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0
+                                                .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <h5 class="text-custom1">¿Desea Realizar la acción?</h5>
+                                    </div>
+                                </div>
+                                <!-- Formulario de logout -->
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button class="btn btn-light d-flex align-items-center justify-content-center"
+                                                    type="submit">
+                                                Confirmar
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-4">
+        <!-- Encabezado -->
+        <div class="col-12 col-md-6 d-flex align-items-center">
+            <div class="volver">
+                <h2>Facturacion</h2>
+            </div>
+        </div>
+
+        <div class="custom-wrapper">
+            <div class=" container-custom">
+                <!-- Otra Información -->
+                <div class="bg-gray p-3 borde">
+                    <h5 class="text-green">Otra Información</h5>
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select id="estado" class="form-select">
+                                <option selected>Seleccionar...</option>
+                                <option>Anulada</option>
+                                <option>En proceso</option>
+                                <option>Cancelada</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="fecha" class="form-label">Fecha</label>
+                            <input type="date" id="fecha" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="encargado" class="form-label">Encargado</label>
+                            <div class="input-group">
+                                <input type="hidden" id="trabajadorId" name="Id" value="" />
+                                <input type="text" id="Nombre" class="form-control" placeholder="Seleccionar">
+                                <input type="hidden" id="PrimerApellido" name="PrimerApellido" value="" />
+                                <input type="hidden" id="SegundoApellido" name="SegundoApellido" value="" />
+                                <button class=" btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalEncargado" id="#ModalEncargado">
+                                    <i class="fas fa-search">+</i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="d-flex align-items-center mt-3">
+                                <label class="form-check-label me-2" for="contado">Contado</label>
+                                <input class="form-check-input" type="radio" name="pago" id="contado" checked>
+                                <label class="form-check-label ms-3 me-2" for="credito">Crédito</label>
+                                <input class="form-check-input" type="radio" name="pago" id="credito">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray p-3 borde mt-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <h5 class="text-green mb-0">Datos del Cliente</h5>
+                                <button class="btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalCliente" id="#ModalCliente">
+                                    <i class="fas fa-search">+</i>
+                                </button>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Tipo de Persona -->
+                        <div class="d-flex align-items-center">
+                            <label class="form-check-label me-2 text-green" for="persona-fisica">Persona Física</label>
+                            <input type="radio" class="form-check-input" name="tipo-persona" id="persona-fisica">
+                            <label class="form-check-label ms-3 me-2 text-green" for="persona-juridica">Persona Jurídica</label>
+                            <input type="radio" class="form-check-input" name="tipo-persona" id="persona-juridica" checked>
+                        </div>
+                    </div>
+
+                    <!-- Fila principal con tres columnas -->
+                    <div class="row">
+                        <!-- Primera columna -->
+                        <input type="hidden" id="clienteId" name="Id" value="" />
+                        <div class="col-md-4">
+                            <label for="Cedula" class="form-label">Cédula</label>
+                            <input type="text" id="Cedula" name="Cedula" class="form-control">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="Telefono" class="form-label">Teléfono</label>
+                            <input type="text" id="Telefono" name="Telefono" class="form-control">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="Correo" class="form-label">E-mail</label>
+                            <input type="email" id="Correo" name="Correo" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- Segunda fila con tres columnas -->
+                    <div class="row mt-3">
+
+                        <div class="col-md-4">
+                            <label for="Nombre" class="form-label">Nombre</label>
+                            <input type="text" id="NombreCliente" name="Nombre" class="form-control">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="PrimerApellido" class="form-label">Primer Apellido</label>
+                            <input type="text" id="PrimerApellidoCliente" name="PrimerApellido" class="form-control">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="SegundoApellido" class="form-label">Segundo Apellido</label>
+                            <input type="text" id="SegundoApellidoCliente" name="SegundoApellido" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray p-3 borde mt-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center">
+                            <h5 class="text-green mb-0">Datos del Vehiculo</h5>
+                            <button class="btn-outline-secondary btn-inside-input align-items-center" data-bs-toggle="modal" data-bs-target="#ModalVehiculo" id="#ModalVehiculo">
+                                <i class="fas fa-search">+</i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <!-- Campo Placa -->
+                        <div>
+                            <label for="placa" class="form-label">Placa</label>
+                            <input type="text" id="placa" class="form-control">
+                        </div>
+
+                        <!-- Campo Año -->
+                        <div>
+                            <label for="anio" class="form-label">Año</label>
+                            <input type="text" id="anio" class="form-control">
+                        </div>
+
+                        <!-- Campo Marca -->
+                        <div>
+                            <label for="marca" class="form-label">Marca</label>
+                            <input type="text" id="marca" class="form-control">
+                        </div>
+
+                        <!-- Campo VIN -->
+                        <div>
+                            <label for="vin" class="form-label">VIN</label>
+                            <input type="text" id="vin" class="form-control">
+                        </div>
+
+                        <!-- Unidad de medida y Distancia -->
+                        <div>
+                            <div class="d-flex align-items-center mb-2 unidad-medida-container">
+                                <label class="form-check-label me-2 text-green label-ajustado">Kilómetros</label>
+                                <input type="radio" class="form-check-input" name="unidad-medida" id="kilometros">
+                                <label class="form-check-label ms-3 me-2 text-green label-ajustado">Millas</label>
+                                <input type="radio" class="form-check-input" name="unidad-medida" id="millas" checked>
+                            </div>
+                            <input type="text" id="distancia" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-tabla borde">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center">
+                            <h5 class="text-green mb-0">Productos</h5>
+                            <button class="btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalProducto" id="#ModalProducto">
+                                <i class="fas fa-search">+</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="TablaSeleccionados">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Precio Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Aquí se agregarán las filas dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <!-- Columna de Observaciones -->
+                        <div class="col-md-6">
+                            <h4 class="text-green mb-3">Observaciones</h4>
+                            <div class="observaciones">
+                                <textarea placeholder="Observaciones" class="form-control observaciones-textarea"></textarea>
+                            </div>
+
+                            <h4 class="text-green mb-3">Notas</h4>
+                            <div class="Notas">
+                                <textarea placeholder="Notas" class="form-control Notas-textarea"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Columna de Totales -->
+                        <div class="col-md-6">
+                            <h4 class="text-green mb-3">Totales</h4>
+                            <div class="totals custom-totals-container">
+
+
+                                <div><span>Sub-total</span><input type="text" readonly class="form-control total-input"></div>
+                                <div><span>IVA</span><input type="text" readonly class="form-control total-input"></div>
+                                <div><span>Descuento</span><input type="number" class="form-control total-input" min="0" value="0"></div>
+                                <div><span>Total</span><input type="text" readonly class="form-control total-input"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="row botones d-flex justify-content-between">
+                            <div class="col d-flex justify-content-center">
+                                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">Guardar</button>
+                            </div>
+                            <div class="col d-flex justify-content-center">
+                                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">Anular</button>
+                            </div>
+                            <div class="col d-flex justify-content-center">
+                                <button type="button" onclick="window.print()" class="btn btn-print d-flex align-items-center justify-content-center" data-bs-dismiss="modal">Imprimir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modal Principal Factura -->
+                <div class="modal fade" id="ModalFactura" tabindex="-1" aria-labelledby="ModalFacturaLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <!-- Encabezado -->
+                                    <div class="row mb-4">
+                                        <div class="col-12 col-md-6 d-flex align-items-center">
+                                            <div class="volver">
+                                                <h5>Buscar Factura</h5>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center user-info">
+                                            <i class="bi bi-person-fill me-2"></i>
+                                            <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Radio y campo de búsqueda -->
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-8">
+                                            <div class="d-flex align-items-center">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="searchOption" id="searchByDate" value="Date">
+                                                    <label class="form-check-label" for="searchByDate">Fecha</label>
+                                                </div>
+                                                <div class="form-check me-3">
+                                                    <input class="form-check-input" type="radio" name="searchOption" id="searchByName" value="name" checked>
+                                                    <label class="form-check-label" for="searchByName">Nombre</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="searchOption" id="searchByPlaca" value="Placa">
+                                                    <label class="form-check-label" for="searchByPlaca">Placa</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="searchOption" id="searchByEstado" value="Estado">
+                                                    <label class="form-check-label" for="searchByEstado">Estado</label>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control mt-2" placeholder="Buscar Factura">
+                                        </div>
+                                    </div>
+
+                                    <!-- Tabla -->
+                                    <div class="table-responsive ">
+                                        <table class="table table-bordered table-hover table-custom">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-nowrap">Fecha</th>
+                                                    <th class="text-nowrap">Nombre</th>
+                                                    <th class="text-nowrap">Marca</th>
+                                                    <th class="text-nowrap">Placa</th>
+                                                    <th class="text-nowrap">Distancia</th>
+                                                    <th class="text-nowrap">Encargado</th>
+                                                    <th class="text-nowrap">Observaciones</th>
+                                                    <th class="text-nowrap">Notas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="Fecha"></td>
+                                                    <td class="Nombre"></td>
+                                                    <td class="Marca"></td>
+                                                    <td class="Placa"></td>
+                                                    <td class="Distancia"></td>
+                                                    <td class="Encargado"></td>
+                                                    <td class="Notas"></td>
+                                                    <td class="Observaciones"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Fecha"></td>
+                                                    <td class="Nombre"></td>
+                                                    <td class="Marca"></td>
+                                                    <td class="Placa"></td>
+                                                    <td class="Distancia"></td>
+                                                    <td class="Encargado"></td>
+                                                    <td class="Notas"></td>
+                                                    <td class="Observaciones"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Fecha"></td>
+                                                    <td class="Nombre"></td>
+                                                    <td class="Marca"></td>
+                                                    <td class="Placa"></td>
+                                                    <td class="Distancia"></td>
+                                                    <td class="Encargado"></td>
+                                                    <td class="Notas"></td>
+                                                    <td class="Observaciones"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Fecha"></td>
+                                                    <td class="Nombre"></td>
+                                                    <td class="Marca"></td>
+                                                    <td class="Placa"></td>
+                                                    <td class="Distancia"></td>
+                                                    <td class="Encargado"></td>
+                                                    <td class="Notas"></td>
+                                                    <td class="Observaciones"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Acciones -->
+                                    <div class="col-12 text-end">
+                                        <div class="actions d-flex justify-content-start">
+                                            <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalFactura">Modificar</button>
+                                            <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarFactura">Eliminar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Principal Trabajador -->
+                <div class="modal fade" id="ModalEncargado" tabindex="-1" aria-labelledby="ModalEncargadoLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <!-- Encabezado -->
+                                    <div class="row mb-4">
+                                        <div class="col-12 col-md-6 d-flex align-items-center">
+                                            <button type="button" class="btn btn-link" data-bs-dismiss="modal" aria-label="Close">
+                                            </button>
+                                            <h5 class="ms-2">Buscar Trabajador</h5>
+                                        </div>
+                                        <div class="d-flex align-items-center user-info">
+                                            <i class="bi bi-person-fill me-2"></i>
+                                            <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Radio y campo de búsqueda -->
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-8">
+                                            <div class="d-flex align-items-center">
+                                                <div class="form-check me-3">
+                                                    <input class="form-check-input" type="radio" name="FiltroNombre" id="FiltroNombre" value="name">
+                                                    <label class="form-check-label" for="FiltroNombre">Nombre</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="FiltroCedula" id="FiltroCedula" value="cedula">
+                                                    <label class="form-check-label" for="FiltroCedula">Cédula</label>
+                                                </div>
+                                            </div>
+                                            <input type="text" id="BuscarTrabajador" class="form-control mt-2" placeholder="Buscar Trabajador" onkeyup="filtrarTabla()">
+                                        </div>
+                                        <div class="col-12 col-md-3 mt-4">
+                                            <button class="btn-success" type="button">
+                                                <a asp-controller="Trabajador" asp-action="Index">Crear +</a>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tabla -->
+                                    @if (ViewBag.Trabajadores != null)
+                                    {
+                                        <div class="table-responsive ">
+                                            <table class="table table-bordered table-hover table-custom" id="TablaTrabajadores">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-nowrap">Nombre Completo</th>
+                                                        <th class="text-nowrap">Cedula</th>
+                                                        <th class="text-nowrap">Telefono</th>
+                                                        <th class="text-nowrap">Correo</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in ViewBag.Trabajadores)
+                                                    {
+                                                        <tr data-id="@item.Id" data-nombre="@item.Nombre"
+                                                            data-primerapellido="@item.PrimerApellido" data-segundoapellido="@item.SegundoApellido">
+                                                            <td class="Nombre">
+                                                                @item.Nombre @item.PrimerApellido
+                                                                @item.SegundoApellido
+                                                            </td>
+                                                            <td class="Cedula">@item.Cedula</td>
+                                                            <td class="Telefono">@item.Telefono</td>
+                                                            <td class="Correo">@item.Correo</td>
+                                                        </tr>
+                                                    }
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <p>No hay registro de trabajadores</p>
+                                    }
+
+                                    <!-- Acciones -->
+                                    <div class="col-12 text-end">
+                                        <div class="actions d-flex justify-content-start">
+                                            <button class="btn btn-custom" type="button" id="btnCargarTrabajador">Modificar</button>
+                                            <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarTrabajador">Eliminar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modal Principal Cliente -->
+                <div class="modal fade" id="ModalCliente" tabindex="-1" aria-labelledby="ModalClienteLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <!-- Encabezado -->
+                                    <div class="row mb-4">
+                                        <div class="col-12 col-md-6 d-flex align-items-center">
+                                            <div class="volver">
+                                                <h5>Buscar Cliente</h5>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center user-info">
+                                            <i class="bi bi-person-fill me-2"></i>
+                                            <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Radio y campo de búsqueda -->
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-8">
+                                            <div class="d-flex align-items-center">
+                                                <div class="form-check me-3">
+                                                    <input class="form-check-input" type="radio" name="FiltroNombre" id="FiltroNombre" value="name">
+                                                    <label class="form-check-label" for="FiltroNombre">Nombre</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="FiltroCedula" id="FiltroCedula" value="cedula">
+                                                    <label class="form-check-label" for="FiltroCedula">Cédula</label>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control mt-2" id="BuscarCliente" placeholder="Buscar Cliente" onkeyup="filtrarTabla()">
+                                        </div>
+                                        <div class="col-12 col-md-3 mt-4">
+                                            <button class="btn-success" type="button" data-bs-toggle="modal" data-bs-target="#ModalClienteAgregar">Crear +</button>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Tabla -->
+                                    @if (ViewBag.Clientes != null)
+                                    {
+                                        <div class="table-responsive ">
+                                            <table class="table table-bordered table-hover table-custom" id="TablaCliente">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-nowrap">Nombre Completo</th>
+                                                        <th class="text-nowrap">Cedula</th>
+                                                        <th class="text-nowrap">Telefono</th>
+                                                        <th class="text-nowrap">Correo</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in ViewBag.Clientes)
+                                                    {
+                                                        <tr data-id="@item.Id" data-cedula="@item.Cedula" data-nombre="@item.Nombre"
+                                                            data-primerapellido="@item.PrimerApellido" data-segundoapellido="@item.SegundoApellido"
+                                                            data-correo="@item.Correo" data-telefono="@item.Telefono">
+                                                            <td class="Nombre">@item.Nombre @item.PrimerApellido @item.SegundoApellido</td>
+                                                            <td class="Cedula">@item.Cedula</td>
+                                                            <td class="Telefono">@item.Telefono</td>
+                                                            <td class="Correo">@item.Correo</td>
+                                                        </tr>
+                                                    }
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    }
+
+
+                                    <!-- Acciones -->
+                                    <div class="col-12 text-end">
+                                        <div class="actions d-flex justify-content-start">
+                                            <button class="btn btn-custom" type="button" id="btnCargarCliente">Seleccionar</button>
+                                            <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarCliente">Eliminar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Agregar Cliente -->
+                <div class="modal fade" id="ModalClienteAgregar" tabindex="-1" aria-labelledby="ModalClienteAgregarLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal">
+                        <div class="modal-content">
+                            <div class="d-flex">
+                                <div class="volver">
+                                    <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                        <h1 class="modal-title fs-5" id="ModalClienteTitulo">Agregar Cliente</h1>
+                                    </button>
+                                </div>
+                                <div class="d-flex align-items-center user-info">
+                                    <i class="bi bi-person-fill me-2"></i>
+                                    <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
+                                </div>
+                            </div>
+
+                            <div class="modal-body">
+                                <!-- Formulario -->
+                                <form>
+                                    <div class="container-modal">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <h5>Datos del Cliente</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5 text-start">
+                                                <h9>Nombre</h9>
+                                            </div>
+                                            <div class="col-7">
+                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5 text-start">
+                                                <h9>Primer Apellido</h9>
+                                            </div>
+                                            <div class="col-7 text-end">
+                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5 text-start">
+                                                <h9>Segundo Apellido</h9>
+                                            </div>
+                                            <div class="col-7 text-end">
+                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5 text-start">
+                                                <h9>Cedula</h9>
+                                            </div>
+                                            <div class="col-7">
+                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5 text-start">
+                                                <h9>Correo</h9>
+                                            </div>
+                                            <div class="col-7">
+                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
+                                            </div>
+                                        </div>
+                                        <div class="row botones">
+                                            <div class="col-6 d-flex justify-content-end">
+                                                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                    Anular
+                                                </button>
+                                            </div>
+                                            <div class="col-6 d-flex">
+                                                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                    Confirmar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Modal Principal Vehiculo -->
+                <div class="modal fade" id="ModalVehiculo" tabindex="-1" aria-labelledby="ModalVehiculoLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <!-- Encabezado -->
+                                    <div class="row mb-4">
+                                        <div class="col-12 col-md-6 d-flex align-items-center">
+                                            <div class="volver">
+                                                <h5>Buscar Vehiculo</h5>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center user-info">
+                                            <i class="bi bi-person-fill me-2"></i>
+                                            <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Radio y campo de búsqueda -->
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-8">
+                                            <div class="d-flex align-items-center">
+                                                <div class="form-check me-3">
+                                                    <input class="form-check-input" type="radio" name="searchOption" id="searchByName" value="name" checked>
+                                                    <label class="form-check-label" for="searchByName">Nombre del Dueño</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="searchOption" id="searchByPlaca" value="Placa">
+                                                    <label class="form-check-label" for="searchByPlaca">Placa</label>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control mt-2" placeholder="Buscar Vehiculo">
+                                        </div>
+                                        <div class="col-12 col-md-3 mt-4">
+                                            <button class="btn-success" type="button" data-bs-toggle="modal" data-bs-target="#ModalVehiculoAgregar">Crear +</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tabla -->
+                                    <div class="table-responsive ">
+                                        <table class="table table-bordered table-hover table-custom">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-nowrap">Dueño</th>
+                                                    <th class="text-nowrap">Placa</th>
+                                                    <th class="text-nowrap">Marca</th>
+                                                    <th class="text-nowrap">Modelo</th>
+                                                    <th class="text-nowrap">Año</th>
+                                                    <th class="text-nowrap">VIN</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="Dueño"></td>
+                                                    <td class="Placa"></td>
+                                                    <td class="Marca"></td>
+                                                    <td class="Modelo"></td>
+                                                    <td class="Año"></td>
+                                                    <td class="VIN"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Dueño"></td>
+                                                    <td class="Placa"></td>
+                                                    <td class="Marca"></td>
+                                                    <td class="Modelo"></td>
+                                                    <td class="Año"></td>
+                                                    <td class="VIN"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Dueño"></td>
+                                                    <td class="Placa"></td>
+                                                    <td class="Marca"></td>
+                                                    <td class="Modelo"></td>
+                                                    <td class="Año"></td>
+                                                    <td class="VIN"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Dueño"></td>
+                                                    <td class="Placa"></td>
+                                                    <td class="Marca"></td>
+                                                    <td class="Modelo"></td>
+                                                    <td class="Año"></td>
+                                                    <td class="VIN"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Acciones -->
+                                    <div class="col-12 text-end">
+                                        <div class="actions d-flex justify-content-start">
+                                            <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalVehiculo">Modificar</button>
+                                            <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarVehiculo">Eliminar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Agregar Vehiculo -->
+                <div class="modal fade" id="ModalVehiculoAgregar" tabindex="-1" aria-labelledby="ModalVehiculoAgregarLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal">
+                        <div class="modal-content">
+                            <div class="d-flex">
+                                <div class="volver">
+                                    <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                        <h1 class="modal-title fs-5" id="ModalVehiculoTitulo">Agregar Vehiculo</h1>
+                                    </button>
+                                </div>
+                                <div class="d-flex align-items-center user-info">
+                                    <i class="bi bi-person-fill me-2"></i>
+                                    <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
+                                </div>
+                            </div>
+
+                            <div class="modal-body">
+                                <!-- Formulario -->
+                                <form>
+                                    <div class="container-modal">
+                                        <div class="row">
+                                            <div class="col text-start">
+                                                <h8>Datos del Vehiculo</h8>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <!-- Columna izquierda -->
+                                            <div class="col-6">
+                                                <div class="row mb-3">
+                                                    <div class="col-5 text-start">
+                                                        <h9>Placa</h9>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control input-custom">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-5 text-start">
+                                                        <h9>VIN</h9>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control input-custom">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-5 text-start">
+                                                        <h9>Modelo</h9>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control input-custom">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div>
+                                                        <div class="d-flex align-items-center mb-2 unidad-medida-container">
+                                                            <label class="form-check-label me-2 text-green label-ajustado">Kilómetros</label>
+                                                            <input type="radio" class="form-check-input" name="unidad-medida" id="kilometros">
+                                                            <label class="form-check-label ms-3 me-2 text-green label-ajustado">Millas</label>
+                                                            <input type="radio" class="form-check-input" name="unidad-medida" id="millas" checked>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Columna derecha -->
+                                            <div class="col-6">
+                                                <div class="row mb-3">
+                                                    <div class="col-5 text-start">
+                                                        <h9>Marca</h9>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control input-custom">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-5 text-start">
+                                                        <h9>Año</h9>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control input-custom">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-5 text-start">
+                                                        <h9>Cliente</h9>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control input-custom">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-5 text-start">
+                                                        <h9>Distancia Recorrida</h9>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control input-custom">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row botones">
+                                            <div class="col-6 d-flex justify-content-end">
+                                                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                    Anular
+                                                </button>
+                                            </div>
+                                            <div class="col-6 d-flex">
+                                                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                    Guardar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="ModalEliminarVehiculo" tabindex="-1" aria-labelledby="ModalEliminarVehiculo" style="display: none;"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="d-flex">
+                                </div>
+                                <div class="container-modal1 text-center">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-12">
+                                            <h5 class="text-custom1">¿Desea eliminar el Vehiculo seleccionado?</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Confirmar
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Modal Principal Producto -->
+                <div class="modal fade" id="ModalProducto" tabindex="-1" aria-labelledby="ModalProductoLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <!-- Encabezado -->
+                                    <div class="row mb-4">
+                                        <div class="col-12 col-md-6 d-flex align-items-center">
+                                            <div class="volver">
+                                                <h5>Buscar Producto</h5>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center user-info">
+                                            <i class="bi bi-person-fill me-2"></i>
+                                            <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Radio y campo de búsqueda -->
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-8">
+                                            <div class="d-flex align-items-center">
+                                                <div class="form-check me-3">
+                                                    <input class="form-check-input" type="radio" name="searchOption" id="searchByName" value="name" checked>
+                                                    <label class="form-check-label" for="searchByName">Nombre del producto</label>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control mt-2" placeholder="Buscar Producto">
+                                        </div>
+                                        <div class="col-12 col-md-3 mt-4">
+                                            <button class=" btn-success" type="button" data-bs-toggle="modal" data-bs-target="#ModalProductoAgregar">Crear +</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tabla -->
+                                    @if (ViewBag.Productos != null)
+                                    {
+                                        <div class="table-responsive ">
+                                            <table class="table table-bordered" id="TablaProductos">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nombre</th>
+                                                        <th>Stock</th>
+                                                        <th>Precio</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in ViewBag.Productos)
+                                                    {
+                                                        <tr data-id="@item.Id_Producto"
+                                                            data-nombre="@item.Descripcion_Producto"
+                                                            data-stock="@item.Stock_Producto"
+                                                            data-precio="@item.Precio_Producto">
+                                                            <td>@item.Descripcion_Producto</td>
+                                                            <td>@item.Stock_Producto</td>
+                                                            <td>@item.Precio_Producto</td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    }
+
+
+                                    <!-- Acciones -->
+                                    <div class="col-12 text-end">
+                                        <div class="actions d-flex justify-content-start">
+                                            <button class="btn btn-custom" type="button" id="btnSeleccionarProducto">Seleccionar</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="js/js.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+<!-- SCRIPTS DE TRABAJADOR -->
+<script>
+    function filtrarTabla() {
+        // Obtén el texto ingresado en el campo de búsqueda y conviértelo a minúsculas.
+        const filtro = document.getElementById("BuscarTrabajador").value.toLowerCase();
+
+        // Obtén la referencia de la tabla donde se realizará el filtrado.
+        const tabla = document.getElementById("TablaTrabajadores");
+
+        // Obtén todas las filas de la tabla (<tr>), incluyendo encabezados y datos.
+        const filas = tabla.getElementsByTagName("tr");
+
+        // Verifica si el checkbox "Nombre" o "Cedula" está seleccionado.
+        const filtrarPorNombre = document.getElementById("FiltroNombre").checked;
+        const filtrarPorCedula = document.getElementById("FiltroCedula").checked;
+
+        // Itera sobre todas las filas de la tabla, comenzando desde el índice 1 para saltar la fila de encabezado.
+        for (let i = 1; i < filas.length; i++) {
+            // Obtén todas las celdas (<td>) de la fila actual.
+            const celdas = filas[i].getElementsByTagName("td");
+
+            // Variable para determinar si esta fila debe mostrarse o no.
+            let mostrarFila = false;
+
+            // Si el checkbox "Nombre" está seleccionado:
+            if (filtrarPorNombre) {
+                // Verifica si el contenido de la celda en la columna 1 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[1] && celdas[1].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true;
+                }
+            }
+
+            // Si el checkbox "Cédula" está seleccionado:
+            if (filtrarPorCedula) {
+                // Verifica si el contenido de la celda en la columna 3 (Cédula) incluye el texto ingresado en el filtro.
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true;
+                }
+            }
+
+            // Si no se selecciona ningún filtro, busca en todas las columnas:
+            if (!filtrarPorNombre && !filtrarPorCedula) {
+                for (let j = 0; j < celdas.length; j++) {
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true;
+                        break;
+                    }
+                }
+            }
+
+            // Muestra u oculta la fila según el valor de mostrarFila.
+            filas[i].style.display = mostrarFila ? "" : "none";
+        }
+    }
+
+</script>
+<script>
+    // Espera a que todo el DOM se cargue completamente antes de ejecutar el script
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Obtiene la referencia de la tabla de productos
+        const table = document.getElementById('TablaTrabajadores');
+        // Obtiene la referencia del botón que abre el modal para modificar productos
+        const btnModificar = document.getElementById('btnCargarTrabajador');
+
+        // Variable para almacenar la fila seleccionada actualmente
+        let selectedRow = null;
+
+        // Agrega un evento de clic a la tabla para detectar cuando se selecciona una fila
+        table.addEventListener('click', (event) => {
+            // Obtiene la fila (<tr>) más cercana al elemento que fue clickeado
+            const row = event.target.closest('tr');
+
+            // Si se clickea una fila válida (no nula)
+            if (row) {
+                // Si ya hay una fila seleccionada previamente, remueve el estilo de selección
+                if (selectedRow) {
+                    selectedRow.classList.remove('table-active');
+                }
+
+                // Marca la fila clickeada como seleccionada
+                selectedRow = row;
+                selectedRow.classList.add('table-active'); // Agrega la clase CSS para el estilo de selección
+            }
+        });
+
+        // Agrega un evento al botón "Modificar" para rellenar el modal con los datos de la fila seleccionada
+        btnModificar.addEventListener('click', () => {
+            // Si no hay ninguna fila seleccionada, muestra un mensaje de alerta y detiene el flujo
+            if (!selectedRow) {
+                alert('Por favor selecciona un trabajador primero.');
+                return;
+            }
+
+            // Obtiene los valores de los atributos personalizados (dataset) de la fila seleccionada
+            const id = selectedRow.dataset.id;            // ID
+            const nombre = selectedRow.dataset.nombre;    // Nombre
+            const primerapellido = selectedRow.dataset.primerapellido;    // Apellido1
+            const segundoapellido = selectedRow.dataset.segundoapellido    // Apellido2
+
+            // Asigna los valores obtenidos a los campos del formulario dentro del modal
+            document.getElementById('trabajadorId').value = id;
+            document.getElementById('Nombre').value = nombre + ' ' + primerapellido + ' ' + segundoapellido;
+            document.getElementById('PrimerApellido').value = primerapellido;
+            document.getElementById('SegundoApellido').value = segundoapellido;// Campo de texto/numérico para el telefono
+
+        });
+    });
+</script>
+<!-- SCRIPTS DE Cliente -->
+<script>
+    function filtrarTabla() {
+        // Obtén el texto ingresado en el campo de búsqueda y conviértelo a minúsculas.
+        const filtro = document.getElementById("BuscarCliente").value.toLowerCase();
+
+        // Obtén la referencia de la tabla donde se realizará el filtrado.
+        const tabla = document.getElementById("TablaCliente");
+
+        // Obtén todas las filas de la tabla (<tr>), incluyendo encabezados y datos.
+        const filas = tabla.getElementsByTagName("tr");
+
+        // Verifica si el checkbox "Nombre" o "Cedula" está seleccionado.
+        const filtrarPorNombre = document.getElementById("FiltroNombre").checked;
+        const filtrarPorCedula = document.getElementById("FiltroCedula").checked;
+
+        // Itera sobre todas las filas de la tabla, comenzando desde el índice 1 para saltar la fila de encabezado.
+        for (let i = 1; i < filas.length; i++) {
+            // Obtén todas las celdas (<td>) de la fila actual.
+            const celdas = filas[i].getElementsByTagName("td");
+
+            // Variable para determinar si esta fila debe mostrarse o no.
+            let mostrarFila = false;
+
+            // Si el checkbox "Nombre" está seleccionado:
+            if (filtrarPorNombre) {
+                // Verifica si el contenido de la celda en la columna 1 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[1] && celdas[1].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true;
+                }
+            }
+
+            // Si el checkbox "Cédula" está seleccionado:
+            if (filtrarPorCedula) {
+                // Verifica si el contenido de la celda en la columna 3 (Cédula) incluye el texto ingresado en el filtro.
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true;
+                }
+            }
+
+            // Si no se selecciona ningún filtro, busca en todas las columnas:
+            if (!filtrarPorNombre && !filtrarPorCedula) {
+                for (let j = 0; j < celdas.length; j++) {
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true;
+                        break;
+                    }
+                }
+            }
+
+            // Muestra u oculta la fila según el valor de mostrarFila.
+            filas[i].style.display = mostrarFila ? "" : "none";
+        }
+    }
+
+</script>
+
+<script>
+    // Espera a que todo el DOM se cargue completamente antes de ejecutar el script
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Obtiene la referencia de la tabla de productos
+        const table = document.getElementById('TablaCliente');
+        // Obtiene la referencia del botón que abre el modal para modificar productos
+        const btnModificar = document.getElementById('btnCargarCliente');
+
+        // Variable para almacenar la fila seleccionada actualmente
+        let selectedRow = null;
+
+        // Agrega un evento de clic a la tabla para detectar cuando se selecciona una fila
+        table.addEventListener('click', (event) => {
+            // Obtiene la fila (<tr>) más cercana al elemento que fue clickeado
+            const row = event.target.closest('tr');
+
+            // Si se clickea una fila válida (no nula)
+            if (row) {
+                // Si ya hay una fila seleccionada previamente, remueve el estilo de selección
+                if (selectedRow) {
+                    selectedRow.classList.remove('table-active');
+                }
+
+                // Marca la fila clickeada como seleccionada
+                selectedRow = row;
+                selectedRow.classList.add('table-active'); // Agrega la clase CSS para el estilo de selección
+            }
+        });
+
+        // Agrega un evento al botón "Modificar" para rellenar el modal con los datos de la fila seleccionada
+        btnModificar.addEventListener('click', () => {
+            // Si no hay ninguna fila seleccionada, muestra un mensaje de alerta y detiene el flujo
+            if (!selectedRow) {
+                alert('Por favor selecciona un cliente primero.');
+                return;
+            }
+
+            // Obtiene los valores de los atributos personalizados (dataset) de la fila seleccionada
+            const id = selectedRow.dataset.id;            // ID
+            const cedula = selectedRow.dataset.cedula;    // Cedula
+            const nombre = selectedRow.dataset.nombre;    // Nombre
+            const primerapellido = selectedRow.dataset.primerapellido;    // Apellido1
+            const segundoapellido = selectedRow.dataset.segundoapellido    // Apellido2
+            const correo = selectedRow.dataset.correo;      // Correo
+            const telefono = selectedRow.dataset.telefono;    // Telfono
+
+            // Asigna los valores obtenidos a los campos del formulario dentro del modal
+            document.getElementById('clienteId').value = id;
+            document.getElementById('Cedula').value = cedula;
+            document.getElementById('NombreCliente').value = nombre;
+            document.getElementById('PrimerApellidoCliente').value = primerapellido;
+            document.getElementById('SegundoApellidoCliente').value = segundoapellido;
+            document.getElementById('Correo').value = correo;
+            document.getElementById('Telefono').value = telefono;  // Campo de texto/numérico para el telefono
+
+        });
+    });
+</script>
+<script>
+    function filtrarTabla() {
+        // Obtén el texto ingresado en el campo de búsqueda y conviértelo a minúsculas para hacer la búsqueda insensible a mayúsculas/minúsculas.
+        const filtro = document.getElementById("BuscarProducto").value.toLowerCase();
+
+        // Obtén la referencia de la tabla donde se realizará el filtrado.
+        const tabla = document.getElementById("TablaProductos");
+
+        // Obtén todas las filas de la tabla (<tr>), incluyendo encabezados y datos.
+        const filas = tabla.getElementsByTagName("tr");
+
+        // Verifica si el checkbox "Nombre" está seleccionado (para filtrar solo por esa columna).
+        const filtrarPorNombre = document.getElementById("FiltroNombre").checked;
+
+        // Itera sobre todas las filas de la tabla, comenzando desde el índice 1 para saltar la fila de encabezado.
+        for (let i = 1; i < filas.length; i++) {
+            // Obtén todas las celdas (<td>) de la fila actual.
+            const celdas = filas[i].getElementsByTagName("td");
+
+            // Variable para determinar si esta fila debe mostrarse o no.
+            let mostrarFila = false;
+
+            // Si el checkbox "Nombre" está seleccionado:
+            if (filtrarPorNombre) {
+                // Verifica si el contenido de la celda en la columna 0 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true; // Marca esta fila para ser mostrada.
+                }
+            } else {
+                // Si el checkbox "Nombre" NO está seleccionado, busca el texto en todas las columnas de la fila.
+                for (let j = 0; j < celdas.length; j++) {
+                    // Verifica si la celda existe y contiene el texto buscado.
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true; // Marca esta fila para ser mostrada.
+                        break; // Detén la búsqueda en esta fila, ya que se encontró una coincidencia.
+                    }
+                }
+            }
+
+            // Si se encontró coincidencia (mostrarFila es true), muestra la fila; de lo contrario, ocúltala.
+            filas[i].style.display = mostrarFila ? "" : "none";
+        }
+    }
+</script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Obtener referencias a los elementos del DOM
+        const tableProductos = document.getElementById('TablaProductos');
+        const tableSeleccionados = document.getElementById('TablaSeleccionados').querySelector('tbody');
+        const btnSeleccionar = document.getElementById('btnSeleccionarProducto');
+        const btnEliminar = document.getElementById('btnEliminarProducto');
+        const subtotalInput = document.querySelector('.total-input'); // Subtotal input
+        const ivaInput = document.querySelectorAll('.total-input')[1]; // IVA input
+        const descuentoInput = document.querySelectorAll('.total-input')[2]; // Descuento input
+        const totalInput = document.querySelectorAll('.total-input')[3]; // Total input
+
+        // Variable para almacenar la fila seleccionada
+        let selectedRow = null;
+
+        // Función para actualizar los totales
+        const actualizarTotales = () => {
+            let subtotal = 0;
+            const filasSeleccionadas = [...tableSeleccionados.querySelectorAll('tr')];
+
+            // Sumar los precios totales de cada fila
+            filasSeleccionadas.forEach(row => {
+                const precioTotal = parseFloat(row.querySelector('.precio-total').innerText) || 0;
+                subtotal += precioTotal;
+            });
+
+            // Calcular IVA (13% en Costa Rica)
+            const iva = subtotal * 0.13;
+
+            // Obtener el descuento desde el input de descuento
+            const descuento = parseFloat(descuentoInput.value) || 0; // Si no se introduce un valor, tratamos el descuento como 0
+
+            // Calcular total
+            const total = subtotal + iva - descuento;
+
+            // Actualizar los campos
+            subtotalInput.value = subtotal.toFixed(2);
+            ivaInput.value = iva.toFixed(2);
+            descuentoInput.value = descuento.toFixed(2);
+            totalInput.value = total.toFixed(2);
+        };
+
+        // Seleccionar fila de la tabla de productos
+        tableProductos.addEventListener('click', (event) => {
+            const row = event.target.closest('tr');
+            if (row && row !== tableProductos.querySelector('thead tr')) {
+                if (selectedRow) selectedRow.classList.remove('table-active');
+                selectedRow = row;
+                selectedRow.classList.add('table-active');
+            }
+        });
+
+        // Transferir producto seleccionado a la tabla de productos seleccionados
+        btnSeleccionar.addEventListener('click', () => {
+            if (!selectedRow) {
+                alert('Por favor selecciona un producto primero.');
+                return;
+            }
+
+            const id = selectedRow.dataset.id;
+            const nombre = selectedRow.dataset.nombre;
+            const stock = parseFloat(selectedRow.dataset.stock) || 0;
+            const precio = parseFloat(selectedRow.dataset.precio) || 0;
+
+            if ([...tableSeleccionados.querySelectorAll('tr')].some(row => row.dataset.id === id)) {
+                alert('El producto ya está en la lista.');
+                return;
+            }
+
+            const nuevaFila = document.createElement('tr');
+            nuevaFila.dataset.id = id;
+            nuevaFila.innerHTML = `
+                <td>${nombre}</td>
+                <td><input type="number" class="form-control cantidad" value="1" min="1" max="${stock}" onchange="actualizarTotal(this)"></td>
+                <td>${precio.toFixed(2)}</td>
+                <td class="precio-total">${precio.toFixed(2)}</td>
+            `;
+
+            tableSeleccionados.appendChild(nuevaFila);
+            selectedRow.classList.remove('table-active');
+            selectedRow = null;
+
+            // Actualizar los totales
+            actualizarTotales();
+        });
+
+        // Eliminar producto seleccionado de la tabla de productos seleccionados
+        btnEliminar.addEventListener('click', () => {
+            if (!selectedRow) {
+                alert('Por favor selecciona un producto para eliminar.');
+                return;
+            }
+
+            const id = selectedRow.dataset.id;
+            const productoSeleccionado = [...tableSeleccionados.querySelectorAll('tr')].find(row => row.dataset.id === id);
+
+            if (productoSeleccionado) {
+                productoSeleccionado.remove();
+            }
+
+            selectedRow.classList.remove('table-active');
+            selectedRow = null;
+
+            // Actualizar los totales
+            actualizarTotales();
+        });
+
+        // Función para actualizar el precio total al cambiar la cantidad
+        window.actualizarTotal = (input) => {
+            const fila = input.closest('tr');
+            const cantidad = parseFloat(input.value) || 0;
+            const precioUnitario = parseFloat(fila.children[2].innerText) || 0;
+            fila.querySelector('.precio-total').innerText = (cantidad * precioUnitario).toFixed(2);
+
+            // Actualizar los totales
+            actualizarTotales();
+        };
+
+        // Agregar un evento de cambio para el descuento
+        descuentoInput.addEventListener('input', () => {
+            // Actualizamos los totales cuando el descuento se modifica
+            actualizarTotales();
+        });
+    });
+
+
+
+
+</script>

@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<FacturacionLabco_Models.Marca>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 @{
 
     Layout = null;
@@ -44,7 +47,7 @@
                 </li>
                 <!-- Opción Trabajadores -->
                 <li class="nav-item">
-                    <a asp-area="" asp-controller="Trabajadores" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Trabajador" asp-action="Index" class="d-flex align-items-center justify-content-center">
                         <i class="bi bi-people-fill"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Trabajador</span>
                     </a>
@@ -152,7 +155,7 @@
                                         <!-- Información del usuario -->
                                         <div class="d-flex align-items-center user-info">
                                             <i class="bi bi-person-fill me-2"></i>
-                                            <span class="user-name">Messi</span>
+                                            <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
                                         </div>
                                     </div>
                                     <div class="container-modal">
@@ -273,7 +276,7 @@
                                     <!-- Información del usuario -->
                                     <div class="d-flex align-items-center user-info">
                                         <i class="bi bi-person-fill me-2"></i>
-                                        <span class="user-name">Messi</span>
+                                        <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
                                     </div>
                                 </div>
                                 <div class="container-modal">

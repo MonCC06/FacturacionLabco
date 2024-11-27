@@ -1,0 +1,497 @@
+﻿@model IEnumerable<FacturacionLabco_Models.Producto>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+    var producto = Model;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/Producto.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous">
+<body>
+    <!-- Barra lateral -->
+    <div class="d-flex flex-column vh-100 p-3 bg-white shadow-sm menu">
+        <!-- Logo -->
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto justify-content-center">
+            <div class="logo">
+                <img src="~/Imagenes/labco.png" alt="LABCO Logo">
+            </div>
+        </a>
+        <hr>
+        <div class="container-fluid">
+            <!-- Menú de navegación -->
+            <ul class="nav nav-pills flex-column mb-auto">
+                <!-- Opción Factura -->
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="Factura" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-file-earmark-bar-graph"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Factura</span>
+                    </a>
+                </li>
+                <!-- Opción Cliente -->
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="Cliente" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-person-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Cliente</span>
+                    </a>
+                </li>
+                <!-- Opción Trabajadores -->
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="Trabajador" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Trabajador</span>
+                    </a>
+                </li>
+                <!-- Opción Vehículo -->
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="Vehiculo" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-car-front-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Vehículo</span>
+                    </a>
+                </li>
+
+                <!-- Opción Marca -->
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="Marca" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-substack"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Marca</span>
+                    </a>
+                </li>
+                <!-- Opción Productos -->
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="Producto" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-clipboard-check-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Productos</span>
+                    </a>
+                </li>
+                <!-- Opción Logout -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#ModalMensajeAdvertencia">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Logout</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- Modal Mensaje Advertencia -->
+            <div class="modal " id="ModalMensajeAdvertencia" tabindex="-1" aria-labelledby="ModalMensajeAdvertencia"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="container-modal1 text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#771019" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0
+                                                .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <h5 class="text-custom1">¿Desea Realizar la acción?</h5>
+                                    </div>
+                                </div>
+                                <!-- Formulario de logout -->
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button class="btn btn-light d-flex align-items-center justify-content-center"
+                                                    type="submit">
+                                                Confirmar
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid container-custom">
+        <div class="row mb-4">
+            <div class="encabezado justify-content-between">
+                <!-- Título -->
+                <h1 class="modal-title fs-5">Agregar Producto</h1>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-8">
+                <div class="d-flex align-items-center">
+                    <div class="form-check me-3">
+                        <input class="form-check-input" type="radio" name="FiltroNombre" id="FiltroNombre" value="nombre">
+                        <label class="form-check-label" for="FiltroNombre">
+                            Nombre
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-4">
+                </div>
+                <input type="text" id="BuscarProducto" class="form-control" placeholder="Buscar Producto" onkeyup="filtrarTabla()">
+            </div>
+            <div class="col-12 col-md-3 text-start mt-5">
+                <div class="modal fade" id="ModalProducto" tabindex="-1" aria-labelledby="ModalProducto" style="display: none;"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="d-flex">
+                                    <div class="volver">
+                                        <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                            </svg>
+                                            <h1 class="modal-title fs-5" id="ModalClienteTitulo">Agregar Producto</h1>
+                                        </button>
+                                    </div>
+                                    <div class="d-flex align-items-center user-info">
+                                        <i class="bi bi-person-fill me-2"></i>
+                                        <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
+                                    </div>
+                                </div>
+                                <div class="container-modal">
+                                    <form asp-controller="Producto" asp-action="Crear" method="post">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <h5>Datos del Producto</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Descripcion_Producto">Nombre</label>
+                                            </div>
+                                            <div class="col-8">
+                                                <input name="Descripcion_Producto" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Stock_Producto">Stock</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="Stock_Producto" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 text-start">
+                                                <label for="Precio_Producto">Precio</label>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <input name="Precio_Producto" class="form-control" placeholder="Ingrese aquí" required>
+                                            </div>
+                                        </div>
+                                        <div class="row botones">
+                                            <div class="col-6 d-flex justify-content-end">
+                                                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                    Anular
+                                                </button>
+                                            </div>
+                                            <div class="col-6 d-flex">
+                                                <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
+                                                    Guardar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-success btn-mt-3" type="button" data-bs-toggle="modal" data-bs-target="#ModalProducto">Crear +</button>
+            </div>
+
+            <div class="modal fade" id="ModalEliminarProducto" tabindex="-1" aria-labelledby="ModalEliminar" style="display: none;"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="d-flex">
+                            </div>
+                            <div class="container-modal1 text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <form asp-controller="Producto" id="formEliminar" asp-action="Eliminar" method="post">
+                                    <input type="hidden" id="ProductoId" name="Id_Producto" value="" />
+                                </form>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <h5 class="text-custom1">¿Desea eliminar el producto seleccionado?</h5>
+                                    </div>
+                                </div>
+                                <div class="row botones">
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                data-bs-dismiss="modal" form="formEliminar" aria-label="Close">
+                                            Confirmar
+                                        </button>
+                                    </div>
+
+                                    <div class="col-6 d-flex">
+                                        <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                data-bs-dismiss="modal" aria-label="Close">
+                                            Anular
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (Model.Any())
+        {
+            <div class="table-responsive ">
+                <table class="table table-bordered table-hover table-custom" id="TablaProductos">
+                    <thead>
+                        <tr>
+                            <th class="text-nowrap">Nombre</th>
+                            <th class="text-nowrap">Stock</th>
+                            <th class="text-nowrap">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr data-id="@item.Id_Producto" data-nombre="@item.Descripcion_Producto" data-stock="@item.Stock_Producto" data-precio="@item.Precio_Producto" onclick="seleccionarFila(this)">
+                                <td class="Nombre">@item.Descripcion_Producto</td>
+                                <td class="Stock">@item.Stock_Producto</td>
+                                <td class="Precio">@item.Precio_Producto</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <p>No hay registro de productos</p>
+        }
+
+        <div class="col-12 col-md-3 text-start mt-5">
+            <div class="modal fade" id="ModalModificarProducto" tabindex="-1" aria-labelledby="ModalModificarProducto" style="display: none;"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="d-flex">
+                                <div class="volver">
+                                    <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                        </svg>
+                                        <h1 class="modal-title fs-5" id="ModalModificarProducto">Editar Producto</h1>
+                                    </button>
+                                </div>
+                                <div class="d-flex align-items-center user-info">
+                                    <i class="bi bi-person-fill me-2"></i>
+                                    <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
+                                </div>
+                            </div>
+                            <div class="container-modal">
+                                <form asp-controller="Producto" asp-action="Editar" method="post">
+                                    <input type="hidden" id="productoId" name="Id_Producto" value="" />
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <h5>Datos del Producto</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <label for="Descripcion_Producto">Nombre</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <input id="Descripcion_Producto" name="Descripcion_Producto" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <label for="Stock_Producto">Stock</label>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <input id="Stock_Producto" name="Stock_Producto" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-start">
+                                            <label for="Precio_Producto">Precio</label>
+                                        </div>
+                                        <div class="col-8 text-end">
+                                            <input id="Precio_Producto" name="Precio_Producto" class="form-control" placeholder="Ingrese aquí" required>
+                                        </div>
+                                    </div>
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
+                                                Guardar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 text-end">
+            <div class="actions d-flex justify-content-start">
+                <button class="btn btn-custom" type="button" id="btnModificarProducto" data-bs-toggle="modal" data-bs-target="#ModalModificarProducto">Modificar</button>
+                <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarProducto">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+<script>
+    function filtrarTabla() {
+        // Obtén el texto ingresado en el campo de búsqueda y conviértelo a minúsculas para hacer la búsqueda insensible a mayúsculas/minúsculas.
+        const filtro = document.getElementById("BuscarProducto").value.toLowerCase();
+
+        // Obtén la referencia de la tabla donde se realizará el filtrado.
+        const tabla = document.getElementById("TablaProductos");
+
+        // Obtén todas las filas de la tabla (<tr>), incluyendo encabezados y datos.
+        const filas = tabla.getElementsByTagName("tr");
+
+        // Verifica si el checkbox "Nombre" está seleccionado (para filtrar solo por esa columna).
+        const filtrarPorNombre = document.getElementById("FiltroNombre").checked;
+
+        // Itera sobre todas las filas de la tabla, comenzando desde el índice 1 para saltar la fila de encabezado.
+        for (let i = 1; i < filas.length; i++) {
+            // Obtén todas las celdas (<td>) de la fila actual.
+            const celdas = filas[i].getElementsByTagName("td");
+
+            // Variable para determinar si esta fila debe mostrarse o no.
+            let mostrarFila = false;
+
+            // Si el checkbox "Nombre" está seleccionado:
+            if (filtrarPorNombre) {
+                // Verifica si el contenido de la celda en la columna 0 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true; // Marca esta fila para ser mostrada.
+                }
+            } else {
+                // Si el checkbox "Nombre" NO está seleccionado, busca el texto en todas las columnas de la fila.
+                for (let j = 0; j < celdas.length; j++) {
+                    // Verifica si la celda existe y contiene el texto buscado.
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true; // Marca esta fila para ser mostrada.
+                        break; // Detén la búsqueda en esta fila, ya que se encontró una coincidencia.
+                    }
+                }
+            }
+
+            // Si se encontró coincidencia (mostrarFila es true), muestra la fila; de lo contrario, ocúltala.
+            filas[i].style.display = mostrarFila ? "" : "none";
+        }
+    }
+</script>
+
+
+<script>
+    // Espera a que todo el DOM se cargue completamente antes de ejecutar el script
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Obtiene la referencia de la tabla de productos
+        const table = document.getElementById('TablaProductos');
+        // Obtiene la referencia del botón que abre el modal para modificar productos
+        const btnModificar = document.getElementById('btnModificarProducto');
+
+        // Variable para almacenar la fila seleccionada actualmente
+        let selectedRow = null;
+
+        // Agrega un evento de clic a la tabla para detectar cuando se selecciona una fila
+        table.addEventListener('click', (event) => {
+            // Obtiene la fila (<tr>) más cercana al elemento que fue clickeado
+            const row = event.target.closest('tr');
+
+            // Si se clickea una fila válida (no nula)
+            if (row) {
+                // Si ya hay una fila seleccionada previamente, remueve el estilo de selección
+                if (selectedRow) {
+                    selectedRow.classList.remove('table-active');
+                }
+
+                // Marca la fila clickeada como seleccionada
+                selectedRow = row;
+                selectedRow.classList.add('table-active'); // Agrega la clase CSS para el estilo de selección
+            }
+        });
+
+        // Agrega un evento al botón "Modificar" para rellenar el modal con los datos de la fila seleccionada
+        btnModificar.addEventListener('click', () => {
+            // Si no hay ninguna fila seleccionada, muestra un mensaje de alerta y detiene el flujo
+            if (!selectedRow) {
+                alert('Por favor selecciona un producto primero.');
+                return;
+            }
+
+            // Obtiene los valores de los atributos personalizados (dataset) de la fila seleccionada
+            const id = selectedRow.dataset.id;            // ID del producto
+            const nombre = selectedRow.dataset.nombre;    // Nombre del producto
+            const stock = selectedRow.dataset.stock;      // Stock del producto
+            const precio = selectedRow.dataset.precio;    // Precio del producto
+
+            // Asigna los valores obtenidos a los campos del formulario dentro del modal
+            document.getElementById('productoId').value = id; // Campo oculto para el ID
+            document.getElementById('Descripcion_Producto').value = nombre; // Campo de texto para el nombre
+            document.getElementById('Stock_Producto').value = stock;        // Campo de texto/numérico para el stock
+            document.getElementById('Precio_Producto').value = precio;      // Campo de texto/numérico para el precio
+        });
+    });
+</script>
+<script>
+    function seleccionarFila(fila) {
+        // Obtén el Id desde el atributo data-id de la fila
+        var id = fila.getAttribute("data-id");
+
+        // Muestra el modal de confirmación
+
+        // Configura el input oculto en el modal para enviar el Id al backend
+        document.getElementById("ProductoId").value = id;
+    }
+</script>

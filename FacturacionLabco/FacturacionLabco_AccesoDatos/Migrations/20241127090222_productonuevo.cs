@@ -5,7 +5,7 @@
 namespace FacturacionLabco_AccesoDatos.Migrations
 {
     /// <inheritdoc />
-    public partial class detalle : Migration
+    public partial class productonuevo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

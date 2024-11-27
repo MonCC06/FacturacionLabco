@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FacturacionLabco_AccesoDatos.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20241102032555_producto")]
-    partial class producto
+    [Migration("20241127090222_productonuevo")]
+    partial class productonuevo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.20")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -119,6 +119,9 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.Property<int>("TrabajadorID")
                         .HasColumnType("int");
 
+                    b.Property<int>("VehiculoID")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ClienteID");
@@ -126,6 +129,8 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.HasIndex("DetalleID");
 
                     b.HasIndex("TrabajadorID");
+
+                    b.HasIndex("VehiculoID");
 
                     b.ToTable("factura");
                 });
@@ -165,9 +170,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.Property<float>("Stock_Producto")
                         .HasColumnType("real");
 
-                    b.Property<int>("TipoProductoServicio")
-                        .HasColumnType("int");
-
                     b.HasKey("Id_Producto");
 
                     b.ToTable("producto");
@@ -190,6 +192,14 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PrimerApellido")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SegundoApellido")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -313,7 +323,8 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -367,7 +378,7 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
                     b.ToTable("AspNetUsers", (string)null);
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+                    b.HasDiscriminator().HasValue("IdentityUser");
 
                     b.UseTphMappingStrategy();
                 });
@@ -495,11 +506,19 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("FacturacionLabco_Models.Vehiculo", "Vehiculo")
+                        .WithMany()
+                        .HasForeignKey("VehiculoID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Cliente");
 
                     b.Navigation("Detalle");
 
                     b.Navigation("Trabajador");
+
+                    b.Navigation("Vehiculo");
                 });
 
             modelBuilder.Entity("FacturacionLabco_Models.Vehiculo", b =>

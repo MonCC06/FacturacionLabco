@@ -190,6 +190,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dylan Pereira/source/FacturacionLabco/FacturacionLabco/FacturacionLabco/Views/Factura/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dylan Pereira/source/FacturacionLabco/FacturacionLabco/FacturacionLabco/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -200,6 +204,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Dylan Pereira/source/FacturacionLabco/FacturacionLabco/FacturacionLabco/Views/Marca/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dylan Pereira/source/FacturacionLabco/FacturacionLabco/FacturacionLabco/Views/Producto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dylan Pereira/source/FacturacionLabco/FacturacionLabco/FacturacionLabco/Views/Shared/Error.cshtml]
@@ -216,6 +224,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Dylan Pereira/source/FacturacionLabco/FacturacionLabco/FacturacionLabco/Views/Trabajador/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhYmFqYWRvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dylan Pereira/source/FacturacionLabco/FacturacionLabco/FacturacionLabco/Views/Vehiculo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dylan Pereira/source/FacturacionLabco/FacturacionLabco/FacturacionLabco/Views/_ViewImports.cshtml]

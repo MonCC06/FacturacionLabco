@@ -14,16 +14,24 @@ namespace FacturacionLabco.Controllers
     {
 
         private readonly IVehiculoRepositorio _vehRepo;
+        private readonly IMarcaRepositorio _marRepo;
+        private readonly IClienteRepositorio _cliRepo;
 
-        public VehiculoController(IVehiculoRepositorio vehRepo)//recibe nuestro contexto de BD
+        public VehiculoController(IVehiculoRepositorio vehRepo, IMarcaRepositorio marRepo, IClienteRepositorio cliRepo)//recibe nuestro contexto de BD
         {
             //    _db = db;
             _vehRepo = vehRepo;
+            _marRepo = marRepo;
+            _cliRepo = cliRepo;
 
         }
         public IActionResult Index()
         {
-            IEnumerable<Vehiculo> lista = _vehRepo.ObtenerTodos(incluirPropiedades: "Cliente,Marca");
+            IEnumerable<Vehiculo> lista = _vehRepo.ObtenerTodos(incluirPropiedades: "Marca,Cliente");
+            
+            IEnumerable<Cliente> listacliente = _cliRepo.GetClienteList();
+
+            ViewBag.Clientes = listacliente;
 
             return View(lista);
         }

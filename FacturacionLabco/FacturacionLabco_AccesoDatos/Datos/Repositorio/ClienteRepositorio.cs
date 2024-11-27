@@ -34,5 +34,10 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
                 tipoAnterior.Telefono = cliente.Telefono;
             }
         }
+
+        public IEnumerable<Cliente> GetClienteList()
+        {
+            return _db.cliente;
+        }
     }
 }

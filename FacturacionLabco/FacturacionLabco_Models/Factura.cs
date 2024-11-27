@@ -29,13 +29,13 @@ namespace FacturacionLabco_Models
         [Required(ErrorMessage = "Total de la factura es obligatorio")]
         public DateTime Fecha { get; set; }
 
+        [Required(ErrorMessage = "Nota de la factura es obligatoria")]
+        public string Nota { get; set; }
+
+        [Required(ErrorMessage = "Nota interna de la factura es obligatoria")]
+        public string Nota_Interna { get; set; }
+
         //Foreing key
-
-        public int DetalleID { get; set; }
-
-        [ForeignKey("DetalleID")]
-        public virtual Detalle? Detalle { get; set; }
-
 
         public int TrabajadorID { get; set; }
 

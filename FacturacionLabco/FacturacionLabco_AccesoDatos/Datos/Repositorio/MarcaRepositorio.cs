@@ -27,5 +27,9 @@ namespace FacturacionLabco_AccesoDatos.Datos
                 catAnterior.Nombre_Marca = marca.Nombre_Marca;
             }
         }
+        public IEnumerable<Marca> GetMarcaList()
+        {
+            return _db.Marca;
+        }
     }
 }

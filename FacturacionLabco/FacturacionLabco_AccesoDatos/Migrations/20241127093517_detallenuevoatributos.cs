@@ -5,46 +5,45 @@
 namespace FacturacionLabco_AccesoDatos.Migrations
 {
     /// <inheritdoc />
-    public partial class factura : Migration
+    public partial class detallenuevoatributos : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "VehiculoID",
-                table: "factura",
+                name: "FacturaID",
+                table: "detalle",
                 type: "int",
                 nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.CreateIndex(
-                name: "IX_factura_VehiculoID",
-                table: "factura",
-                column: "VehiculoID");
+                name: "IX_detalle_FacturaID",
+                table: "detalle",
+                column: "FacturaID");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_factura_vehiculo_VehiculoID",
-                table: "factura",
-                column: "VehiculoID",
-                principalTable: "vehiculo",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                name: "FK_detalle_FacturaID",
+                table: "detalle",
+                column: "FacturaID",
+                principalTable: "factura",
+                principalColumn: "Id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_factura_vehiculo_VehiculoID",
-                table: "factura");
+                name: "FK_detalle_factura_FacturaID",
+                table: "detalle");
 
             migrationBuilder.DropIndex(
-                name: "IX_factura_VehiculoID",
-                table: "factura");
+                name: "IX_detalle_FacturaID",
+                table: "detalle");
 
             migrationBuilder.DropColumn(
-                name: "VehiculoID",
-                table: "factura");
+                name: "FacturaID",
+                table: "detalle");
         }
     }
 }

@@ -1,0 +1,740 @@
+
+.menu {
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1; /* Hace que el menú ocupe el espacio disponible */
+    width: 20%; /* La barra ocupará el 20% del ancho del viewport */
+    max-width: 250px; /* Límite superior de ancho */
+    min-width: 150px; /* Límite inferior de ancho */
+
+    position: fixed !important; 
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
+  
+}
+.menu li {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.menu li a:hover {
+  background-color: #035928;
+  color: #ffffff;
+}
+
+.menu li a svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  fill: #000000;
+}
+
+.menu li a:hover svg {
+  fill: #ffffff;
+}
+.logo img {
+  max-width: 100%; /* Ajusta el ancho al tamaño del contenedor */
+  height: auto; /* Mantiene la proporción del logo */
+}
+.logo {
+  display: flex; /* Asegura flexibilidad */
+  justify-content: center; /* Centra el logo horizontalmente */
+  align-items: center; /* Centra el logo verticalmente */
+  max-width: 100%; /* No supera el tamaño del contenedor */
+}
+
+
+/* Barra*/
+
+/* Reset de márgenes y paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.barra {
+  width: 259px;
+}
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+.sidebar {
+  width: 250px; /* Ancho de la barra lateral */
+  background-color: #fff; /* Color de fondo de la barra lateral */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra de la barra lateral */
+  position: fixed; /* Posición fija */
+  height: 100vh; /* Altura de la barra lateral */
+  overflow-y: auto; /* Desplazamiento vertical si es necesario */
+}
+.container-custom {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+
+ 
+}
+.container-custom2{
+  margin-left: 230px !important;
+  padding: 20px;
+}
+
+/* Cuando el ancho de la pantalla sea menor a 768px (por ejemplo, tablets y móviles) */
+@media (max-width: 768px) {
+  .container-custom2 {
+    margin-left: 0; /* Reduce el margen para pantallas pequeñas */
+  }
+}
+
+/* Cuando el ancho de la pantalla sea menor a 576px (móviles más pequeños) */
+@media (max-width: 576px) {
+  .container-custom2 {
+    margin-left: 0; /* Sin margen en pantallas muy pequeñas */
+    margin-top: 10px; /* Opcional: ajusta el margen superior */
+  }
+}
+
+.container-modal1{
+  background-color: #F1E3E2;
+  max-width: 1030px !important;
+   margin-left: 10px; /* Espacio para la barra lateral */
+   margin-right: 10px !important;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-top: 20px; /* Margen superior */
+ 
+ }
+ 
+ .container-modal2{
+   background-color: #DDEEE4;
+   max-width: 1030px !important;
+    margin-left: 10px; /* Espacio para la barra lateral */
+    margin-right: 10px !important;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Margen superior */
+  
+  }
+
+.btn-custom {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 120px !important;
+  background-color: #035928 !important;
+  color: #ffffff !important; /* Texto blanco al pasar el cursor */
+  border: none; /* Eliminar el borde */
+
+}
+.btn-custom2 {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 120px !important;
+  color: #ffffff !important; /* Color del texto en blanco */
+  background-color: #77221d !important; /* Fuerza el color de fondo rojo */
+  border: none;
+
+}
+.btn-custom3{
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 120px !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: none; /* Eliminar el borde */
+
+}
+.btn-custom3:hover {
+  background-color: #035928 !important;
+  color: #ffffff !important; 
+  border: none; 
+}
+.text-custom1{
+  color: #000000;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.user-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.user-name {
+  margin-left: 10px;
+  color: black;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.table-custom {
+  margin-top: 20px;
+  background-color: white;
+}
+.text-nowrap{
+  width: 16%;
+}
+.btn-success {
+  border-radius: 120px !important;
+  background-color: #035928 !important;
+  transform: none; /* Evita que cambie el tamaño */
+  border:none;
+}
+.nav-item{
+  justify-items: start;
+}
+
+/*---------------------------------------------------- Factura------------------------------------------------------------ */
+.text-green {
+  color: #035928;
+}
+
+/* Estilo al pasar el cursor por encima */
+.btn-gris:hover {
+  background-color: #a0a0a0; /* Color gris más oscuro al hacer hover */
+  border: none;
+}
+.bg-gray {
+  background-color: #f2f2f2;
+}
+.form-select, .form-control {
+  width: 100%;
+}
+
+/* --------------------------------------VEHICULO------------------------------------------ */
+
+.bg-light {
+  background-color: #f2f2f2; /* Color de fondo */
+}
+
+
+.form-check-input:checked {
+  background-color: #035928; /* Color del switch cuando está activado */
+}
+
+.table-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead {
+  background-color: #f3f3f3;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+}
+
+button {
+  background-color: #035928;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.footer p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+textarea {
+  width: 60%;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  resize: none;
+}
+
+.totals {
+  width: 35%;
+}
+
+.totals div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.totals input {
+  width: 120px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+
+/*--------------------------------------------------------- Estilo para botones ----------------------------------------------------*/
+
+/* Contenedor de los botones Gaurdar, Anular, Imprimir */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.botones {
+  margin-top: 30px !important;
+  margin-bottom: 5px !important;
+}
+
+
+/* Botón circular*/
+.btn-circle {
+  border: none;
+  background-color: #fff;
+  color: #035928;
+  border-radius: 50%; /* Hace el botón circular */
+  width: 25px;
+  height: 25px;
+  font-size: 1.2rem; /* Ajusta el tamaño del símbolo + */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Cambia el puntero al pasar sobre el botón */
+  margin-left: 10px; /* Espacio entre el texto "Producto" y el botón */
+}
+
+.btn-circle span {
+  font-weight: bold; /* Aumenta el peso del símbolo + */
+  border: none;
+}
+
+/* Estilo para el botón en hover */
+.btn-circle:hover {
+  background-color: #035928; /* Fondo verde */
+  color: white; /* Cambia el color del texto a blanco */
+  border: none;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Botón "Anular" */
+.btn-anular {
+  color: #77221d !important;
+  background-color: white !important;
+  width: 100px;
+  border-radius: 120px !important;
+  height: 30px;
+  border: none;
+}
+
+.btn-anular:hover {
+  background-color: #77221d !important;
+  color: white !important;
+  border: none;
+}
+
+.btn-anular:active {
+  background-color: #77221d !important;
+  color: #cccccc !important;
+  border: none;
+}
+
+/* Botón "Guardar" */
+.btn-light {
+  background-color: white !important;
+  width: 100px;
+  border-radius: 120px !important;
+  height: 30px;
+  border: none;
+}
+
+.btn-light:hover {
+  background-color: #035928 !important;
+  color: white !important;
+  border: none;
+}
+
+.btn-light:active {
+  background-color: #034b22 !important;
+  color: #cccccc !important;
+  border: none;
+}
+
+/* Botón "Imprimir" */
+.btn-print {
+  color: #0056b3 !important; /* Azul para el texto */
+  background-color: white !important;
+  width: 100px;
+  border-radius: 120px !important;
+  height: 30px;
+  border: 1px solid #0056b3; /* Borde azul */
+  text-align: center;
+  line-height: 30px;
+  border: none;
+}
+
+.btn-print:hover {
+  background-color: #0056b3 !important;
+  color: white !important;
+  border: none;
+}
+
+.btn-print:active {
+  background-color: #004494 !important;
+  color: #cccccc !important;
+  border: none;
+}
+
+
+/*--------------------------------------------------------- Tabla ----------------------------------------------------*/
+
+
+.row {
+  color: #035928;
+  margin-bottom: 20px;
+}
+
+.col-3 {
+  color: black !important;
+}
+
+.container-tabla{
+  background-color: #f2f2f2;
+}
+
+.container-tabla {
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.table-custom th {
+  background-color: #035928;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+.table-custom td {
+  padding: 10px;
+  border: 1px solid #dddddd;
+}
+
+.table-custom th:first-child,
+.table-custom td:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 0;
+}
+
+.table-custom th:last-child,
+.table-custom td:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 0;
+}
+/*--------------------------------------------------------- Onservaciones y Totales ----------------------------------------------------*/
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+textarea {
+  width: 60%;
+  height: 100px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+  font-size: 14px;
+  background-color: #f2f2f2;
+}
+
+.totals {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.totals div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totals span {
+  font-weight: bold;
+  color: #000000;
+}
+
+.totals input {
+  width: 50%;
+  padding: 5px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  text-align: right;
+}
+
+
+/* Contenedor de Totales */
+.custom-totals-container {
+  background-color: white;     /* Fondo blanco */
+  border-radius: 10px;         /* Bordes redondeados */
+  padding: 20px;               /* Espaciado interno */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  border: 1px solid #ddd;      /* Borde sutil */
+  width: 95%;                  /* Hace el contenedor más largo */
+
+}
+
+/* Inputs de Totales */
+.total-input {
+  width: 90%;                  /* inputs más largos */
+  background-color: #f2f2f2;   /* Fondo gris  */
+  border-radius: 8px;          /* Bordes redondeados */
+  border: 1px solid #ccc;      /* Borde gris */
+  padding: 8px;                /* Espaciado interno */
+  
+  font-size: 12px;             /* Tamaño del texto */
+  box-sizing: border-box;      /* padding y borde en el ancho total */
+}
+
+.totals span {
+  margin-right: 10px;          /* Espacio entre el texto y el input */
+}
+
+input{
+  border-radius: 20pc !important;
+}
+
+
+
+/* Estilo hover */
+.btn-outline-secondary:hover {
+  background-color: #035928 !important; /* Fondo verde oscuro */
+  color: #ffffff !important; /* Texto blanco */
+  border: none;
+}
+
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dddddd;
+  border-radius: 20pc; /* Bordes redondeados */
+  overflow: hidden; /* Asegura que los bordes redondeados se apliquen a todos los elementos internos */
+  background-color: #ffffff;
+}
+
+/* Estilo del input */
+.input-group .form-control {
+  border: none; /* Sin borde adicional */
+  border-radius: 0; /* Sin bordes individuales */
+  padding: 10px;
+  flex: 1; /* Ocupa todo el espacio disponible */
+  outline: none; /* Sin borde al hacer clic */
+}
+
+
+/* Estilo del botón */
+.btn-outline-secondary {
+  background-color: #035928 !important; /* Fondo verde */
+  color: #ffffff !important; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 5px 11px; /* Tamaño pequeño */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  margin-left: 20px;
+}
+
+.btn-outline-secondary .fas {
+  font-size: 16px; /* Tamaño del icono más pequeño */
+}
+
+/* Si es un botón dentro de un input-group */
+.input-group .btn-inside-input {
+  background-color: #ffffff; /* Fondo blanco */
+  color: #000000; /* Texto negro */
+  border: none; /* Sin borde */
+  padding: 5px 11px; /* Tamaño pequeño */
+  cursor: pointer; /* Cambia el cursor al pasar */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  margin-left: 20px;
+}
+
+
+
+
+.producto.boton {
+  display: flex; /* Alinea el texto y el botón en la misma línea */
+  align-items: center; /* Centra verticalmente ambos elementos */
+  gap: 10px; /* Añade espacio entre el texto y el botón */
+}
+
+.producto.boton span {
+  flex-shrink: 0; /* Evita que el texto se reduzca */
+}
+
+
+.form-check-label {
+  font-size: 14px; /* Tamaño de texto uniforme */
+  color: #035928; /* Mismo color para ambos */
+}
+
+.form-check-input {
+  margin: 0; /* Elimina márgenes inconsistentes */
+  accent-color: #035928; /* Asegura un color personalizado en los radios */
+}
+
+.btn-custom {
+  background-color: #ffffff; /* Fondo blanco natural */
+  border: 1px solid #035928; /* Borde verde sutil */
+  color: #035928; /* Texto verde */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 14px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+.btn-custom:hover {
+  background-color: #035928; /* Fondo verde al pasar el cursor */
+  color: #ffffff; /* Texto blanco al pasar el cursor */
+  border: none; /* Sin borde */
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  border-radius: 2pc;
+  padding: 5px 10px;
+  border:none;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 20px;
+  color: #035928; 
+}
+
+.borde{
+  border-radius: 10px;
+}
+ .custom-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 20px auto;
+  width: 100%;
+  height: auto; /* Mantén la altura automática */
+  min-height: 120vh; /* Incrementa la altura mínima al 120% de la vista */
+  justify-content: center; /* Centra los hijos horizontalmente */
+  align-items: center; /* Centra los hijos verticalmente */
+}
+
+.btn-BuscarFactura{
+  margin-right: 40px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border-radius: 120px !important;
+  background-color: #f0f0f0 !important;
+  color: #000000;
+  border: none; /* Eliminar el borde */
+
+}
+.btn-BuscarFactura:hover {
+  background-color: #035928 !important; /* Fondo verde al pasar el cursor */
+  color: #ffffff !important; /* Texto blanco al pasar el cursor */
+  border: none; /* Sin borde */
+}
+.container-modal {
+  max-width: 1030px !important;
+  margin-left: 10px; /* Espacio para la barra lateral */
+  margin-right: 10px !important;
+  background-color: #F0F0F0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px; /* Margen superior */
+}
+.titulo {
+  display: flex;
+  align-items: center;
+  color: #035928;
+  border-radius: 2pc;
+  padding: 5px 10px;
+  cursor: pointer; /* Cambia el cursor a una manita */
+  border:none;
+  margin-top: 10px;
+  margin-left: 40px;
+}

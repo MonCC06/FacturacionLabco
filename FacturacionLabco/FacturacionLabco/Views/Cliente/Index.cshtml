@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<FacturacionLabco_Models.Cliente>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 @{
     Layout = null;
 }
@@ -163,7 +166,7 @@
                       <!-- Información del usuario -->
                       <div class="d-flex align-items-center user-info">
                         <i class="bi bi-person-fill me-2"></i>
-                        <span class="user-name">Messi</span>
+                           <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
                       </div>
                   </div>
                 <div class="container-modal">
@@ -363,7 +366,7 @@
                                     <!-- Información del usuario -->
                                     <div class="d-flex align-items-center user-info">
                                         <i class="bi bi-person-fill me-2"></i>
-                                        <span class="user-name">Messi</span>
+                                        <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
                                     </div>
                                 </div>
                         <div class="container-modal">

@@ -12,6 +12,6 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
     {
         void Actualizar(Producto producto);
 
-
+        IEnumerable<Producto> GetProductoList();
     }
 }
