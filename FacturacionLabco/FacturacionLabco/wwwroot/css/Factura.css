@@ -25,6 +25,31 @@
   border-radius: 5px;
 }
 
+@media print {
+
+    /* Oculta la sección de notas durante la impresión */
+    .Notas {
+        display: none;
+    }
+
+    /* Oculta la barra lateral (y sus elementos internos) durante la impresión */
+    .menu, .menu * {
+        display: none !important; /* El uso de !important asegura que esta regla se aplique incluso si existen otras reglas más específicas */
+    }
+
+    /* Oculta el menú de impresión (y sus elementos internos) durante la impresión */
+    #menu-imprimir, #menu-imprimir * {
+        display: none !important; /* Al igual que la regla anterior, se asegura que el menú de impresión no se muestre durante la impresión */
+    }
+}
+
+
+
+
+
+
+
+
 .menu li a:hover {
   background-color: #035928;
   color: #ffffff;

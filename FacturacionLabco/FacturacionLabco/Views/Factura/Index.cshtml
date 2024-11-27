@@ -288,7 +288,7 @@
 
           <div><span>Sub-total</span><input type="text" readonly class="form-control total-input"></div>
           <div><span>IVA</span><input type="text" readonly class="form-control total-input"></div>
-          <div><span>Descuento</span><input type="text" readonly class="form-control total-input"></div>
+          <div><span>Descuento</span><input type="number" class="form-control total-input" min="0" value="0"></div>
           <div><span>Total</span><input type="text" readonly class="form-control total-input"></div>
         </div>
       </div>
@@ -303,7 +303,7 @@
           <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">Anular</button>
         </div>
         <div class="col d-flex justify-content-center">
-          <button type="button" class="btn btn-print d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">Imprimir</button>
+          <button type="button" onclick="window.print()" class="btn btn-print d-flex align-items-center justify-content-center" data-bs-dismiss="modal">Imprimir</button>
         </div>
       </div>
     </div>
@@ -601,7 +601,7 @@
           <!-- Acciones -->
           <div class="col-12 text-end">
             <div class="actions d-flex justify-content-start">
-              <button class="btn btn-custom" type="button" id="btnCargarCliente">Modificar</button>
+              <button class="btn btn-custom" type="button" id="btnCargarCliente">Seleccionar</button>
               <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarCliente">Eliminar</button>
             </div>
           </div>
@@ -1034,7 +1034,7 @@
           <div class="col-12 text-end">
             <div class="actions d-flex justify-content-start">
               <button class="btn btn-custom" type="button" id="btnSeleccionarProducto" >Seleccionar</button>
-              <button class="btn btn-custom2" type="button" data-bs-toggle="modal" aria-label="close">Eliminar</button>
+                
             </div>
           </div>
         </div>
@@ -1223,6 +1223,7 @@
     }
 
 </script>
+
 <script>
     // Espera a que todo el DOM se cargue completamente antes de ejecutar el script
     document.addEventListener('DOMContentLoaded', () => {
@@ -1327,16 +1328,52 @@
     }
 </script>
 <script>
+
     document.addEventListener('DOMContentLoaded', () => {
+        // Obtener referencias a los elementos del DOM
         const tableProductos = document.getElementById('TablaProductos');
         const tableSeleccionados = document.getElementById('TablaSeleccionados').querySelector('tbody');
         const btnSeleccionar = document.getElementById('btnSeleccionarProducto');
+        const btnEliminar = document.getElementById('btnEliminarProducto');
+        const subtotalInput = document.querySelector('.total-input'); // Subtotal input
+        const ivaInput = document.querySelectorAll('.total-input')[1]; // IVA input
+        const descuentoInput = document.querySelectorAll('.total-input')[2]; // Descuento input
+        const totalInput = document.querySelectorAll('.total-input')[3]; // Total input
+
+        // Variable para almacenar la fila seleccionada
         let selectedRow = null;
+
+        // Función para actualizar los totales
+        const actualizarTotales = () => {
+            let subtotal = 0;
+            const filasSeleccionadas = [...tableSeleccionados.querySelectorAll('tr')];
+
+            // Sumar los precios totales de cada fila
+            filasSeleccionadas.forEach(row => {
+                const precioTotal = parseFloat(row.querySelector('.precio-total').innerText) || 0;
+                subtotal += precioTotal;
+            });
+
+            // Calcular IVA (13% en Costa Rica)
+            const iva = subtotal * 0.13;
+
+            // Obtener el descuento desde el input de descuento
+            const descuento = parseFloat(descuentoInput.value) || 0; // Si no se introduce un valor, tratamos el descuento como 0
+
+            // Calcular total
+            const total = subtotal + iva - descuento;
+
+            // Actualizar los campos
+            subtotalInput.value = subtotal.toFixed(2);
+            ivaInput.value = iva.toFixed(2);
+            descuentoInput.value = descuento.toFixed(2);
+            totalInput.value = total.toFixed(2);
+        };
 
         // Seleccionar fila de la tabla de productos
         tableProductos.addEventListener('click', (event) => {
             const row = event.target.closest('tr');
-            if (row) {
+            if (row && row !== tableProductos.querySelector('thead tr')) {
                 if (selectedRow) selectedRow.classList.remove('table-active');
                 selectedRow = row;
                 selectedRow.classList.add('table-active');
@@ -1350,38 +1387,73 @@
                 return;
             }
 
-            // Obtener datos de la fila seleccionada
             const id = selectedRow.dataset.id;
             const nombre = selectedRow.dataset.nombre;
             const stock = parseFloat(selectedRow.dataset.stock) || 0;
             const precio = parseFloat(selectedRow.dataset.precio) || 0;
 
-            // Verificar si ya existe en la tabla seleccionada
             if ([...tableSeleccionados.querySelectorAll('tr')].some(row => row.dataset.id === id)) {
                 alert('El producto ya está en la lista.');
                 return;
             }
 
-            // Crear una nueva fila en la tabla seleccionada
             const nuevaFila = document.createElement('tr');
             nuevaFila.dataset.id = id;
             nuevaFila.innerHTML = `
-                    <td>${nombre}</td>
-                    <td><input type="number" class="form-control cantidad" value="1" min="1" max="${stock}" onchange="actualizarTotal(this)"></td>
-                    <td>${precio.toFixed(2)}</td>
-                    <td class="precio-total">${precio.toFixed(2)}</td>
-                `;
+                <td>${nombre}</td>
+                <td><input type="number" class="form-control cantidad" value="1" min="1" max="${stock}" onchange="actualizarTotal(this)"></td>
+                <td>${precio.toFixed(2)}</td>
+                <td class="precio-total">${precio.toFixed(2)}</td>
+            `;
 
-            // Agregar fila a la tabla seleccionada
             tableSeleccionados.appendChild(nuevaFila);
+            selectedRow.classList.remove('table-active');
+            selectedRow = null;
+
+            // Actualizar los totales
+            actualizarTotales();
         });
 
-        // Calcular precio total al cambiar la cantidad
+        // Eliminar producto seleccionado de la tabla de productos seleccionados
+        btnEliminar.addEventListener('click', () => {
+            if (!selectedRow) {
+                alert('Por favor selecciona un producto para eliminar.');
+                return;
+            }
+
+            const id = selectedRow.dataset.id;
+            const productoSeleccionado = [...tableSeleccionados.querySelectorAll('tr')].find(row => row.dataset.id === id);
+
+            if (productoSeleccionado) {
+                productoSeleccionado.remove();
+            }
+
+            selectedRow.classList.remove('table-active');
+            selectedRow = null;
+
+            // Actualizar los totales
+            actualizarTotales();
+        });
+
+        // Función para actualizar el precio total al cambiar la cantidad
         window.actualizarTotal = (input) => {
             const fila = input.closest('tr');
             const cantidad = parseFloat(input.value) || 0;
             const precioUnitario = parseFloat(fila.children[2].innerText) || 0;
             fila.querySelector('.precio-total').innerText = (cantidad * precioUnitario).toFixed(2);
+
+            // Actualizar los totales
+            actualizarTotales();
         };
+
+        // Agregar un evento de cambio para el descuento
+        descuentoInput.addEventListener('input', () => {
+            // Actualizamos los totales cuando el descuento se modifica
+            actualizarTotales();
+        });
     });
+
+
+
+      
 </script>
