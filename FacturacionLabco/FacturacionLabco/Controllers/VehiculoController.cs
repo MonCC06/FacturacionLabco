@@ -9,32 +9,31 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 
-
 namespace FacturacionLabco.Controllers
 {
     public class VehiculoController : Controller
     {
 
         private readonly IVehiculoRepositorio _vehRepo;
-        private readonly IClienteRepositorio _clienteRepo;
-        private readonly IMarcaRepositorio _marcaRepo;
+        private readonly IMarcaRepositorio _marRepo;
+        private readonly IClienteRepositorio _cliRepo;
 
-        public VehiculoController(IVehiculoRepositorio vehRepo,IClienteRepositorio clienterepo, IMarcaRepositorio marcaRepo)//recibe nuestro contexto de BD
+        public VehiculoController(IVehiculoRepositorio vehRepo, IMarcaRepositorio marRepo, IClienteRepositorio cliRepo)//recibe nuestro contexto de BD
         {
             //    _db = db;
             _vehRepo = vehRepo;
-            _clienteRepo = clienterepo;
-            _marcaRepo = marcaRepo;
+            _marRepo = marRepo;
+            _cliRepo = cliRepo;
 
         }
         public IActionResult Index()
         {
-            IEnumerable<Vehiculo> lista = _vehRepo.ObtenerTodos(incluirPropiedades: "Cliente,Marca");
-            IEnumerable<Cliente> listaclientes = _clienteRepo.GetClienteList();
-            IEnumerable<Marca> listamarca = _marcaRepo.GetMarcaList(); 
+            IEnumerable<Vehiculo> lista = _vehRepo.ObtenerTodos(incluirPropiedades: "Marca,Cliente");
+            IEnumerable<Marca> listamarca = _marRepo.GetMarcaList();
+            IEnumerable<Cliente> listacliente = _cliRepo.GetClienteList();
 
-
-
+            ViewBag.Marcas = listamarca;
+            ViewBag.Clientes = listacliente;
 
             return View(lista);
         }
