@@ -18,7 +18,7 @@
 </head>
 <body>
 <!-- Barra lateral -->
-<div class="d-flex flex-column vh-100 p-3 bg-white shadow-sm menu">
+    <div id="menu-imprimir" class="menu d-flex flex-column vh-100 p-3 bg-white shadow-sm">
   <!-- Logo -->
   <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto justify-content-center">
       <div class="logo">
@@ -299,6 +299,7 @@
         </div>
         
         <h4 class="text-green mb-3">Notas</h4> 
+
         <div class="Notas">
           <textarea placeholder="Notas" class="form-control Notas-textarea"></textarea>
         </div>
@@ -325,7 +326,7 @@
           <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">Anular</button>
         </div>
         <div class="col d-flex justify-content-center">
-          <button type="button" class="btn btn-print d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">Imprimir</button>
+          <button type="button" onclick="window.print()" class="btn btn-print d-flex align-items-center justify-content-center" >Imprimir</button>
         </div>
       </div>
     </div>

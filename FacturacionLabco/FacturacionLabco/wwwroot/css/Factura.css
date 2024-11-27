@@ -9,6 +9,30 @@
 
   
 }
+
+@media print {
+
+    .Notas {
+        display: none; /* Esto ocultará la sección de notas durante la impresión */
+    }
+
+    @media print {
+        .menu, .menu * {
+            display: none !important; /* Oculta la barra lateral y sus elementos durante la impresión */
+        }
+    }
+
+    @media print {
+        #menu-imprimir, #menu-imprimir * {
+            display: none !important; /* Oculta la barra lateral y sus elementos durante la impresión */
+        }
+    }
+
+   
+}
+
+
+
 .menu li {
   width: 100%;
   margin-bottom: 15px;
@@ -59,6 +83,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 
