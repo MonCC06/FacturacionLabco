@@ -30,61 +30,97 @@
             <ul class="nav nav-pills flex-column mb-auto">
                 <!-- Opción Factura -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Factura" asp-action="Index" class="d-flex align-items-center justify-content-center">
                         <i class="bi bi-file-earmark-bar-graph"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Factura</span>
                     </a>
                 </li>
                 <!-- Opción Cliente -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Cliente" asp-action="Index" class="d-flex align-items-center justify-content-center">
                         <i class="bi bi-person-fill"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Cliente</span>
                     </a>
                 </li>
                 <!-- Opción Trabajadores -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Trabajadores" asp-action="Index" class="d-flex align-items-center justify-content-center">
                         <i class="bi bi-people-fill"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Trabajador</span>
                     </a>
                 </li>
                 <!-- Opción Vehículo -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Vehiculo" asp-action="Index" class="d-flex align-items-center justify-content-center">
                         <i class="bi bi-car-front-fill"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Vehículo</span>
                     </a>
                 </li>
 
-
-
                 <!-- Opción Marca -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Marca" asp-action="Index" class="d-flex align-items-center justify-content-center">
                         <i class="bi bi-substack"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Marca</span>
                     </a>
                 </li>
-
-
-
-
-                <!-- Opción Servicio -->
-                <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
-                        <i class="bi bi-tools"></i>
-                        <span class="fs-5 ms-2 d-none d-sm-inline">Servicio</span>
-                    </a>
-                </li>
                 <!-- Opción Productos -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Producto" asp-action="Index" class="d-flex align-items-center justify-content-center">
                         <i class="bi bi-clipboard-check-fill"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Productos</span>
                     </a>
                 </li>
+                <!-- Opción Logout -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#ModalMensajeAdvertencia">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Logout</span>
+                    </a>
+                </li>
             </ul>
+            <!-- Modal Mensaje Advertencia -->
+            <div class="modal " id="ModalMensajeAdvertencia" tabindex="-1" aria-labelledby="ModalMensajeAdvertencia"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="container-modal1 text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#771019" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0
+                                                .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <h5 class="text-custom1">¿Desea Realizar la acción?</h5>
+                                    </div>
+                                </div>
+                                <!-- Formulario de logout -->
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button class="btn btn-light d-flex align-items-center justify-content-center"
+                                                    type="submit">
+                                                Confirmar
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

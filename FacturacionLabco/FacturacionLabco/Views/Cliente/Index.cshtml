@@ -21,7 +21,7 @@
     <!-- Logo -->
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto justify-content-center">
         <div class="logo">
-            <img src="/Cliente/Imagenes/Labco.png" alt="LABCO Logo">
+                <img src="~/Imagenes/Labco.png" alt="LABCO Logo">
         </div>
     </a>
     <hr>
@@ -30,54 +30,95 @@
     <ul class="nav nav-pills flex-column mb-auto">
         <!-- Opción Factura -->
         <li class="nav-item">
-            <a href="#" class="d-flex align-items-center justify-content-center">
+             <a asp-area="" asp-controller="Factura" asp-action="Index" class="d-flex align-items-center justify-content-center">
               <i class="bi bi-file-earmark-bar-graph"></i>
                 <span class="fs-5 ms-2 d-none d-sm-inline">Factura</span>
             </a>
         </li>
         <!-- Opción Cliente -->
         <li class="nav-item">
-            <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Cliente" asp-action="Index" class="d-flex align-items-center justify-content-center">
               <i class="bi bi-person-fill"></i>
                 <span class="fs-5 ms-2 d-none d-sm-inline">Cliente</span>
             </a>
         </li>
         <!-- Opción Trabajadores -->
         <li class="nav-item">
-            <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Trabajador" asp-action="Index" class="d-flex align-items-center justify-content-center">
               <i class="bi bi-people-fill"></i>
                 <span class="fs-5 ms-2 d-none d-sm-inline">Trabajador</span>
             </a>
         </li>
         <!-- Opción Vehículo -->
         <li class="nav-item">
-            <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Vehiculo" asp-action="Index" class="d-flex align-items-center justify-content-center">
               <i class="bi bi-car-front-fill"></i>
                 <span class="fs-5 ms-2 d-none d-sm-inline">Vehículo</span>
             </a>
         </li>
         <!-- Opción Marca -->
         <li class="nav-item">
-          <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Marca" asp-action="Index" class="d-flex align-items-center justify-content-center">
             <i class="bi bi-substack"></i>
               <span class="fs-5 ms-2 d-none d-sm-inline">Marca</span>
           </a>
       </li>
-        <!-- Opción Servicio -->
-        <li class="nav-item">
-            <a href="#" class="d-flex align-items-center justify-content-center">
-              <i class="bi bi-tools"></i>
-                <span class="fs-5 ms-2 d-none d-sm-inline">Servicio</span>
-            </a>
-        </li>
         <!-- Opción Productos -->
         <li class="nav-item">
-            <a href="#" class="d-flex align-items-center justify-content-center">
+                    <a asp-area="" asp-controller="Producto" asp-action="Index" class="d-flex align-items-center justify-content-center">
               <i class="bi bi-clipboard-check-fill"></i>
                 <span class="fs-5 ms-2 d-none d-sm-inline">Productos</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="#" class="d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#ModalMensajeAdvertencia">
+               <i class="bi bi-box-arrow-right"></i>
+               <span class="fs-5 ms-2 d-none d-sm-inline">Logout</span>
+            </a>
+        </li>
       </ul>
+            <!-- Modal Mensaje Advertencia -->
+            <div class="modal " id="ModalMensajeAdvertencia" tabindex="-1" aria-labelledby="ModalMensajeAdvertencia"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="container-modal1 text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#771019" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0
+                                                .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <h5 class="text-custom1">¿Desea Realizar la acción?</h5>
+                                    </div>
+                                </div>
+                                <!-- Formulario de logout -->
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button class="btn btn-light d-flex align-items-center justify-content-center"
+                                                    type="submit">
+                                                Confirmar
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
   </div>
 
@@ -309,26 +350,22 @@
           <p>No hay registro de clientes</p>
       }
 
-      <div class="col-12 col-md-3 text-start mt-5">
-        <div class="modal fade" id="ModalEditarCliente" tabindex="-1" aria-labelledby="ModalEditarCliente"
-             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="d-flex">
-                            <div class="volver">
-                                <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
-                                    </svg>
-                                    <h1 class="modal-title fs-5" id="ModalClienteTitulo">Agregar Cliente</h1>
-                                </button>
-                            </div>
-                            <div class="col-12 col-md-6 text-start user-info">
-                                <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
-                                <span class="user-name">Messi</span>
-                            </div>
-                        </div>
+            <div class="col-12 col-md-3 text-start mt-5">
+                <div class="modal fade" id="ModalEditarCliente" tabindex="-1" aria-labelledby="ModalEditarCliente"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <!-- Encabezado -->
+                                <div class="encabezado justify-content-between">
+                                    <!-- Título -->
+                                    <h1 class="modal-title fs-5">Agregar Cliente</h1>
+                                    <!-- Información del usuario -->
+                                    <div class="d-flex align-items-center user-info">
+                                        <i class="bi bi-person-fill me-2"></i>
+                                        <span class="user-name">Messi</span>
+                                    </div>
+                                </div>
                         <div class="container-modal">
                           <form asp-controller="Cliente" asp-action="Editar" method="post">
                             <input type="hidden" id="clienteId" name="Id" value="" />
@@ -408,7 +445,7 @@
 
       <div class="col-12 text-end">
         <div class="actions d-flex justify-content-start">
-          <button class="btn btn-custom" type="button" id="btnModificarTrabajadores" data-bs-toggle="modal" data-bs-target="#ModalModificarTrabajador">Modificar</button>
+                        <button class="btn btn-custom" type="button" id="btnModificarCliente" data-bs-toggle="modal" data-bs-target="#ModalEditarCliente">Modificar</button>
           <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarCliente">Eliminar</button>
         </div>
       </div>
@@ -450,7 +487,7 @@
             // Si el checkbox "Nombre" está seleccionado:
             if (filtrarPorNombre) {
                 // Verifica si el contenido de la celda en la columna 1 (Nombre) incluye el texto ingresado en el filtro.
-                if (celdas[1] && celdas[1].innerText.toLowerCase().includes(filtro)) {
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
                     mostrarFila = true;
                 }
             }
@@ -458,7 +495,7 @@
             // Si el checkbox "Cédula" está seleccionado:
             if (filtrarPorCedula) {
                 // Verifica si el contenido de la celda en la columna 0 (Cédula) incluye el texto ingresado en el filtro.
-                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                if (celdas[1] && celdas[1].innerText.toLowerCase().includes(filtro)) {
                     mostrarFila = true;
                 }
             }
