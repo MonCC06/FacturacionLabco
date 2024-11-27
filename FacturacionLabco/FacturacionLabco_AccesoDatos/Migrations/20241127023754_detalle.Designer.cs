@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FacturacionLabco_AccesoDatos.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20241126064112_detalle")]
+    [Migration("20241127023754_detalle")]
     partial class detalle
     {
         /// <inheritdoc />
@@ -73,10 +73,15 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
+                    b.Property<int>("FacturaID")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductoID")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FacturaID");
 
                     b.HasIndex("ProductoID");
 
@@ -482,11 +487,19 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
             modelBuilder.Entity("FacturacionLabco_Models.Detalle", b =>
                 {
+                    b.HasOne("FacturacionLabco_Models.Factura", "Factura")
+                        .WithMany()
+                        .HasForeignKey("FacturaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("FacturacionLabco_Models.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Factura");
 
                     b.Navigation("Producto");
                 });

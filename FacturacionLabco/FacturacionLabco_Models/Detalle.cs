@@ -22,5 +22,11 @@ namespace FacturacionLabco_Models
 
         [ForeignKey("ProductoID")]
         public virtual Producto? Producto { get; set; }
+
+        public int FacturaID { get; set; }
+
+        [ForeignKey("FacturaID")]
+        public virtual Factura? Factura { get; set; }
+
     }
 }

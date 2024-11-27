@@ -12,21 +12,25 @@ namespace FacturacionLabco.Controllers
         private readonly IFacturaRepositorio _facturaRepo;
         private readonly ITrabajadorRepositorio _traRepo;
         private readonly IClienteRepositorio _cliRepo;
+        private readonly IProductoRepositorio _proRepo;
         public FacturaController(IFacturaRepositorio facturaRepo, ITrabajadorRepositorio traRepo, 
-            IClienteRepositorio cliRepo)
+            IClienteRepositorio cliRepo, IProductoRepositorio proRepo)
         {
             _facturaRepo = facturaRepo;
             _traRepo = traRepo;
             _cliRepo = cliRepo;
+            _proRepo = proRepo;
         }
         public IActionResult Index()
         {
-            IEnumerable<Factura> lista = _facturaRepo.ObtenerTodos(incluirPropiedades: "Detalle,Trabajador,Cliente,Vehiculo");
+            IEnumerable<Factura> lista = _facturaRepo.ObtenerTodos(incluirPropiedades: "Trabajador,Cliente,Vehiculo");
             IEnumerable<Trabajador>listaTrabajadores= _traRepo.GetTrabajadorList();
             IEnumerable<Cliente> listaclientes = _cliRepo.GetClienteList();
+            IEnumerable<Producto> listaproductos = _proRepo.GetProductoList();
 
             ViewBag.Trabajadores = listaTrabajadores;
             ViewBag.Clientes = listaclientes;
+            ViewBag.Productos = listaproductos;
             return View(lista);
         }
 

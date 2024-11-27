@@ -4,7 +4,7 @@
     Layout = null;
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/css/Producto.css">
+<link rel="stylesheet" href="~/css/Detalle.css">
 <body>
     <!-- Barra lateral -->
     <div class="d-flex flex-column vh-100 p-3 bg-white shadow-sm menu">
@@ -117,7 +117,7 @@
                 <input type="text" id="BuscarDetalle" class="form-control" placeholder="Buscar Detalle" onkeyup="filtrarTabla()">
             </div>
             <div class="col-12 col-md-3 text-start mt-5">
-                <div class="modal fade" id="ModalDetalle" tabindex="-1" aria-labelledby="ModalDetalle" style="display: none;"
+                <div class="modal" id="ModalDetalle" tabindex="-1" aria-labelledby="ModalDetalle" style="display: none;"
                      aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -157,7 +157,8 @@
                                             </div>
                                             <div class="col-8">
                                                 <div class="input-group">
-                                                    <input type="text" id="Nombre" class="form-control" placeholder="Seleccionar">
+                                                    <input type="hidden" id="productoId" name="Id_Producto" value="" />
+                                                    <input type="text" id="NombreProducto" class="form-control" placeholder="Seleccionar">
                                                     <button class=" btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalProducto" id="#ModalProducto">
                                                         <i class="fas fa-search">+</i>
                                                     </button>
@@ -185,55 +186,10 @@
                 </div>
                 <button class="btn btn-success btn-mt-3" type="button" data-bs-toggle="modal" data-bs-target="#ModalDetalle">Crear +</button>
             </div>
-
-            <div class="modal fade" id="ModalEliminarProducto" tabindex="-1" aria-labelledby="ModalEliminar" style="display: none;"
-                 aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="d-flex">
-                            </div>
-                            <div class="container-modal1 text-center">
-                                <div class="row justify-content-center">
-                                    <div class="col-12">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
-                                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <form asp-controller="Producto" id="formEliminar" asp-action="Eliminar" method="post">
-                                    <input type="hidden" id="ProductoId" name="Id_Producto" value="" />
-                                </form>
-                                <div class="row justify-content-center">
-                                    <div class="col-12">
-                                        <h5 class="text-custom1">¿Desea eliminar el producto seleccionado?</h5>
-                                    </div>
-                                </div>
-                                <div class="row botones">
-                                    <div class="col-6 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center"
-                                                data-bs-dismiss="modal" form="formEliminar" aria-label="Close">
-                                            Confirmar
-                                        </button>
-                                    </div>
-
-                                    <div class="col-6 d-flex">
-                                        <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
-                                                data-bs-dismiss="modal" aria-label="Close">
-                                            Anular
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
             <div class="table-responsive ">
-                <table class="table table-bordered table-hover table-custom" id="TablaProductos">
+                <table class="table table-bordered table-hover table-custom" id="TablaDetalle">
                     <thead>
                         <tr>
                             <th class="text-nowrap">Cantidad</th>
@@ -241,7 +197,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <tr onclick="seleccionarFila(this)">
+                            <tr >
                                 <td class="Cantidad"></td>
                                 <td class="Producto"></td>
                             </tr>
@@ -250,82 +206,7 @@
                 </table>
             </div>
         
-        
-
-        <div class="col-12 col-md-3 text-start mt-5">
-            <div class="modal fade" id="ModalModificarProducto" tabindex="-1" aria-labelledby="ModalModificarProducto" style="display: none;"
-                 aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="d-flex">
-                                <div class="volver">
-                                    <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
-                                        </svg>
-                                        <h1 class="modal-title fs-5" id="ModalModificarProducto">Editar Producto</h1>
-                                    </button>
-                                </div>
-                                <div class="col-12 col-md-6 text-start user-info">
-                                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
-                                    <span class="user-name">Messi</span>
-                                </div>
-                            </div>
-                            <div class="container-modal">
-                                <form asp-controller="Detalle" asp-action="Upsert" method="post">
-                                    <input type="hidden" id="productoId" name="Id_Producto" value="" />
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h5>Datos del Producto</h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-4 text-start">
-                                            <label for="Descripcion_Producto">Nombre</label>
-                                        </div>
-                                        <div class="col-8">
-                                            <input id="Descripcion_Producto" name="Descripcion_Producto" class="form-control" placeholder="Ingrese aquí" required>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-4 text-start">
-                                            <label for="Stock_Producto">Stock</label>
-                                        </div>
-                                        <div class="col-8 text-end">
-                                            <input id="Stock_Producto" name="Stock_Producto" class="form-control" placeholder="Ingrese aquí" required>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-4 text-start">
-                                            <label for="Precio_Producto">Precio</label>
-                                        </div>
-                                        <div class="col-8 text-end">
-                                            <input id="Precio_Producto" name="Precio_Producto" class="form-control" placeholder="Ingrese aquí" required>
-                                        </div>
-                                    </div>
-                                    <div class="row botones">
-                                        <div class="col-6 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
-                                                    data-bs-dismiss="modal" aria-label="Close">
-                                                Anular
-                                            </button>
-                                        </div>
-                                        <div class="col-6 d-flex">
-                                            <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
-                                                Guardar
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="ModalProducto" tabindex="-1" aria-labelledby="ModalDetalleLabel" aria-hidden="true">
+        <div class="modal" id="ModalProducto" tabindex="-1" aria-labelledby="ModalDetalleLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -396,8 +277,8 @@
                             <!-- Acciones -->
                             <div class="col-12 text-end">
                                 <div class="actions d-flex justify-content-start">
-                                    <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalProducto">Seleccionar</button>
-                                    <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</button>
+                                    <button class="btn btn-custom" type="button" id="btnSeleccionarProducto">Seleccionar</button>
+                                    <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalDetalle" aria-label="close">Salir</button>
                                 </div>
                             </div>
                         </div>
@@ -476,7 +357,7 @@
         // Obtiene la referencia de la tabla de productos
         const table = document.getElementById('TablaProductos');
         // Obtiene la referencia del botón que abre el modal para modificar productos
-        const btnModificar = document.getElementById('btnModificarProducto');
+        const btnModificar = document.getElementById('btnSeleccionarProducto');
 
         // Variable para almacenar la fila seleccionada actualmente
         let selectedRow = null;
@@ -510,25 +391,10 @@
             // Obtiene los valores de los atributos personalizados (dataset) de la fila seleccionada
             const id = selectedRow.dataset.id;            // ID del producto
             const nombre = selectedRow.dataset.nombre;    // Nombre del producto
-            const stock = selectedRow.dataset.stock;      // Stock del producto
-            const precio = selectedRow.dataset.precio;    // Precio del producto
 
             // Asigna los valores obtenidos a los campos del formulario dentro del modal
             document.getElementById('productoId').value = id; // Campo oculto para el ID
-            document.getElementById('Descripcion_Producto').value = nombre; // Campo de texto para el nombre
-            document.getElementById('Stock_Producto').value = stock;        // Campo de texto/numérico para el stock
-            document.getElementById('Precio_Producto').value = precio;      // Campo de texto/numérico para el precio
+            document.getElementById('NombreProducto').value = nombre; // Campo de texto para el nombre
         });
     });
-</script>
-<script>
-    function seleccionarFila(fila) {
-        // Obtén el Id desde el atributo data-id de la fila
-        var id = fila.getAttribute("data-id");
-
-        // Muestra el modal de confirmación
-
-        // Configura el input oculto en el modal para enviar el Id al backend
-        document.getElementById("ProductoId").value = id;
-    }
 </script>

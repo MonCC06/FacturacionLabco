@@ -38,12 +38,6 @@ namespace FacturacionLabco_Models
 
         //Foreing key
 
-        public int DetalleID { get; set; }
-
-        [ForeignKey("DetalleID")]
-        public virtual Detalle? Detalle { get; set; }
-
-
         public int TrabajadorID { get; set; }
 
         [ForeignKey("TrabajadorID")]

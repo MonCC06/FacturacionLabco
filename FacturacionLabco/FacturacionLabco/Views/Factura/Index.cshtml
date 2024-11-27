@@ -246,49 +246,25 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
       <div class="d-flex align-items-center">
         <h5 class="text-green mb-0">Productos</h5>
-        <button class="btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalDetalle" id="#ModalDetalle">
+        <button class="btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalProducto" id="#ModalProducto">
           <i class="fas fa-search">+</i>
         </button>          
       </div>
     </div>
     <div class="table-responsive">
-      <table class="table table-bordered table-hover table-custom">
+      <table class="table table-bordered" id="TablaSeleccionados">
         <thead>
-          <tr>
-            <th class="text-nowrap text-green">Producto</th>        
-            <th class="text-nowrap text-green">Cantidad</th>
-            <th class="text-nowrap text-green">Precio Unitario</th>
-            <th class="text-nowrap text-green">Precio Total</th>
-          </tr>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Precio Total</th>
+            </tr>
         </thead>
-        
         <tbody>
-          <tr>
-            <td class="Producto"></td>
-            <td class="Cantidad"></td>
-            <td class="Precio Unitario"></td>
-            <td class="Precio Total"></td>
-          </tr>
-          <tr>
-            <td class="Producto"></td>
-            <td class="Cantidad"></td>
-            <td class="Precio Unitario"></td>
-            <td class="Precio Total"></td>
-          </tr>
-          <tr>
-            <td class="Producto"></td>
-            <td class="Cantidad"></td>
-            <td class="Precio Unitario"></td>
-            <td class="Precio Total"></td>
-          </tr>
-          <tr>
-            <td class="Producto"></td>
-            <td class="Cantidad"></td>
-            <td class="Precio Unitario"></td>
-            <td class="Precio Total"></td>
-          </tr>
+        <!-- Aquí se agregarán las filas dinámicamente -->
         </tbody>
-      </table>
+    </table>
     </div>
     <div class="row">
       <!-- Columna de Observaciones -->
@@ -308,6 +284,8 @@
       <div class="col-md-6">
         <h4 class="text-green mb-3">Totales</h4> 
         <div class="totals custom-totals-container">
+            
+
           <div><span>Sub-total</span><input type="text" readonly class="form-control total-input"></div>
           <div><span>IVA</span><input type="text" readonly class="form-control total-input"></div>
           <div><span>Descuento</span><input type="text" readonly class="form-control total-input"></div>
@@ -984,177 +962,7 @@
 
 
 
-<!-- Modal Principal Detalle -->
-<div class="modal fade" id="ModalDetalle" tabindex="-1" aria-labelledby="ModalDetalleLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="container-fluid">
-          <!-- Encabezado -->
-          <div class="row mb-4">
-            <div class="col-12 col-md-6 d-flex align-items-center">
-              <div class="volver">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
-                </svg>
-                <h5>Buscar Detalle</h5>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 text-end user-info">
-              <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
-              <span class="user-name">User</span>
-            </div>
-          </div>
-
-          <!-- Radio y campo de búsqueda -->
-          <div class="row mb-3">
-            <div class="col-12 col-md-8">
-              <div class="d-flex align-items-center">
-                <div class="form-check me-3">
-                  <input class="form-check-input" type="radio" name="searchOption" id="searchByName" value="name" checked>
-                  <label class="form-check-label" for="searchByName">Nombre del producto</label>
-                </div>
-              </div>
-              <input type="text" class="form-control mt-2" placeholder="Buscar Producto">
-            </div>
-            <div class="col-12 col-md-3 mt-4">
-              <button class=" btn-success" type="button" data-bs-toggle="modal" data-bs-target="#ModalDetalleAgregar">Crear +</button>
-            </div>
-          </div>
-
-          <!-- Tabla -->
-          <div class="table-responsive ">
-            <table class="table table-bordered table-hover table-custom">
-              <thead>
-                <tr>
-                  <th class="text-nowrap" >Cantidad</th>
-                  <th class="text-nowrap" >Producto</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="Cantidad"></td>
-                  <td class="Producto"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Acciones -->
-          <div class="col-12 text-end">
-            <div class="actions d-flex justify-content-start">
-              <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalProducto">Seleccionar</button>
-              <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Agregar Detalle -->
-<div class="modal fade" id="ModalDetalleAgregar" tabindex="-1" aria-labelledby="ModalProductoAgregarLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal">
-    <div class="modal-content">
-      <div class="d-flex">
-        <div class="volver">
-          <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
-            </svg>
-            <h1 class="modal-title fs-5" id="ModalProductoTitulo">Agregar Producto</h1>
-          </button>
-        </div>
-        <div class="col-12 col-md-6 text-start user-info">
-          <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
-          <span class="user-name">Messi</span>
-        </div>
-      </div>
-
-      <div class="modal-body">
-        <!-- Formulario -->
-        <form>
-          <div class="container-modal">
-            <div class="row">
-              <div class="col text-center">
-                <h5>Datos del detalle</h5>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-4 text-start">
-                <h9>Cantidad</h9>
-              </div>
-              <div class="col-8">
-                <input type="text" class="form-control" placeholder="Ingrese aquí">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-4 text-start">
-                <h9>Producto</h9>
-              </div>
-              <div class="col-8">
-                <div class="input-group">
-                  <input type="text" id="Nombre" class="form-control" placeholder="Seleccionar">
-                  <button class=" btn-outline-secondary btn-inside-input" data-bs-toggle="modal" data-bs-target="#ModalProducto" id="#ModalProducto">
-                      <i class="fas fa-search">+</i>
-                  </button>
-                </div> 
-              </div>           
-            </div>
-            <div class="row botones">
-              <div class="col-6 d-flex justify-content-end">
-                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" 
-                data-bs-dismiss="modal" aria-label="Close">Anular</button>
-              </div>
-              <div class="col-6 d-flex">
-                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
-                data-bs-dismiss="modal" aria-label="Close">Guardar</button>
-              </div>
-            </div>
-          </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="ModalEliminarProducto" tabindex="-1" aria-labelledby="ModalEliminarProducto" style="display: none;"
-  aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="d-flex">
-          </div>
-          <div class="container-modal1 text-center">
-            <div class="row justify-content-center">
-              <div class="col-12">
-                <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
-                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                </svg>
-              </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-12">
-                <h5 class="text-custom1">¿Desea eliminar el Producto seleccionado?</h5>
-              </div>
-            </div>
-            <div class="row botones">
-              <div class="col-6 d-flex justify-content-end">
-                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
-                data-bs-dismiss="modal" aria-label="Close">Confirmar</button>
-              </div>
-              <div class="col-6 d-flex">
-                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" 
-                data-bs-dismiss="modal" aria-label="Close">Anular</button>
-              </div>
-            </div>
-          </div>                  
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Principal Producto -->
+<!-- Modal Principal Producto -->
 <div class="modal fade" id="ModalProducto" tabindex="-1" aria-labelledby="ModalProductoLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
@@ -1193,45 +1001,40 @@
           </div>
 
           <!-- Tabla -->
+        @if (ViewBag.Productos != null)
+        {
           <div class="table-responsive ">
-            <table class="table table-bordered table-hover table-custom">
-              <thead>
+              <table class="table table-bordered" id="TablaProductos">
+            <thead>
                 <tr>
-                  <th class="text-nowrap" >Nombre</th>
-                  <th class="text-nowrap" >Stock</th>
-                  <th class="text-nowrap" >Precio</th>
+                    <th>Nombre</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
                 </tr>
-              </thead>
+            </thead>
               <tbody>
-                <tr>
-                  <td class="Nombre"></td>
-                  <td class="Stock"></td>
-                  <td class="Precio"></td>
-                </tr>
-                <tr>
-                  <td class="Nombre"></td>
-                  <td class="Stock"></td>
-                  <td class="Precio"></td>
-                </tr>
-                <tr>
-                  <td class="Nombre"></td>
-                  <td class="Stock"></td>
-                  <td class="Precio"></td>
-                </tr>
-                <tr>
-                  <td class="Nombre"></td>
-                  <td class="Stock"></td>
-                  <td class="Precio"></td>
-                </tr>
+                @foreach (var item in ViewBag.Productos)
+                {
+                    <tr data-id="@item.Id_Producto" 
+                        data-nombre="@item.Descripcion_Producto" 
+                        data-stock="@item.Stock_Producto" 
+                        data-precio="@item.Precio_Producto">
+                        <td>@item.Descripcion_Producto</td>
+                        <td>@item.Stock_Producto</td>
+                        <td>@item.Precio_Producto</td>
+                    </tr>
+                }
               </tbody>
             </table>
           </div>
+        }
+          
 
           <!-- Acciones -->
           <div class="col-12 text-end">
             <div class="actions d-flex justify-content-start">
-              <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalProducto">Modificar</button>
-              <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</button>
+              <button class="btn btn-custom" type="button" id="btnSeleccionarProducto" >Seleccionar</button>
+              <button class="btn btn-custom2" type="button" data-bs-toggle="modal" aria-label="close">Eliminar</button>
             </div>
           </div>
         </div>
@@ -1239,7 +1042,6 @@
     </div>
   </div>
 </div>
-
 </div>
 </div>
 </div>
@@ -1478,5 +1280,108 @@
             document.getElementById('Telefono').value = telefono;  // Campo de texto/numérico para el telefono
 
         });
+    });
+</script>
+<script>
+    function filtrarTabla() {
+        // Obtén el texto ingresado en el campo de búsqueda y conviértelo a minúsculas para hacer la búsqueda insensible a mayúsculas/minúsculas.
+        const filtro = document.getElementById("BuscarProducto").value.toLowerCase();
+
+        // Obtén la referencia de la tabla donde se realizará el filtrado.
+        const tabla = document.getElementById("TablaProductos");
+
+        // Obtén todas las filas de la tabla (<tr>), incluyendo encabezados y datos.
+        const filas = tabla.getElementsByTagName("tr");
+
+        // Verifica si el checkbox "Nombre" está seleccionado (para filtrar solo por esa columna).
+        const filtrarPorNombre = document.getElementById("FiltroNombre").checked;
+
+        // Itera sobre todas las filas de la tabla, comenzando desde el índice 1 para saltar la fila de encabezado.
+        for (let i = 1; i < filas.length; i++) {
+            // Obtén todas las celdas (<td>) de la fila actual.
+            const celdas = filas[i].getElementsByTagName("td");
+
+            // Variable para determinar si esta fila debe mostrarse o no.
+            let mostrarFila = false;
+
+            // Si el checkbox "Nombre" está seleccionado:
+            if (filtrarPorNombre) {
+                // Verifica si el contenido de la celda en la columna 0 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true; // Marca esta fila para ser mostrada.
+                }
+            } else {
+                // Si el checkbox "Nombre" NO está seleccionado, busca el texto en todas las columnas de la fila.
+                for (let j = 0; j < celdas.length; j++) {
+                    // Verifica si la celda existe y contiene el texto buscado.
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true; // Marca esta fila para ser mostrada.
+                        break; // Detén la búsqueda en esta fila, ya que se encontró una coincidencia.
+                    }
+                }
+            }
+
+            // Si se encontró coincidencia (mostrarFila es true), muestra la fila; de lo contrario, ocúltala.
+            filas[i].style.display = mostrarFila ? "" : "none";
+        }
+    }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tableProductos = document.getElementById('TablaProductos');
+        const tableSeleccionados = document.getElementById('TablaSeleccionados').querySelector('tbody');
+        const btnSeleccionar = document.getElementById('btnSeleccionarProducto');
+        let selectedRow = null;
+
+        // Seleccionar fila de la tabla de productos
+        tableProductos.addEventListener('click', (event) => {
+            const row = event.target.closest('tr');
+            if (row) {
+                if (selectedRow) selectedRow.classList.remove('table-active');
+                selectedRow = row;
+                selectedRow.classList.add('table-active');
+            }
+        });
+
+        // Transferir producto seleccionado a la tabla de productos seleccionados
+        btnSeleccionar.addEventListener('click', () => {
+            if (!selectedRow) {
+                alert('Por favor selecciona un producto primero.');
+                return;
+            }
+
+            // Obtener datos de la fila seleccionada
+            const id = selectedRow.dataset.id;
+            const nombre = selectedRow.dataset.nombre;
+            const stock = parseFloat(selectedRow.dataset.stock) || 0;
+            const precio = parseFloat(selectedRow.dataset.precio) || 0;
+
+            // Verificar si ya existe en la tabla seleccionada
+            if ([...tableSeleccionados.querySelectorAll('tr')].some(row => row.dataset.id === id)) {
+                alert('El producto ya está en la lista.');
+                return;
+            }
+
+            // Crear una nueva fila en la tabla seleccionada
+            const nuevaFila = document.createElement('tr');
+            nuevaFila.dataset.id = id;
+            nuevaFila.innerHTML = `
+                    <td>${nombre}</td>
+                    <td><input type="number" class="form-control cantidad" value="1" min="1" max="${stock}" onchange="actualizarTotal(this)"></td>
+                    <td>${precio.toFixed(2)}</td>
+                    <td class="precio-total">${precio.toFixed(2)}</td>
+                `;
+
+            // Agregar fila a la tabla seleccionada
+            tableSeleccionados.appendChild(nuevaFila);
+        });
+
+        // Calcular precio total al cambiar la cantidad
+        window.actualizarTotal = (input) => {
+            const fila = input.closest('tr');
+            const cantidad = parseFloat(input.value) || 0;
+            const precioUnitario = parseFloat(fila.children[2].innerText) || 0;
+            fila.querySelector('.precio-total').innerText = (cantidad * precioUnitario).toFixed(2);
+        };
     });
 </script>

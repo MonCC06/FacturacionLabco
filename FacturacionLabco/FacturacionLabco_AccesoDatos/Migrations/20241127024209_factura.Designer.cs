@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FacturacionLabco_AccesoDatos.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20241126064144_factura")]
+    [Migration("20241127024209_factura")]
     partial class factura
     {
         /// <inheritdoc />
@@ -73,10 +73,15 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
+                    b.Property<int>("FacturaID")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductoID")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FacturaID");
 
                     b.HasIndex("ProductoID");
 
@@ -92,9 +97,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("ClienteID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DetalleID")
                         .HasColumnType("int");
 
                     b.Property<string>("Estado")
@@ -130,8 +132,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ClienteID");
-
-                    b.HasIndex("DetalleID");
 
                     b.HasIndex("TrabajadorID");
 
@@ -482,11 +482,19 @@ namespace FacturacionLabco_AccesoDatos.Migrations
 
             modelBuilder.Entity("FacturacionLabco_Models.Detalle", b =>
                 {
+                    b.HasOne("FacturacionLabco_Models.Factura", "Factura")
+                        .WithMany()
+                        .HasForeignKey("FacturaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("FacturacionLabco_Models.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Factura");
 
                     b.Navigation("Producto");
                 });
@@ -496,12 +504,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                     b.HasOne("FacturacionLabco_Models.Cliente", "Cliente")
                         .WithMany()
                         .HasForeignKey("ClienteID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FacturacionLabco_Models.Detalle", "Detalle")
-                        .WithMany()
-                        .HasForeignKey("DetalleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -518,8 +520,6 @@ namespace FacturacionLabco_AccesoDatos.Migrations
                         .IsRequired();
 
                     b.Navigation("Cliente");
-
-                    b.Navigation("Detalle");
 
                     b.Navigation("Trabajador");
 

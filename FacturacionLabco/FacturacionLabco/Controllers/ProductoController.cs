@@ -1,8 +1,6 @@
-﻿using FacturacionLabco_AccesoDatos;
-using FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio;
+﻿using FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio;
 using FacturacionLabco_Models;
 using FacturacionLabco_Utilidades;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FacturacionLabco.Controllers
