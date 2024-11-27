@@ -231,7 +231,7 @@
                                                         <h9>Distancia Recorrida</h9>
                                                     </div>
                                                     <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
+                                                        <input type="text" name="DistanciaRecorrida" class="form-control input-custom">
                                                     </div>
                                                 </div>
                                             </div>
@@ -245,8 +245,7 @@
                                                 </button>
                                             </div>
                                             <div class="col-6 d-flex">
-                                                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
-                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center">
                                                     Guardar
                                                 </button>
                                             </div>
@@ -257,7 +256,7 @@
                         </div>
                     </div>
                 </div>
-                <a asp-controller="Vehiculo" class="btn btn-success btn-mt-3" type="button" data-bs-toggle="modal" data-bs-target="#ModalVehiculo">Crear +</a>
+                <a asp-controller="Vehiculo" asp-action="Upsert" class="btn btn-success btn-mt-3" type="button">Crear +</a>
             </div>
         </div>
 
@@ -283,30 +282,6 @@
                         <td class="Año"></td>
                         <td class="VIN"></td>
                     </tr>
-                    <tr>
-                        <td class="Dueño"></td>
-                        <td class="Placa"></td>
-                        <td class="Marca"></td>
-                        <td class="Modelo"></td>
-                        <td class="Año"></td>
-                        <td class="VIN"></td>
-                    </tr>
-                    <tr>
-                        <td class="Dueño"></td>
-                        <td class="Placa"></td>
-                        <td class="Marca"></td>
-                        <td class="Modelo"></td>
-                        <td class="Año"></td>
-                        <td class="VIN"></td>
-                    </tr>
-                    <tr>
-                        <td class="Dueño"></td>
-                        <td class="Placa"></td>
-                        <td class="Marca"></td>
-                        <td class="Modelo"></td>
-                        <td class="Año"></td>
-                        <td class="VIN"></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -318,171 +293,11 @@
             </div>
         </div>
 
-        <!-- Modal Principal Cliente -->
-        <div class="modal" id="ModalCliente" tabindex="-1" aria-labelledby="ModalClienteLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-body fondo">
-                        <div class="container-fluid">
-                            <!-- Encabezado -->
-                            <div class="row mb-4">
-                                <div class="col-12 col-md-6 d-flex align-items-center">
-                                    <div class="volver">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
-                                        </svg>
-                                        <h5>Buscar Cliente</h5>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 text-end user-info">
-                                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
-                                    <span class="user-name">User</span>
-                                </div>
-                            </div>
-
-                            <!-- Radio y campo de búsqueda -->
-                            <div class="row mb-3">
-                                <div class="col-12 col-md-8">
-                                    <div class="d-flex align-items-center">
-                                        <div class="form-check me-3">
-                                            <input class="form-check-input" type="radio" name="searchOption" id="searchByName" value="name" checked>
-                                            <label class="form-check-label" for="searchByName">Nombre</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="searchOption" id="searchByCedula" value="cedula">
-                                            <label class="form-check-label" for="searchByCedula">Cédula</label>
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control mt-2" placeholder="Buscar Cliente">
-                                </div>
-                                <div class="col-12 col-md-3 mt-4">
-                                    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#ModalClienteAgregar">Crear +</button>
-                                </div>
-                            </div>
-
-                            <!-- Tabla -->
-                            @if (ViewBag.Clientes != null)
-                            {
-                                <div class="table-responsive ">
-                                    <table class="table table-bordered table-hover table-custom" id="TablaClientes">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-nowrap">Cedula</th>
-                                                <th class="text-nowrap">Nombre</th>
-                                                <th class="text-nowrap">Correo</th>
-                                                <th class="text-nowrap">Telefono</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var item in ViewBag.Clientes)
-                                            {
-                                                <tr data-id="@item.Id" data-cedula="@item.Cedula" data-nombre="@item.Nombre"
-                                                    data-primerapellido="@item.PrimerApellido" data-segundoapellido="@item.SegundoApellido"
-                                                    data-correo="@item.Correo" data-telefono="@item.Telefono" onclick="seleccionarFila(this)">
-                                                    <td class="Cedula">@item.Cedula</td>
-                                                    <td class="Nombre">@item.Nombre @item.PrimerApellido @item.SegundoApellido</td>
-                                                    <td class="Correo">@item.Correo</td>
-                                                    <td class="Telefono">@item.Telefono</td>
-                                                </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                            }
-                            else
-                            {
-                                <p>No hay registro de trabajadores</p>
-                            }
-
-                            <!-- Acciones -->
-                            <div class="col-12 text-end">
-                                <div class="actions d-flex justify-content-start">
-                                    <button class="btn btn-custom" type="button" id="btnSeleccionarClientes">Modificar</button>
-                                    <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalVehiculo" aria-label="close">Eliminar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        
 
 
     <!-- Modal Principal Cliente -->
-    <div class="modal" id="ModalMarca" tabindex="-1" aria-labelledby="ModalMarcaLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-body fondo">
-                    <div class="container-fluid">
-                        <!-- Encabezado -->
-                        <div class="row mb-4">
-                            <div class="col-12 col-md-6 d-flex align-items-center">
-                                <div class="volver">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
-                                    </svg>
-                                    <h5>Buscar Marca</h5>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 text-end user-info">
-                                <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
-                                <span class="user-name">User</span>
-                            </div>
-                        </div>
-
-                        <!-- Radio y campo de búsqueda -->
-                        <div class="row mb-3">
-                            <div class="col-12 col-md-8">
-                                <div class="d-flex align-items-center">
-                                    <div class="form-check me-3">
-                                        <input class="form-check-input" type="radio" name="searchOption" id="searchByName" value="name" checked>
-                                        <label class="form-check-label" for="searchByName">Nombre de la marca</label>
-                                    </div>
-                                </div>
-                                <input type="text" class="form-control mt-2" placeholder="Buscar Marca">
-                            </div>
-                        </div>
-
-                        <!-- Tabla -->
-                        @if (ViewBag.Marcas != null)
-                        {
-                           <div class="table-responsive ">
-                                <table class="table table-bordered table-hover table-custom" id="TablaMarca">
-                                <thead>
-                                    <tr>
-                                        <th class="text-nowrap">Nombre Marca</th>
-                                    </tr>
-                                </thead>
-                                    @foreach (var item in ViewBag.Marcas)
-                                    {
-                                        <tbody>
-                                            <tr data.id="@item.Id" data-nombre="@item.Nombre_Marca">
-                                                <td class="Nombre">@item.Nombre_Marca</td>
-                                            </tr>
-                                        </tbody>
-                                    }
-                            </table>
-                            </div>
-                        }
-                        else
-                        {
-                            <p>No hay marcas creadas</p>
-                        }
-
-                        <!-- Acciones -->
-                        <div class="col-12 text-end">
-                            <div class="actions d-flex justify-content-start">
-                                <button class="btn btn-custom" type="button" id="btnSeleccionarMarca">Seleccionar</button>
-                                <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalVehiculo" aria-label="close">Salir</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 
 

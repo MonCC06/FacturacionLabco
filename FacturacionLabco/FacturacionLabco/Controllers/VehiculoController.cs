@@ -39,6 +39,11 @@ namespace FacturacionLabco.Controllers
         }
         public IActionResult Upsert(int? Id)
         {
+            IEnumerable<Marca> listamarca = _marRepo.GetMarcaList();
+            IEnumerable<Cliente> listacliente = _cliRepo.GetClienteList();
+
+            ViewBag.Marcas = listamarca;
+            ViewBag.Clientes = listacliente;
 
             VehiculoVM vehiculoVM = new VehiculoVM()
             {
