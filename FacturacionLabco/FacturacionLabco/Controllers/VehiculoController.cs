@@ -1,12 +1,12 @@
 ﻿using FacturacionLabco_AccesoDatos;
 using FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio;
-using FacturacionLabco_AccesoDatos.Migrations;
 using FacturacionLabco_Models;
 using FacturacionLabco_Models.ViewModels;
 using FacturacionLabco_Utilidades;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FacturacionLabco.Controllers
 {
@@ -30,11 +30,16 @@ namespace FacturacionLabco.Controllers
             IEnumerable<Vehiculo> lista = _vehRepo.ObtenerTodos(incluirPropiedades: "Marca,Cliente");
             
             IEnumerable<Cliente> listacliente = _cliRepo.GetClienteList();
+            IEnumerable<Marca> listamarca = _marRepo.GetMarcaList();
 
             ViewBag.Clientes = listacliente;
+            ViewBag.Marcas = listamarca;
 
             return View(lista);
         }
+
+
+
         public IActionResult Upsert(int? Id)
         {
 
@@ -70,37 +75,32 @@ namespace FacturacionLabco.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(VehiculoVM vehiculoVM)
         {
-            //validamos el modelo
             if (ModelState.IsValid)
             {
-                //ahora validamos si es o no un nuevo ingreso o si se trata de una actualizacion 
                 if (vehiculoVM.Vehiculo.Id == 0)
                 {
-
                     _vehRepo.Agregar(vehiculoVM.Vehiculo);
                 }
                 else
                 {
-                    //se actualiza si el ID es mayor a cero
-                    var objProducto = _vehRepo.ObtenerPrimero(p => p.Id == vehiculoVM.Vehiculo.Id, isTracking: false);   //Obtenemos el producto que queremos editar 
-
-
-
+                    var objProducto = _vehRepo.ObtenerPrimero(p => p.Id == vehiculoVM.Vehiculo.Id, isTracking: false);
                     _vehRepo.Actualizar(vehiculoVM.Vehiculo);
-
                 }
 
-                _vehRepo.Grabar();
-                return RedirectToAction("Index");
-            }//ESTA LLAVE PERTENCE AL IF DEL ModelIsValidate
+                try
+                {
+                    _vehRepo.Grabar();
+                }
+                catch (DbUpdateException ex)
+                {
+                    var innerMessage = ex.InnerException?.Message ?? ex.Message;
+                    // Puedes lanzar una excepción para que la veas en la pantalla, o hacer un log
+                    throw new Exception($"Error al guardar en BD: {innerMessage}");
+                }
+            }
 
-
-            vehiculoVM.ClienteLista = _vehRepo.ObtenerTodosDropDownList(WC.ClienteNombre);
-            vehiculoVM.MarcaLista = _vehRepo.ObtenerTodosDropDownList(WC.MarcaNombre);
-
-
-            return View(vehiculoVM);//si el modelo no es validado o sea no es correcto retornamos a la vista el objeto
-
+            // Si el modelo no es válido, devolvé algún error que podás manejar con JS
+            return RedirectToAction("Index");
         }
 
         // ACA NO SOLAMENTE ELIMINAMOS EL PRODUCTO , SINO TBM LA IMG ASOCIADA A ESTE

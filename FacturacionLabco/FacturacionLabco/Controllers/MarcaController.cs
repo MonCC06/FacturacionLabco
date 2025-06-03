@@ -25,6 +25,14 @@ namespace FacturacionLabco.Controllers
             return View(lista);
         }
 
+        [HttpGet]
+        public IActionResult ObtenerListaMarcas()
+        {
+
+            return Json(new { data = _marRepo.ObtenerTodos() });
+
+        }
+
         //Get
         public IActionResult Crear()
         {

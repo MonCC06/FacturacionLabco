@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>Vehículo</title>
 <link rel="icon" type="image/png" href="Imagenes/logo-Labco.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous">
@@ -16,7 +17,7 @@
         <!-- Logo -->
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto justify-content-center">
             <div class="logo">
-                <img src="Imagenes/labco.png" alt="LABCO Logo" style="max-width: 100%; height: auto;">
+                <img src="~/Imagenes/labco.png" alt="LABCO Logo">
             </div>
         </a>
         <hr>
@@ -25,60 +26,99 @@
             <ul class="nav nav-pills flex-column mb-auto">
                 <!-- Opción Factura -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-earmark-bar-graph-fill" viewBox="0 0 16 16">
-                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m.5 10v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5m-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5z" />
-                        </svg>
+                    <a asp-area="" asp-controller="Factura" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-file-earmark-bar-graph"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Factura</span>
                     </a>
                 </li>
-                <!-- Opción Vehiculo -->
+                <!-- Opción Cliente -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                        </svg>
-                        <span class="fs-5 ms-2 d-none d-sm-inline">Vehiculo</span>
+                    <a asp-area="" asp-controller="Cliente" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-person-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Cliente</span>
                     </a>
                 </li>
                 <!-- Opción Trabajadores -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
-                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
-                        </svg>
-                        <span class="fs-5 ms-2 d-none d-sm-inline">Trabajadores</span>
+                    <a asp-area="" asp-controller="Trabajador" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people-fill"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Trabajador</span>
                     </a>
                 </li>
                 <!-- Opción Vehículo -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
-                            <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17s3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
-                        </svg>
+                    <a asp-area="" asp-controller="Vehiculo" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-car-front-fill"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Vehículo</span>
                     </a>
                 </li>
+
                 <!-- Opción Marca -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
-                            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z" />
-                        </svg>
+                    <a asp-area="" asp-controller="Marca" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-substack"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Marca</span>
                     </a>
                 </li>
                 <!-- Opción Productos -->
                 <li class="nav-item">
-                    <a href="#" class="d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
-                            <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
-                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
-                        </svg>
+                    <a asp-area="" asp-controller="Producto" asp-action="Index" class="d-flex align-items-center justify-content-center">
+                        <i class="bi bi-clipboard-check-fill"></i>
                         <span class="fs-5 ms-2 d-none d-sm-inline">Productos</span>
                     </a>
                 </li>
+                <!-- Opción Logout -->
+                <li class="nav-item">
+                    <a href="#" class="d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#ModalMensajeAdvertencia">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span class="fs-5 ms-2 d-none d-sm-inline">Logout</span>
+                    </a>
+                </li>
             </ul>
+            <!-- Modal Mensaje Advertencia -->
+            <div class="modal " id="ModalMensajeAdvertencia" tabindex="-1" aria-labelledby="ModalMensajeAdvertencia"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="container-modal1 text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#771019" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0
+                                                .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <h5 class="text-custom1">¿Desea Realizar la acción?</h5>
+                                    </div>
+                                </div>
+                                <!-- Formulario de logout -->
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                    <div class="row botones">
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button class="btn btn-light d-flex align-items-center justify-content-center"
+                                                    type="submit">
+                                                Confirmar
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Anular
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         </div>
     </div>
 
@@ -133,7 +173,7 @@
                                     </div>
                                 </div>
                                 <div class="container-modal">
-                                    <form asp-controller="Vehiculo" asp-action="Upsert" method="post">
+                                    <form asp-controller="Vehiculo" asp-action="Upsert" id="FormVehi" method="post">
                                         <div class="row">
                                             <div class="col text-start">
                                                 <h8>Datos del Vehiculo</h8>
@@ -147,7 +187,7 @@
                                                         <h9>Placa</h9>
                                                     </div>
                                                     <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
+                                                        <input name="Vehiculo.Placa" class="form-control input-custom">
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
@@ -155,7 +195,7 @@
                                                         <h9>VIN</h9>
                                                     </div>
                                                     <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
+                                                        <input name="Vehiculo.VIN" class="form-control input-custom">
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
@@ -163,16 +203,16 @@
                                                         <h9>Modelo</h9>
                                                     </div>
                                                     <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
+                                                        <input name="Vehiculo.NombreModelo" class="form-control input-custom">
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
                                                     <div>
                                                         <div class="d-flex align-items-center mb-2 unidad-medida-container">
                                                             <label class="form-check-label me-2 text-green label-ajustado">Kilómetros</label>
-                                                            <input type="radio" class="form-check-input" name="unidad-medida" id="kilometros">
+                                                            <input type="radio" class="form-check-input" name="Vehiculo.TipoDistancia" id="kilometros" value="true">
                                                             <label class="form-check-label ms-3 me-2 text-green label-ajustado">Millas</label>
-                                                            <input type="radio" class="form-check-input" name="unidad-medida" id="millas" checked>
+                                                            <input type="radio" class="form-check-input" name="Vehiculo.TipoDistancia" id="millas" value="Millas">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -185,9 +225,10 @@
                                                         <label for="marca" class="form-label">Marca</label>
                                                     </div>
                                                     <div class="col-7">
-                                                        <input type="hidden" id="marcaId" name="Id" value="" />
+                                                        
                                                         <div class="input-group">
-                                                            <input type="text" id="Nombre" class="form-control" placeholder="Seleccionar">
+                                                            <input type="hidden" id="Nombre"/>
+                                                            <input type="text" id="MarcaId" name="Vehiculo.MarcaId" class="form-control" placeholder="Seleccionar">
                                                             <button class="btn btn-outline-secondary btn-inside-input" type="button" data-bs-toggle="modal" data-bs-target="#ModalMarca" id="#ModalMarca">
                                                                 <i class="fas fa-search">+</i>
                                                             </button>
@@ -199,7 +240,7 @@
                                                         <h9>Año</h9>
                                                     </div>
                                                     <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
+                                                        <input name="Vehiculo.Anno" class="form-control input-custom">
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
@@ -207,9 +248,9 @@
                                                         <label for="cliente" class="form-label">Cliente</label>
                                                     </div>
                                                     <div class="col-7">
+                                                        <input type="hidden" id="NombreCliente"  />
                                                         <div class="input-group">
-                                                            <input type="hidden" id="clienteId" name="Id" value="" />
-                                                            <input type="text" id="NombreCliente" class="form-control" placeholder="Seleccionar">
+                                                            <input type="text" id="clienteId" class="form-control" name="Vehiculo.ClienteId" placeholder="Seleccionar">
                                                             <input type="hidden" id="PrimerApellido" value="" />
                                                             <input type="hidden" id="SegundoApellido" value="" />
                                                             <button class="btn btn-outline-secondary btn-inside-input" type="button" data-bs-toggle="modal" data-bs-target="#ModalCliente" id="#ModalCliente">
@@ -223,7 +264,7 @@
                                                         <h9>Distancia Recorrida</h9>
                                                     </div>
                                                     <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
+                                                        <input name="Vehiculo.DistanciaRecorrida" class="form-control input-custom">
                                                     </div>
                                                 </div>
                                             </div>
@@ -237,7 +278,7 @@
                                                 </button>
                                             </div>
                                             <div class="col-6 d-flex">
-                                                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center"
                                                         data-bs-dismiss="modal" aria-label="Close">
                                                     Guardar
                                                 </button>
@@ -253,55 +294,44 @@
             </div>
         </div>
 
+        @if (Model.Any())
+        {
 
-        <div class="table-responsive ">
-            <table class="table table-bordered table-hover table-custom">
-                <thead>
-                    <tr>
-                        <th class="text-nowrap">Dueño</th>
-                        <th class="text-nowrap">Placa</th>
-                        <th class="text-nowrap">Marca</th>
-                        <th class="text-nowrap">Modelo</th>
-                        <th class="text-nowrap">Año</th>
-                        <th class="text-nowrap">VIN</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="Dueño"></td>
-                        <td class="Placa"></td>
-                        <td class="Marca"></td>
-                        <td class="Modelo"></td>
-                        <td class="Año"></td>
-                        <td class="VIN"></td>
-                    </tr>
-                    <tr>
-                        <td class="Dueño"></td>
-                        <td class="Placa"></td>
-                        <td class="Marca"></td>
-                        <td class="Modelo"></td>
-                        <td class="Año"></td>
-                        <td class="VIN"></td>
-                    </tr>
-                    <tr>
-                        <td class="Dueño"></td>
-                        <td class="Placa"></td>
-                        <td class="Marca"></td>
-                        <td class="Modelo"></td>
-                        <td class="Año"></td>
-                        <td class="VIN"></td>
-                    </tr>
-                    <tr>
-                        <td class="Dueño"></td>
-                        <td class="Placa"></td>
-                        <td class="Marca"></td>
-                        <td class="Modelo"></td>
-                        <td class="Año"></td>
-                        <td class="VIN"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="table-responsive ">
+                <table class="table table-bordered table-hover table-custom" id="TablaVehiculo">
+                    <thead>
+                        <tr>
+                            <th class="text-nowrap">Dueño</th>
+                            <th class="text-nowrap">Placa</th>
+                            <th class="text-nowrap">Marca</th>
+                            <th class="text-nowrap">Modelo</th>
+                            <th class="text-nowrap">Año</th>
+                            <th class="text-nowrap">VIN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr data-id="@item.Id" data-dueno="@item.ClienteId" data-placa="@item.Placa" data-marca="@item.MarcaId" 
+                            data-modelo="@item.NombreModelo" data-anno="@item.Anno" data-vin="@item.VIN" onclick="seleccionarFila(this)">
+                                <td class="Dueño">@item.Cliente?.Nombre</td>
+                                <td class="Placa">@item.Placa</td>
+                                <td class="Marca">@item.Marca?.Nombre_Marca</td>
+                                <td class="Modelo">@item.NombreModelo</td>
+                                <td class="Año">@item.Anno</td>
+                                <td class="VIN">@item.VIN</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <p>No hay registro de Vehiculos</p>
+        }
+
+
 
         <div class="col-12 text-end">
             <div class="actions d-flex justify-content-start">
@@ -402,7 +432,7 @@
     </div>
 
 
-    <!-- Modal Principal Cliente -->
+    <!-- Modal Principal Marca -->
     <div class="modal" id="ModalMarca" tabindex="-1" aria-labelledby="ModalMarcaLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -444,13 +474,15 @@
                                 <table class="table table-bordered table-hover table-custom" id="TablaMarca">
                                     <thead>
                                         <tr>
+                                            <th class="text-nowrap">ID</th>
                                             <th class="text-nowrap">Nombre Marca</th>
                                         </tr>
                                     </thead>
                                     @foreach (var item in ViewBag.Marcas)
                                     {
                                         <tbody>
-                                            <tr data.id="@item.Id" data-nombre="@item.Nombre_Marca">
+                                            <tr data-id="@item.Id" data-nombre="@item.Nombre_Marca">
+                                                <td class="ID">@item.Id</td>
                                                 <td class="Nombre">@item.Nombre_Marca</td>
                                             </tr>
                                         </tbody>
@@ -479,6 +511,7 @@
 
 
 </body>
+<script src="~/js/JavaScript.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -520,20 +553,19 @@
 
         // Agrega un evento al botón "Modificar" para rellenar el modal con los datos de la fila seleccionada
         btnModificar.addEventListener('click', () => {
-            // Si no hay ninguna fila seleccionada, muestra un mensaje de alerta y detiene el flujo
             if (!selectedRow) {
                 alert('Por favor selecciona un trabajador primero.');
                 return;
             }
 
-            // Obtiene los valores de los atributos personalizados (dataset) de la fila seleccionada
             const id = selectedRow.dataset.id;            // ID
             const nombre = selectedRow.dataset.nombre;    // Nombre
 
-            // Asigna los valores obtenidos a los campos del formulario dentro del modal
-            document.getElementById('marcaId').value = id;
-            document.getElementById('Nombre').value = nombre;
+            console.log('ID:', id);
+            console.log('Nombre:', nombre);
 
+            document.getElementById('MarcaId').value = id;
+            document.getElementById('Nombre').value = nombre;
         });
     });
 </script>
