@@ -345,6 +345,10 @@
                                 <button type="button" class="btn btn-light d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">Guardar</button>
                             </div>
                             <div class="col d-flex justify-content-center">
+                                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#ModalFactura" 
+                                id="#ModalFactura">Prueba</button>
+                            </div>
+                            <div class="col d-flex justify-content-center">
                                 <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">Anular</button>
                             </div>
                             <div class="col d-flex justify-content-center">
@@ -553,8 +557,9 @@
                                     <!-- Acciones -->
                                     <div class="col-12 text-end">
                                         <div class="actions d-flex justify-content-start">
-                                            <button class="btn btn-custom" type="button" id="btnCargarTrabajador">Modificar</button>
-                                            <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarTrabajador">Eliminar</button>
+                                            <button class="btn btn-custom" type="button" id="btnCargarTrabajador">Seleccionar</button>
+                                            <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarTrabajador"
+                                            data-bs-dismiss="modal" aria-label="Close">Salir</button>
                                         </div>
                                     </div>
                                 </div>
@@ -640,7 +645,8 @@
                                     <div class="col-12 text-end">
                                         <div class="actions d-flex justify-content-start">
                                             <button class="btn btn-custom" type="button" id="btnCargarCliente">Seleccionar</button>
-                                            <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarCliente">Eliminar</button>
+                                            <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarCliente"
+                                            data-bs-dismiss="modal" aria-label="Close">Salir</button>
                                         </div>
                                     </div>
                                 </div>
@@ -648,94 +654,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Modal Agregar Cliente -->
-                <div class="modal fade" id="ModalClienteAgregar" tabindex="-1" aria-labelledby="ModalClienteAgregarLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal">
-                        <div class="modal-content">
-                            <div class="d-flex">
-                                <div class="volver">
-                                    <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
-                                        <h1 class="modal-title fs-5" id="ModalClienteTitulo">Agregar Cliente</h1>
-                                    </button>
-                                </div>
-                                <div class="d-flex align-items-center user-info">
-                                    <i class="bi bi-person-fill me-2"></i>
-                                    <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
-                                </div>
-                            </div>
-
-                            <div class="modal-body">
-                                <!-- Formulario -->
-                                <form>
-                                    <div class="container-modal">
-                                        <div class="row">
-                                            <div class="col text-center">
-                                                <h5>Datos del Cliente</h5>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5 text-start">
-                                                <h9>Nombre</h9>
-                                            </div>
-                                            <div class="col-7">
-                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5 text-start">
-                                                <h9>Primer Apellido</h9>
-                                            </div>
-                                            <div class="col-7 text-end">
-                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5 text-start">
-                                                <h9>Segundo Apellido</h9>
-                                            </div>
-                                            <div class="col-7 text-end">
-                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5 text-start">
-                                                <h9>Cedula</h9>
-                                            </div>
-                                            <div class="col-7">
-                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-5 text-start">
-                                                <h9>Correo</h9>
-                                            </div>
-                                            <div class="col-7">
-                                                <input type="text" class="form-control" placeholder="Ingrese aquí">
-                                            </div>
-                                        </div>
-                                        <div class="row botones">
-                                            <div class="col-6 d-flex justify-content-end">
-                                                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
-                                                        data-bs-dismiss="modal" aria-label="Close">
-                                                    Anular
-                                                </button>
-                                            </div>
-                                            <div class="col-6 d-flex">
-                                                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
-                                                        data-bs-dismiss="modal" aria-label="Close">
-                                                    Confirmar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
 
 
                 <!-- Modal Principal Vehiculo -->
@@ -791,38 +709,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td class="Dueño"></td>
-                                                    <td class="Placa"></td>
-                                                    <td class="Marca"></td>
-                                                    <td class="Modelo"></td>
-                                                    <td class="Año"></td>
-                                                    <td class="VIN"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="Dueño"></td>
-                                                    <td class="Placa"></td>
-                                                    <td class="Marca"></td>
-                                                    <td class="Modelo"></td>
-                                                    <td class="Año"></td>
-                                                    <td class="VIN"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="Dueño"></td>
-                                                    <td class="Placa"></td>
-                                                    <td class="Marca"></td>
-                                                    <td class="Modelo"></td>
-                                                    <td class="Año"></td>
-                                                    <td class="VIN"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="Dueño"></td>
-                                                    <td class="Placa"></td>
-                                                    <td class="Marca"></td>
-                                                    <td class="Modelo"></td>
-                                                    <td class="Año"></td>
-                                                    <td class="VIN"></td>
-                                                </tr>
+                                                @foreach (var item in ViewBag.Vehiculos)
+                                                {
+                                                    <tr data-id="@item.Id" data-tipodistancia="@item.TipoDistancia" data-distancia="@item.DistanciaRecorrida"
+                                                        data-dueno="@item.ClienteId" data-placa="@item.Placa" data-marca="@item.MarcaId" data-modelo="@item.NombreModelo"
+                                                        data-anno="@item.Anno" data-vin="@item.VIN" onclick="seleccionarFila(this)">
+                                                        <td class="Dueño">@item.Cliente?.Nombre</td>
+                                                        <td class="Placa">@item.Placa</td>
+                                                        <td class="Marca">@item.Marca?.Nombre_Marca</td>
+                                                        <td class="Modelo">@item.NombreModelo</td>
+                                                        <td class="Año">@item.Anno</td>
+                                                        <td class="VIN">@item.VIN</td>
+                                                    </tr>
+                                                }
                                             </tbody>
                                         </table>
                                     </div>
@@ -832,167 +731,6 @@
                                         <div class="actions d-flex justify-content-start">
                                             <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalVehiculo">Modificar</button>
                                             <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarVehiculo">Eliminar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal Agregar Vehiculo -->
-                <div class="modal fade" id="ModalVehiculoAgregar" tabindex="-1" aria-labelledby="ModalVehiculoAgregarLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal">
-                        <div class="modal-content">
-                            <div class="d-flex">
-                                <div class="volver">
-                                    <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
-                                        <h1 class="modal-title fs-5" id="ModalVehiculoTitulo">Agregar Vehiculo</h1>
-                                    </button>
-                                </div>
-                                <div class="d-flex align-items-center user-info">
-                                    <i class="bi bi-person-fill me-2"></i>
-                                    <span class="user-name" title="Manage">Bienvenido @UserManager.GetUserName(User)!</span>
-                                </div>
-                            </div>
-
-                            <div class="modal-body">
-                                <!-- Formulario -->
-                                <form>
-                                    <div class="container-modal">
-                                        <div class="row">
-                                            <div class="col text-start">
-                                                <h8>Datos del Vehiculo</h8>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <!-- Columna izquierda -->
-                                            <div class="col-6">
-                                                <div class="row mb-3">
-                                                    <div class="col-5 text-start">
-                                                        <h9>Placa</h9>
-                                                    </div>
-                                                    <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-5 text-start">
-                                                        <h9>VIN</h9>
-                                                    </div>
-                                                    <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-5 text-start">
-                                                        <h9>Modelo</h9>
-                                                    </div>
-                                                    <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div>
-                                                        <div class="d-flex align-items-center mb-2 unidad-medida-container">
-                                                            <label class="form-check-label me-2 text-green label-ajustado">Kilómetros</label>
-                                                            <input type="radio" class="form-check-input" name="unidad-medida" id="kilometros">
-                                                            <label class="form-check-label ms-3 me-2 text-green label-ajustado">Millas</label>
-                                                            <input type="radio" class="form-check-input" name="unidad-medida" id="millas" checked>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Columna derecha -->
-                                            <div class="col-6">
-                                                <div class="row mb-3">
-                                                    <div class="col-5 text-start">
-                                                        <h9>Marca</h9>
-                                                    </div>
-                                                    <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-5 text-start">
-                                                        <h9>Año</h9>
-                                                    </div>
-                                                    <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-5 text-start">
-                                                        <h9>Cliente</h9>
-                                                    </div>
-                                                    <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-5 text-start">
-                                                        <h9>Distancia Recorrida</h9>
-                                                    </div>
-                                                    <div class="col-7">
-                                                        <input type="text" class="form-control input-custom">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row botones">
-                                            <div class="col-6 d-flex justify-content-end">
-                                                <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
-                                                        data-bs-dismiss="modal" aria-label="Close">
-                                                    Anular
-                                                </button>
-                                            </div>
-                                            <div class="col-6 d-flex">
-                                                <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
-                                                        data-bs-dismiss="modal" aria-label="Close">
-                                                    Guardar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="ModalEliminarVehiculo" tabindex="-1" aria-labelledby="ModalEliminarVehiculo" style="display: none;"
-                     aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="d-flex">
-                                </div>
-                                <div class="container-modal1 text-center">
-                                    <div class="row justify-content-center">
-                                        <div class="col-12">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="129" height="129" fill="#77221d" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
-                                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-12">
-                                            <h5 class="text-custom1">¿Desea eliminar el Vehiculo seleccionado?</h5>
-                                        </div>
-                                    </div>
-                                    <div class="row botones">
-                                        <div class="col-6 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-light d-flex align-items-center justify-content-center"
-                                                    data-bs-dismiss="modal" aria-label="Close">
-                                                Confirmar
-                                            </button>
-                                        </div>
-                                        <div class="col-6 d-flex">
-                                            <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
-                                                    data-bs-dismiss="modal" aria-label="Close">
-                                                Anular
-                                            </button>
                                         </div>
                                     </div>
                                 </div>

@@ -12,13 +12,16 @@ namespace FacturacionLabco.Controllers
         private readonly ITrabajadorRepositorio _traRepo;
         private readonly IClienteRepositorio _cliRepo;
         private readonly IProductoRepositorio _proRepo;
+        private readonly IVehiculoRepositorio _vehRepo;
+
         public FacturaController(IFacturaRepositorio facturaRepo, ITrabajadorRepositorio traRepo,
-            IClienteRepositorio cliRepo, IProductoRepositorio proRepo)
+            IClienteRepositorio cliRepo, IProductoRepositorio proRepo, IVehiculoRepositorio vehRepo)
         {
             _facturaRepo = facturaRepo;
             _traRepo = traRepo;
             _cliRepo = cliRepo;
             _proRepo = proRepo;
+            _vehRepo = vehRepo;
         }
         public IActionResult Index()
         {
@@ -26,10 +29,12 @@ namespace FacturacionLabco.Controllers
             IEnumerable<Trabajador> listaTrabajadores = _traRepo.GetTrabajadorList();
             IEnumerable<Cliente> listaclientes = _cliRepo.GetClienteList();
             IEnumerable<Producto> listaproductos = _proRepo.GetProductoList();
+            IEnumerable<Vehiculo> listavehiculos = _vehRepo.GetVehiculoList();
 
             ViewBag.Trabajadores = listaTrabajadores;
             ViewBag.Clientes = listaclientes;
             ViewBag.Productos = listaproductos;
+            ViewBag.Vehiculos = listavehiculos;
             return View(lista);
         }
 

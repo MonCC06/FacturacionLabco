@@ -83,7 +83,7 @@ namespace FacturacionLabco.Controllers
                 }
                 else
                 {
-                    var objProducto = _vehRepo.ObtenerPrimero(p => p.Id == vehiculoVM.Vehiculo.Id, isTracking: false);
+                    var objVehiculo = _vehRepo.ObtenerPrimero(v => v.Id == vehiculoVM.Vehiculo.Id, isTracking: false);
                     _vehRepo.Actualizar(vehiculoVM.Vehiculo);
                 }
 

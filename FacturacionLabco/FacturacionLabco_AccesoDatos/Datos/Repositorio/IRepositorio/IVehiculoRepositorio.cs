@@ -12,6 +12,7 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio.IRepositorio
     {
         void Actualizar(Vehiculo vehiculo);
 
+        IEnumerable<Vehiculo> GetVehiculoList();
         IEnumerable<SelectListItem> ObtenerTodosDropDownList(string obj);
     }
 }

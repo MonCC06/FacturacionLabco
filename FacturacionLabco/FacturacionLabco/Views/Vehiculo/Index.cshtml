@@ -119,8 +119,6 @@
             </div>
         </div>
     </div>
-        </div>
-    </div>
 
     <div class="container-fluid container-custom">
         <div class="row mb-4">
@@ -130,19 +128,17 @@
                 </div>
             </div>
         </div>
-        <form action="/" method="post">
-        </form>
         <div class="row mb-3">
             <div class="col-12 col-md-8">
                 <div class="d-flex align-items-center">
                     <div class="form-check me-3">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="NombreDueño" value="option1">
+                        <input class="form-check-input" type="radio" name="FiltroNombreDueño" id="FiltroNombreDueño" value="FiltroNombreDueño">
                         <label class="form-check-label" for="NombreDueño">
                             Nombre del Dueño
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="Placa" value="option2">
+                        <input class="form-check-input" type="radio" name="FiltroPlaca" id="FiltroPlaca" value="FiltroPlaca">
                         <label class="form-check-label" for="Placa">
                             Placa
                         </label>
@@ -150,7 +146,7 @@
                 </div>
                 <div class="mb-4">
                 </div>
-                <input type="text" class="form-control" placeholder="Buscar Vehiculo">
+                <input id="BuscarVehiculo" type="text" class="form-control" placeholder="Buscar Vehiculo" onkeyup="filtrarTabla()">
             </div>
             <div class="col-12 col-md-3 text-start mt-5">
                 <div class="modal modal-lg" id="ModalVehiculo" tabindex="-1" aria-labelledby="ModalVehiculo" style="display: none;"
@@ -227,8 +223,8 @@
                                                     <div class="col-7">
                                                         
                                                         <div class="input-group">
-                                                            <input type="hidden" id="Nombre"/>
-                                                            <input type="text" id="MarcaId" name="Vehiculo.MarcaId" class="form-control" placeholder="Seleccionar">
+                                                            <input type="hidden" id="Nombre" />
+                                                            <input type="text" id="marca" name="Vehiculo.MarcaId" class="form-control" placeholder="Seleccionar">
                                                             <button class="btn btn-outline-secondary btn-inside-input" type="button" data-bs-toggle="modal" data-bs-target="#ModalMarca" id="#ModalMarca">
                                                                 <i class="fas fa-search">+</i>
                                                             </button>
@@ -261,7 +257,7 @@
                                                 </div>
                                                 <div class="row mb-3">
                                                     <div class="col-5 text-start">
-                                                        <h9>Distancia Recorrida</h9>
+                                                        <h9>Distancia pene</h9>
                                                     </div>
                                                     <div class="col-7">
                                                         <input name="Vehiculo.DistanciaRecorrida" class="form-control input-custom">
@@ -312,8 +308,9 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr data-id="@item.Id" data-dueno="@item.ClienteId" data-placa="@item.Placa" data-marca="@item.MarcaId" 
-                            data-modelo="@item.NombreModelo" data-anno="@item.Anno" data-vin="@item.VIN" onclick="seleccionarFila(this)">
+                            <tr data-id="@item.Id" data-tipodistancia="@item.TipoDistancia" data-distancia="@item.DistanciaRecorrida" 
+                            data-dueno="@item.ClienteId" data-placa="@item.Placa" data-marca="@item.MarcaId" data-modelo="@item.NombreModelo"
+                            data-anno="@item.Anno" data-vin="@item.VIN" onclick="seleccionarFila(this)">
                                 <td class="Dueño">@item.Cliente?.Nombre</td>
                                 <td class="Placa">@item.Placa</td>
                                 <td class="Marca">@item.Marca?.Nombre_Marca</td>
@@ -335,10 +332,150 @@
 
         <div class="col-12 text-end">
             <div class="actions d-flex justify-content-start">
-                <button class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalVehiculo">Modificar</button>
+                <button id="btnModificarVehiculo" class="btn btn-custom" type="button" data-bs-toggle="modal" data-bs-target="#ModalEditarVehiculo">Modificar</button>
                 <button class="btn btn-custom2" type="button" data-bs-toggle="modal" data-bs-target="#ModalEliminarVehiculo">Eliminar</button>
             </div>
         </div>
+
+        <div class="modal modal-lg" id="ModalEditarVehiculo" tabindex="-1" aria-labelledby="ModalVehiculo" style="display: none;"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="d-flex">
+                            <div class="volver">
+                                <button type="button" class="modalvolver" data-bs-dismiss="modal" aria-label="Close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                    </svg>
+                                    <h1 class="modal-title fs-5" id="ModalVehiculoTitulo">Editar Vehiculo</h1>
+                                </button>
+                            </div>
+                            <div class="col-12 col-md-6 text-start user-info">
+                                <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                                <span class="user-name">Messi</span>
+                            </div>
+                        </div>
+                        <div class="container-modal">
+                            <form asp-controller="Vehiculo" asp-action="Upsert" id="FormEditVehi" method="post">
+                                <input type="hidden" id="vehiculoId" name="ID" value="" />
+                                <div class="row">
+                                    <div class="col text-start">
+                                        <h8>Datos del Vehiculo</h8>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <!-- Columna izquierda -->
+                                    <div class="col-6">
+                                        <div class="row mb-3">
+                                            <div class="col-5 text-start">
+                                                <h9>Placa</h9>
+                                            </div>
+                                            <div class="col-7">
+                                                <input id="placa" name="Vehiculo.Placa" class="form-control input-custom">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-5 text-start">
+                                                <h9>VIN</h9>
+                                            </div>
+                                            <div class="col-7">
+                                                <input id="vin" name="Vehiculo.VIN" class="form-control input-custom">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-5 text-start">
+                                                <h9>Modelo</h9>
+                                            </div>
+                                            <div class="col-7">
+                                                <input id="modelo" name="Vehiculo.NombreModelo" class="form-control input-custom">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div>
+                                                <div class="d-flex align-items-center mb-2 unidad-medida-container">
+                                                    <label class="form-check-label me-2 text-green label-ajustado">Kilómetros</label>
+                                                    <input type="radio" class="form-check-input" name="Vehiculo.TipoDistancia" id="kilometros" value="true">
+                                                    <label class="form-check-label ms-3 me-2 text-green label-ajustado">Millas</label>
+                                                    <input type="radio" class="form-check-input" name="Vehiculo.TipoDistancia" id="millas" value="Millas">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Columna derecha -->
+                                    <div class="col-6">
+                                        <div class="row mb-3">
+                                            <div class="col-5 text-start">
+                                                <label for="marca" class="form-label">Marca</label>
+                                            </div>
+                                            <div class="col-7">
+
+                                                <div class="input-group">
+                                                    <input type="hidden" id="Nombre" />
+                                                    <input type="text" id="marca" name="Vehiculo.MarcaId" class="form-control" placeholder="Seleccionar">
+                                                    <button class="btn btn-outline-secondary btn-inside-input" type="button" data-bs-toggle="modal" data-bs-target="#ModalMarca" id="#ModalMarca">
+                                                        <i class="fas fa-search">+</i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-5 text-start">
+                                                <h9>Año</h9>
+                                            </div>
+                                            <div class="col-7">
+                                                <input id="anno" name="Vehiculo.Anno" class="form-control input-custom">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-5 text-start">
+                                                <label for="cliente" class="form-label">Cliente</label>
+                                            </div>
+                                            <div class="col-7">
+                                                <input type="hidden" id="NombreCliente" />
+                                                <div class="input-group">
+                                                    <input type="text" id="cliente" class="form-control" name="Vehiculo.ClienteId" placeholder="Seleccionar">
+                                                    <input type="hidden" id="PrimerApellido" value="" />
+                                                    <input type="hidden" id="SegundoApellido" value="" />
+                                                    <button class="btn btn-outline-secondary btn-inside-input" type="button" data-bs-toggle="modal" data-bs-target="#ModalCliente" id="#ModalCliente">
+                                                        <i class="fas fa-search">+</i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-5 text-start">
+                                                <h9>Distancia pene</h9>
+                                            </div>
+                                            <div class="col-7">
+                                                <input id="distancia" name="Vehiculo.DistanciaRecorrida" class="form-control input-custom">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row botones">
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <button type="button" class="btn btn-anular d-flex align-items-center justify-content-center"
+                                                data-bs-dismiss="modal" aria-label="Close">
+                                            Anular
+                                        </button>
+                                    </div>
+                                    <div class="col-6 d-flex">
+                                        <button type="submit" class="btn btn-light d-flex align-items-center justify-content-center"
+                                                data-bs-dismiss="modal" aria-label="Close">
+                                            Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
         <!-- Modal Principal Cliente -->
         <div class="modal" id="ModalCliente" tabindex="-1" aria-labelledby="ModalClienteLabel" aria-hidden="true">
@@ -619,6 +756,128 @@
             document.getElementById('PrimerApellido').value = primerapellido;
             document.getElementById('SegundoApellido').value = segundoapellido;// Campo de texto/numérico para el telefono
 
+        });
+    });
+</script>
+<script>
+    function filtrarTabla() {
+        // Obtén el texto ingresado en el campo de búsqueda y conviértelo a minúsculas para hacer la búsqueda insensible a mayúsculas/minúsculas.
+        const filtro = document.getElementById("BuscarVehiculo").value.toLowerCase();
+
+        // Obtén la referencia de la tabla donde se realizará el filtrado.
+        const tabla = document.getElementById("TablaVehiculo");
+
+        // Obtén todas las filas de la tabla (<tr>), incluyendo encabezados y datos.
+        const filas = tabla.getElementsByTagName("tr");
+
+        // Verifica si el checkbox "Nombre" está seleccionado (para filtrar solo por esa columna).
+        const filtrarPorNombre = document.getElementById("FiltroNombreDueño").checked;
+        const filtrarPorPlaca = document.getElementById("FiltroNombreDueño").checked;
+
+        // Itera sobre todas las filas de la tabla, comenzando desde el índice 1 para saltar la fila de encabezado.
+        for (let i = 1; i < filas.length; i++) {
+            // Obtén todas las celdas (<td>) de la fila actual.
+            const celdas = filas[i].getElementsByTagName("td");
+
+            // Variable para determinar si esta fila debe mostrarse o no.
+            let mostrarFila = false;
+
+            // Si el checkbox "Nombre" está seleccionado:
+            if (filtrarPorNombre) {
+                // Verifica si el contenido de la celda en la columna 0 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true; // Marca esta fila para ser mostrada.
+                }
+            } else {
+                // Si el checkbox "Nombre" NO está seleccionado, busca el texto en todas las columnas de la fila.
+                for (let j = 0; j < celdas.length; j++) {
+                    // Verifica si la celda existe y contiene el texto buscado.
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true; // Marca esta fila para ser mostrada.
+                        break; // Detén la búsqueda en esta fila, ya que se encontró una coincidencia.
+                    }
+                }
+            }
+
+            if (filtrarPorPlaca) {
+                // Verifica si el contenido de la celda en la columna 0 (Nombre) incluye el texto ingresado en el filtro.
+                if (celdas[0] && celdas[0].innerText.toLowerCase().includes(filtro)) {
+                    mostrarFila = true; // Marca esta fila para ser mostrada.
+                }
+            } else {
+                // Si el checkbox "Nombre" NO está seleccionado, busca el texto en todas las columnas de la fila.
+                for (let j = 0; j < celdas.length; j++) {
+                    // Verifica si la celda existe y contiene el texto buscado.
+                    if (celdas[j] && celdas[j].innerText.toLowerCase().includes(filtro)) {
+                        mostrarFila = true; // Marca esta fila para ser mostrada.
+                        break; // Detén la búsqueda en esta fila, ya que se encontró una coincidencia.
+                    }
+                }
+            }
+
+            // Si se encontró coincidencia (mostrarFila es true), muestra la fila; de lo contrario, ocúltala.
+            filas[i].style.display = mostrarFila ? "" : "none";
+        }
+    }
+</script>
+<script>
+    // Espera a que todo el DOM se cargue completamente antes de ejecutar el script
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Obtiene la referencia de la tabla de productos
+        const table = document.getElementById('TablaVehiculo');
+        // Obtiene la referencia del botón que abre el modal para modificar productos
+        const btnModificar = document.getElementById('btnModificarProducto');
+
+        // Variable para almacenar la fila seleccionada actualmente
+        let selectedRow = null;
+
+        // Agrega un evento de clic a la tabla para detectar cuando se selecciona una fila
+        table.addEventListener('click', (event) => {
+            // Obtiene la fila (<tr>) más cercana al elemento que fue clickeado
+            const row = event.target.closest('tr');
+
+            // Si se clickea una fila válida (no nula)
+            if (row) {
+                // Si ya hay una fila seleccionada previamente, remueve el estilo de selección
+                if (selectedRow) {
+                    selectedRow.classList.remove('table-active');
+                }
+
+                // Marca la fila clickeada como seleccionada
+                selectedRow = row;
+                selectedRow.classList.add('table-active'); // Agrega la clase CSS para el estilo de selección
+            }
+        });
+
+        // Agrega un evento al botón "Modificar" para rellenar el modal con los datos de la fila seleccionada
+        btnModificar.addEventListener('click', () => {
+            // Si no hay ninguna fila seleccionada, muestra un mensaje de alerta y detiene el flujo
+            if (!selectedRow) {
+                alert('Por favor selecciona un producto primero.');
+                return;
+            }
+
+            // Obtiene los valores de los atributos personalizados (dataset) de la fila seleccionada
+            const id = selectedRow.dataset.id;            // ID del producto
+            const tipodistancia = selectedRow.dataset.tipodistancia;    // Nombre del producto
+            const distancia = selectedRow.dataset.distancia;      // Stock del producto
+            const dueno = selectedRow.dataset.dueno;    // Precio del producto
+            const placa = selectedRow.dataset.placa;            // ID del producto
+            const marca = selectedRow.dataset.marca;    // Nombre del producto
+            const modelo = selectedRow.dataset.modelo;      // Stock del producto
+            const anno = selectedRow.dataset.anno;    // Precio del producto
+            const vin = selectedRow.dataset.vin;    // Precio del producto
+
+            // Asigna los valores obtenidos a los campos del formulario dentro del modal
+            document.getElementById('vehiculoId').value = id; // Campo oculto para el ID
+            document.getElementById('tipodistancia').value = tipodistancia; // Campo de texto para el nombre
+            document.getElementById('distancia').value = distancia;        // Campo de texto/numérico para el stock
+            document.getElementById('cliente').value = dueno;      // Campo de texto/numérico para el precio
+            document.getElementById('placa').value = placa; // Campo oculto para el ID
+            document.getElementById('marca').value = marca; // Campo de texto para el nombre
+            document.getElementById('modelo').value = modelo;        // Campo de texto/numérico para el stock
+            document.getElementById('cliente').value = dueno;      // Campo de texto/numérico para el precio
         });
     });
 </script>

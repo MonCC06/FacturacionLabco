@@ -46,5 +46,10 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
 
             return null;
         }
+
+        public IEnumerable<Vehiculo> GetVehiculoList()
+        {
+            return _db.vehiculo;
+        }
     }
 }
