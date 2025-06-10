@@ -2,6 +2,7 @@
 using FacturacionLabco_Models;
 using FacturacionLabco_Utilidades;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,10 @@ namespace FacturacionLabco_AccesoDatos.Datos.Repositorio
 
         public IEnumerable<Vehiculo> GetVehiculoList()
         {
-            return _db.vehiculo;
+            return _db.vehiculo
+                      .Include(v => v.Cliente)
+                      .Include(v => v.Marca)
+                      .ToList();
         }
     }
 }

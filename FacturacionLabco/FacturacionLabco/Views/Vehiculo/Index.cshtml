@@ -223,8 +223,8 @@
                                                     <div class="col-7">
                                                         
                                                         <div class="input-group">
-                                                            <input type="hidden" id="Nombre" />
-                                                            <input type="text" id="marca" name="Vehiculo.MarcaId" class="form-control" placeholder="Seleccionar">
+                                                            <input type="hidden" id="MarcaId" name="Vehiculo.MarcaId" />
+                                                            <input type="text" id="Nombre" class="form-control" placeholder="Seleccionar" readonly>
                                                             <button class="btn btn-outline-secondary btn-inside-input" type="button" data-bs-toggle="modal" data-bs-target="#ModalMarca" id="#ModalMarca">
                                                                 <i class="fas fa-search">+</i>
                                                             </button>
@@ -243,10 +243,10 @@
                                                     <div class="col-5 text-start">
                                                         <label for="cliente" class="form-label">Cliente</label>
                                                     </div>
-                                                    <div class="col-7">
-                                                        <input type="hidden" id="NombreCliente"  />
+                                                    <div class="col-7"> 
                                                         <div class="input-group">
-                                                            <input type="text" id="clienteId" class="form-control" name="Vehiculo.ClienteId" placeholder="Seleccionar">
+                                                            <input type="hidden" id="clienteId" name="Vehiculo.ClienteId" />
+                                                            <input type="text" id="NombreCliente" class="form-control" placeholder="Seleccionar" readonly>
                                                             <input type="hidden" id="PrimerApellido" value="" />
                                                             <input type="hidden" id="SegundoApellido" value="" />
                                                             <button class="btn btn-outline-secondary btn-inside-input" type="button" data-bs-toggle="modal" data-bs-target="#ModalCliente" id="#ModalCliente">
@@ -257,7 +257,7 @@
                                                 </div>
                                                 <div class="row mb-3">
                                                     <div class="col-5 text-start">
-                                                        <h9>Distancia pene</h9>
+                                                        <h9>Distancia</h9>
                                                     </div>
                                                     <div class="col-7">
                                                         <input name="Vehiculo.DistanciaRecorrida" class="form-control input-custom">
@@ -311,7 +311,7 @@
                             <tr data-id="@item.Id" data-tipodistancia="@item.TipoDistancia" data-distancia="@item.DistanciaRecorrida" 
                             data-dueno="@item.ClienteId" data-placa="@item.Placa" data-marca="@item.MarcaId" data-modelo="@item.NombreModelo"
                             data-anno="@item.Anno" data-vin="@item.VIN" onclick="seleccionarFila(this)">
-                                <td class="Dueño">@item.Cliente?.Nombre</td>
+                                <td class="Dueño">@item.Cliente?.Nombre @item.Cliente?.PrimerApellido @item.Cliente?.SegundoApellido</td>
                                 <td class="Placa">@item.Placa</td>
                                 <td class="Marca">@item.Marca?.Nombre_Marca</td>
                                 <td class="Modelo">@item.NombreModelo</td>
