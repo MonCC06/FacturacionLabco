@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kUl2leDJ/pvxnyVUEKFzleFCyLo5oLkM2or/ogbLjw0=",
+  "Hash": "sadVvnbk96fueKO+qtnYzLgi+J3ku8VEmtMrjd9WY8Q=",
   "Source": "FacturacionLabco",
   "BasePath": "_content/FacturacionLabco",
   "Mode": "Default",
@@ -1516,6 +1516,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Cliente.js"
+    },
+    {
+      "Identity": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\js\\Factura.js",
+      "SourceId": "FacturacionLabco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\",
+      "BasePath": "_content/FacturacionLabco",
+      "RelativePath": "js/Factura.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Factura.js"
     },
     {
       "Identity": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\js\\JavaScript.js",

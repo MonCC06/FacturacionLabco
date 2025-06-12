@@ -7,20 +7,28 @@
       "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\views\\factura\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C83AF40E-E9C0-4270-A398-2D8A1529BB85}|FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco_accesodatos\\datos\\repositorio\\vehiculorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C83AF40E-E9C0-4270-A398-2D8A1529BB85}|FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj|solutionrelative:facturacionlabco_accesodatos\\datos\\repositorio\\vehiculorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C83AF40E-E9C0-4270-A398-2D8A1529BB85}|FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco_accesodatos\\datos\\repositorio\\irepositorio\\ivehiculorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C83AF40E-E9C0-4270-A398-2D8A1529BB85}|FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj|solutionrelative:facturacionlabco_accesodatos\\datos\\repositorio\\irepositorio\\ivehiculorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco\\wwwroot\\js\\factura.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\wwwroot\\js\\factura.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco\\views\\vehiculo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\views\\vehiculo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco\\wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C83AF40E-E9C0-4270-A398-2D8A1529BB85}|FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco_accesodatos\\datos\\repositorio\\irepositorio\\ivehiculorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C83AF40E-E9C0-4270-A398-2D8A1529BB85}|FacturacionLabco_AccesoDatos\\FacturacionLabco_AccesoDatos.csproj|solutionrelative:facturacionlabco_accesodatos\\datos\\repositorio\\irepositorio\\ivehiculorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco\\controllers\\vehiculocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B8D59681-0F3B-4F3A-AF7C-95B7E70BD009}|FacturacionLabco_Models\\FacturacionLabco_Models.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco_models\\viewmodels\\facturavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8D59681-0F3B-4F3A-AF7C-95B7E70BD009}|FacturacionLabco_Models\\FacturacionLabco_Models.csproj|solutionrelative:facturacionlabco_models\\viewmodels\\facturavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|c:\\users\\pablo\\onedrive\\documentos\\github\\facturacionlabco\\facturacionlabco\\facturacionlabco\\wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{76EAA691-AE2A-4097-813A-2848595D3550}|FacturacionLabco\\FacturacionLabco.csproj|solutionrelative:facturacionlabco\\wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 336,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,33 +102,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "Factura.js",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\js\\Factura.js",
+              "RelativeDocumentMoniker": "FacturacionLabco\\wwwroot\\js\\Factura.js",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\js\\Factura.js",
+              "RelativeToolTip": "FacturacionLabco\\wwwroot\\js\\Factura.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-12T05:19:31.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Vehiculo\\Index.cshtml",
-              "RelativeDocumentMoniker": "FacturacionLabco\\Views\\Vehiculo\\Index.cshtml",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Vehiculo\\Index.cshtml",
-              "RelativeToolTip": "FacturacionLabco\\Views\\Vehiculo\\Index.cshtml",
-              "ViewState": "AgIAACcBAAAAAAAAAAAowEABAAAZAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Factura\\Index.cshtml",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Views\\Factura\\Index.cshtml",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Factura\\Index.cshtml",
+              "RelativeToolTip": "FacturacionLabco\\Views\\Factura\\Index.cshtml",
+              "ViewState": "AgIAAFABAAAAAAAAAAAAAF4BAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-27T10:00:19.908Z",
+              "WhenOpened": "2025-06-08T19:30:53.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "VehiculoRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\VehiculoRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\VehiculoRepositorio.cs",
               "ToolTip": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\VehiculoRepositorio.cs",
               "RelativeToolTip": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\VehiculoRepositorio.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwDgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwC0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-09T01:46:10.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "IVehiculoRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\IRepositorio\\IVehiculoRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\IRepositorio\\IVehiculoRepositorio.cs",
@@ -132,12 +148,11 @@
               "RelativeToolTip": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\IRepositorio\\IVehiculoRepositorio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T02:18:58.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T02:18:58.487Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "AplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\AplicationDbContext.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\AplicationDbContext.cs",
@@ -149,33 +164,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Factura\\Index.cshtml",
-              "RelativeDocumentMoniker": "FacturacionLabco\\Views\\Factura\\Index.cshtml",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Factura\\Index.cshtml",
-              "RelativeToolTip": "FacturacionLabco\\Views\\Factura\\Index.cshtml",
-              "ViewState": "AgIAAOsDAAAAAAAAAAAAwAMEAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-08T19:30:53.541Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "FacturaController.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\FacturaController.cs",
               "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\FacturaController.cs",
               "ToolTip": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\FacturaController.cs",
               "RelativeToolTip": "FacturacionLabco\\Controllers\\FacturaController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T23:26:03.616Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-08T23:26:03.616Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Cliente.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Cliente.cs",
@@ -183,12 +184,11 @@
               "RelativeToolTip": "FacturacionLabco_Models\\Cliente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T02:08:19.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T02:08:19.504Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Marca.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\Marca.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\Marca.cs",
@@ -196,12 +196,11 @@
               "RelativeToolTip": "FacturacionLabco_Models\\Marca.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T02:08:23.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T02:08:23.572Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "VehiculoController.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Controllers\\VehiculoController.cs",
               "RelativeDocumentMoniker": "FacturacionLabco\\Controllers\\VehiculoController.cs",
@@ -209,12 +208,11 @@
               "RelativeToolTip": "FacturacionLabco\\Controllers\\VehiculoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T02:53:12.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T02:53:12.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "VehiculoVM.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\ViewModels\\VehiculoVM.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\ViewModels\\VehiculoVM.cs",
@@ -222,12 +220,11 @@
               "RelativeToolTip": "FacturacionLabco_Models\\ViewModels\\VehiculoVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T02:18:47.732Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T02:18:47.732Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "IClienteRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\IRepositorio\\IClienteRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\IRepositorio\\IClienteRepositorio.cs",
@@ -239,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ClienteRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\ClienteRepositorio.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_AccesoDatos\\Datos\\Repositorio\\ClienteRepositorio.cs",
@@ -251,19 +248,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
               "Title": "JavaScript.js",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\js\\JavaScript.js",
               "RelativeDocumentMoniker": "FacturacionLabco\\wwwroot\\js\\JavaScript.js",
               "ToolTip": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\wwwroot\\js\\JavaScript.js",
               "RelativeToolTip": "FacturacionLabco\\wwwroot\\js\\JavaScript.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-06-04T04:34:05.111Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DetalleVM.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\ViewModels\\DetalleVM.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\ViewModels\\DetalleVM.cs",
@@ -275,7 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "FacturaVM.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco_Models\\ViewModels\\FacturaVM.cs",
               "RelativeDocumentMoniker": "FacturacionLabco_Models\\ViewModels\\FacturaVM.cs",
@@ -294,6 +291,40 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "c986f2c0-97f8-4546-b31b-18f85448e942",
+        "Display": 1,
+        "X": 384,
+        "Y": 93,
+        "Width": 1547,
+        "Height": 956,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Vehiculo\\Index.cshtml",
+              "RelativeDocumentMoniker": "FacturacionLabco\\Views\\Vehiculo\\Index.cshtml",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Documentos\\GitHub\\FacturacionLabco\\FacturacionLabco\\FacturacionLabco\\Views\\Vehiculo\\Index.cshtml",
+              "RelativeToolTip": "FacturacionLabco\\Views\\Vehiculo\\Index.cshtml",
+              "ViewState": "AgIAAIICAAAAAAAAAAAAAIoCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T10:00:19.908Z",
+              "EditorCaption": ""
             }
           ]
         }
